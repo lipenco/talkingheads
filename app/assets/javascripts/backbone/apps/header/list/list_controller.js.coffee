@@ -1,11 +1,21 @@
-@Demo.module "HeaderApp.List", (List, App, Backbone, Marionette, $, _ ) ->
-
+@Demo.module "HeaderApp.List", (List, App, Backbone, Marionette, $, _) ->
+  
   List.Controller =
-
+    
     listHeader: ->
-      headerView = @getHeaderView()
+      links = @getLinksCollection()
+      
+      headerView = @getHeaderView links
       App.headerRegion.show headerView
 
-    getHeaderView: ->
-      console.log "list"
-      new List.Header
+    getLinksCollection: ->
+      new Backbone.Collection [
+        {name: "Conferences"}
+        {name: "About"}
+        {name: "Sign In"}
+
+      ]
+    
+    getHeaderView: (links) ->
+      new List.Headers
+        collection: links
