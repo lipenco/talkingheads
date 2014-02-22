@@ -1,6 +1,8 @@
 class ConferencesController < ApplicationController
+  respond_to :json
 
   def index
+    @conferences = Conference.all
   end
 
   def new
