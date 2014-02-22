@@ -1,0 +1,23 @@
+
+<div id="header" class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row">
+        <div class="pull-left">
+          <span class="brand"> Talking Heads - conferences talks form all over the world</span>
+        </div>
+        <ul class="nav pull-right">
+           <li class="active">
+             <a href="#">link1</a>
+           </li>
+           <li class="active">
+             <a href="#">link2</a>
+           </li>
+           <li class="active">
+             <a href="#">link2</a>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
