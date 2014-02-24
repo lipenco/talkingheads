@@ -3,10 +3,21 @@
   List.Controller =
 
     list: ->
-      listView = @getListView()
-      App.mainRegion.show listView
+      @layout = @getLayoutView()
 
-    getListView: ->
-      new List.Conference
+      @layout.on "show", =>
+        @titleRegion()
+
+      App.mainRegion.show @layout
+
+    titleRegion: ->
+      titleView = @getTitleView()
+      @layout.titleRegion.show titleView
+
+    getTitleView: ->
+      new List.Title
+
+    getLayoutView: ->
+      new List.Layout
 
 
