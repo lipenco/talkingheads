@@ -1,0 +1,38 @@
+<div class="spen4  text-center">
+  <a class="th radius" href="#">
+    <img src="" />
+  </a>
+</div>
+<div class="span6  stats-container">
+  <div class="row">
+    <div class="span6  columns">
+      <div class="row">
+        <div class="span3 columns attribute-label">Name</div>
+        <div class="span6 columns"><%= @name %></div>
+      </div>
+      <div class="row">
+        <div class="span3 columns attribute-label">Place</div>
+        <div class="span6 columns"><%= @place %></div>
+      </div>
+      <div class="row">
+        <div class="span3 columns attribute-label">Date</div>
+        <div class="span6 columns"><%= @date %></div>
+      </div>
+      <div class="row">
+        <div class="span3 columns attribute-label">Tags</div>
+        <div class="span8 columns"><%= @tags %></div>
+      </div>
+      <div class="row">
+        <div class="span3 columns attribute-label">Description</div>
+        <div class="span6 columns"><%= @description %></div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+<!-- <div class="crew-delete">
+  <button class="button secondary tiny radius">
+    <i class="general-enclosed foundicon-remove"></i>
+    Delete
+  </button>
+</div> -->

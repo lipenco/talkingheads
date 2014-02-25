@@ -1,0 +1,6 @@
+<div class="panel radius text-center">
+  <h2>
+    <small>No Conferences Found!</small>
+  </h2>
+  <p class="subheader">Add a conference to get started.</p>
+</div>
