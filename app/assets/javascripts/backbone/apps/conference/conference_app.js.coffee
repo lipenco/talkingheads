@@ -6,13 +6,9 @@
       "conferences": "list"
 
   API = 
-    # list: ->
-    #   new ConferenceApp.List.Controller
     list: ->
-      ConferenceApp.List.Controller.list()
+      new ConferenceApp.List.Controller
 
-  # ConferenceApp.on "start", ->
-  #   API.list()
 
   App.addInitializer ->
     new ConferenceApp.Router

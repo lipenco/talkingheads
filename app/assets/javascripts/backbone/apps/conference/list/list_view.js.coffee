@@ -5,10 +5,31 @@
 
     regions:
       titleRegion:  "#title-region"
+      panelRegion:  "#panel-region"
+      newRegion:    "#new-region"
+      crewRegion:   "#conference-region"
 
     
 
   class List.Title extends App.Views.ItemView
     template: "conference/list/_title"
+
+  class List.Panel extends App.Views.ItemView
+    template: "crew/list/_panel"
+
+  class List.ConferenceSingle extends App.Views.ItemView
+    template: "crew/list/_conference_single"
+    tagName: "li"
+    className: "conference-single"
+      
+    # triggers:
+    #   "click .crew-delete button" : "crew:delete:clicked"
+    #   "click"                     : "crew:member:clicked"
+
+  class List.Conference extends App.Views.CompositeView
+    template: "crew/list/_conference"
+    itemView: List.ConferenceSingle
+    emptyView: List.Empty
+    itemViewContainer: "ul"
 
 
