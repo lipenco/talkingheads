@@ -3,19 +3,19 @@
   class List.Controller extends App.Controllers.Base
     
     initialize: ->
-      conference = App.request "conference:entities"
+      conferences = App.request "conference:entities"
 
       
-      App.execute "when:fetched", conference, =>
+      App.execute "when:fetched", conferences, =>
       
-        @layout = @getLayoutView conference
+        @layout = @getLayoutView conferences
         
         # @listenTo @layout, "close", @close
       
         @listenTo @layout, "show", =>
           @titleRegion()
           @panelRegion()
-          @conferenceRegion conference
+          @conferenceRegion conferences
       
         @show @layout
     
@@ -23,16 +23,16 @@
       titleView = @getTitleView()
       @layout.titleRegion.show titleView
     
-    # panelRegion: ->
-    #   panelView = @getPanelView()
+    panelRegion: ->
+      panelView = @getPanelView()
       
     #   @listenTo panelView, "new:conference:button:clicked", =>
     #     @newRegion()
       
     #   @layout.panelRegion.show panelView
     
-    newRegion: ->
-      App.execute "new:conference:single", @layout.newRegion
+    # newRegion: ->
+    #   App.execute "new:conference:single", @layout.newRegion
     
     conferenceRegion: (conference) ->
       conferenceView = @getConferenceView conference
@@ -50,11 +50,11 @@
       new List.Conference
         collection: conference
     
-    # getPanelView: ->
-    #   new List.Panel
+    getPanelView: ->
+      new List.Panel
     
-    # getTitleView: ->
-    #   new List.Title
+    getTitleView: ->
+      new List.Title
     
     getLayoutView: (conference) ->
       new List.Layout

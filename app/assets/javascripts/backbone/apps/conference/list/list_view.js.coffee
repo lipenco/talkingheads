@@ -7,7 +7,7 @@
       titleRegion:  "#title-region"
       panelRegion:  "#panel-region"
       newRegion:    "#new-region"
-      crewRegion:   "#conference-region"
+      conferenceRegion:   "#conference-region"
 
     
 
