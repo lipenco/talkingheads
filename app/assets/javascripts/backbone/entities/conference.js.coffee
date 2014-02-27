@@ -1,12 +1,12 @@
 @Demo.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
   
   class Entities.Conference extends App.Entities.Model
-    urlRoot: '/conferences'
+    urlRoot: -> Routes.conferences_path()
   
   class Entities.ConferenceCollection extends App.Entities.Collection
     model: Entities.Conference
     
-    url: '/conferences'
+    url: -> Routes.conferences_path()
   
   API =
     getConferences: ->
@@ -30,6 +30,6 @@
   App.reqres.setHandler "conference:entity", (id) ->
     API.getConference id
   
-  # App.reqres.setHandler "new:conference:entity", ->
-  #   API.newConference()
+  App.reqres.setHandler "new:conference:entity", ->
+    API.newConference()
 

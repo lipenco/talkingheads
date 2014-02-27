@@ -15,10 +15,10 @@
     template: "conference/list/_title"
 
   class List.Panel extends App.Views.ItemView
-    template: "crew/list/_panel"
+    template: "conference/list/_panel"
 
   class List.ConferenceSingle extends App.Views.ItemView
-    template: "crew/list/_conference_single"
+    template: "conference/list/_conference_single"
     tagName: "li"
     className: "conference-single"
       
@@ -27,7 +27,7 @@
     #   "click"                     : "crew:member:clicked"
 
   class List.Conference extends App.Views.CompositeView
-    template: "crew/list/_conference"
+    template: "conference/list/_conference"
     itemView: List.ConferenceSingle
     emptyView: List.Empty
     itemViewContainer: "ul"

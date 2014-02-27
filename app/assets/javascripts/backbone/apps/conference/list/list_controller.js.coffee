@@ -4,10 +4,9 @@
     
     initialize: ->
       conferences = App.request "conference:entities"
-
-      
+    
       App.execute "when:fetched", conferences, =>
-      
+        
         @layout = @getLayoutView conferences
         
         # @listenTo @layout, "close", @close
@@ -25,17 +24,18 @@
     
     panelRegion: ->
       panelView = @getPanelView()
+      @layout.panelRegion.show panelView
       
     #   @listenTo panelView, "new:conference:button:clicked", =>
     #     @newRegion()
       
-    #   @layout.panelRegion.show panelView
+      
     
     # newRegion: ->
     #   App.execute "new:conference:single", @layout.newRegion
     
-    conferenceRegion: (conference) ->
-      conferenceView = @getConferenceView conference
+    conferenceRegion: (conferences) ->
+      conferenceView = @getConferenceView conferences
       
       # @listenTo conferenceView, "childview:conference:single:clicked", (child, args) ->
       #   App.vent.trigger "conference:single:clicked", args.model
@@ -46,9 +46,9 @@
       
       @layout.conferenceRegion.show conferenceView
     
-    getConferenceView: (conference) ->
+    getConferenceView: (conferences) ->
       new List.Conference
-        collection: conference
+        collection: conferences
     
     getPanelView: ->
       new List.Panel
@@ -56,8 +56,8 @@
     getTitleView: ->
       new List.Title
     
-    getLayoutView: (conference) ->
+    getLayoutView: (conferences) ->
       new List.Layout
-        collection: conference
+        collection: conferences
 
 
