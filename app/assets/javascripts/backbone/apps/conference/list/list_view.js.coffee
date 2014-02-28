@@ -20,7 +20,9 @@
 
   class List.ConferenceSingle extends App.Views.ItemView
     template: "conference/list/_conference_single"
+    className: 'conference_li'
     tagName: "li"
+
       
     # triggers:
     #   "click .crew-delete button" : "crew:delete:clicked"
@@ -29,8 +31,14 @@
   class List.Conference extends App.Views.CompositeView
     template: "conference/list/_conference"
     itemView: List.ConferenceSingle
-    # tagName: "ul"
-    # emptyView: List.Empty
     itemViewContainer: "ul"
+    onRender: ->
+       @childElementsFadeIn()
+    
+    childElementsFadeIn: ->
+      duration = 500;
+      @$el.find('.conference_li').each (index) ->
+        $(this).hide()
+        $(this).delay((index+1) * duration).fadeIn(500)
 
 

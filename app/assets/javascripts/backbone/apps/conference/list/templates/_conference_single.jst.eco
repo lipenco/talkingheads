@@ -1,5 +1,5 @@
 
-  <div class="note <%= @color %> rounded">
+  <div id="conference_<%=@id%>" class="note <%= @color %> rounded">
       <div class="user-card card">
           <div class="user-avatar"><div class="user-bg"><img src="<%= @thumb %>" class="user-pic"></div> </div>
           <header>

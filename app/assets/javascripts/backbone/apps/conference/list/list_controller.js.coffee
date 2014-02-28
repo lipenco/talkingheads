@@ -17,6 +17,7 @@
           @conferenceRegion conferences
       
         @show @layout
+
     
     titleRegion: ->
       titleView = @getTitleView()
@@ -45,6 +46,7 @@
       #   if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
       
       @layout.conferenceRegion.show conferenceView
+
     
     getConferenceView: (conferences) ->
       new List.Conference

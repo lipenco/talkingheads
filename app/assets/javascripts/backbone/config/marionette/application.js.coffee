@@ -30,3 +30,5 @@ do (Backbone) ->
 		
 		getRegistrySize: ->
 			_.size @_registry
+
+			
