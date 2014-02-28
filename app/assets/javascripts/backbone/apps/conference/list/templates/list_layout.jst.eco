@@ -1,14 +1,16 @@
 <div class="container">
- <div id="allconferences">
- <div class="span5">
+
+
    <div id="title-region"></div>
    <div id="panel-region"></div>
    <div id="new-region"></div>
+
+   
+   
    <div id="conference-region"></div>
 
 
  </div>
 
 
- </div>
-</div>
+

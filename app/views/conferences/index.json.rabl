@@ -1,6 +1,6 @@
 collection @conferences
 
-attributes :id, :name, :tags, :date, :organizer, :description, :place, :created_at, :updated_at
+attributes :id, :name, :tags, :date, :organizer, :description, :place, :created_at, :updated_at, :color, :thumb
 
 
 node do |conference|

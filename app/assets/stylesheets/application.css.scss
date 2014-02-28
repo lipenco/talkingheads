@@ -9,11 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap.min
  *= require_tree .
  */
+
 
 
 
  @import "apps/base";
  @import "apps/header";
  @import "apps/footer";
+ @import "apps/conference"

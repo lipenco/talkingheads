@@ -1,0 +1,33 @@
+
+  <div class="note <%= @color %> rounded">
+      <div class="user-card card">
+          <div class="user-avatar"><div class="user-bg"><img src="<%= @thumb %>" class="user-pic"></div> </div>
+          <header>
+             <h1><%= @name %></h1>
+            <p><%= @tags %></p>
+            <div class="divider"></div>
+          </header>
+          <article>
+          <div class="comments-status"><a><%= @place %></a>, <%= @date %></div>
+       
+              <!--  <img class="icon-status" src="img/issue.png"> -->
+             <div class="status"><%= @description %></div>
+             <div class="comments-status"><a> 3 talks</a>, 13 kudos</div>
+           </article>
+           <div class="user-menu card">
+                  <ul class="unstyled table fullwidth">
+                    <li><a><span class="icon-rss"></span></a></li>
+                    <li><a><span class="icon-comment"></span></a></li>
+                    <li><a><span class="icon-share "></span></a></li>
+                    <li><a><span class="icon-remove"></span></a></li>
+                  </ul>
+            </div>
+        </div>
+  </div> 
+
+<!-- <div class="crew-delete">
+  <button class="button secondary tiny radius">
+    <i class="general-enclosed foundicon-remove"></i>
+    Delete
+  </button>
+</div> -->

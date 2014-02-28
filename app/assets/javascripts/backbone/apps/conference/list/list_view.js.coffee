@@ -13,6 +13,7 @@
 
   class List.Title extends App.Views.ItemView
     template: "conference/list/_title"
+    className: "col-centred"
 
   class List.Panel extends App.Views.ItemView
     template: "conference/list/_panel"
@@ -20,7 +21,6 @@
   class List.ConferenceSingle extends App.Views.ItemView
     template: "conference/list/_conference_single"
     tagName: "li"
-    className: "conference-single"
       
     # triggers:
     #   "click .crew-delete button" : "crew:delete:clicked"
@@ -29,7 +29,8 @@
   class List.Conference extends App.Views.CompositeView
     template: "conference/list/_conference"
     itemView: List.ConferenceSingle
-    emptyView: List.Empty
+    # tagName: "ul"
+    # emptyView: List.Empty
     itemViewContainer: "ul"
 
 
