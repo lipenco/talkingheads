@@ -5,6 +5,8 @@ do (Backbone) ->
 		
 		_.defaults options,
 			beforeSend: _.bind(methods.beforeSend, 	entity)
+			beforeSend = (xhr) ->
+        xhr.setRequestHeader "X-CSRFToken", CSRF_TOKEN
 			complete:		_.bind(methods.complete,		entity)
 		
 		sync = _sync(method, entity, options)
@@ -17,3 +19,12 @@ do (Backbone) ->
 		
 		complete: ->
 			@trigger "sync:stop", @
+
+
+# oldSync = Backbone.sync
+# Backbone.sync = (method, model, options) ->
+#   options.beforeSend = (xhr) ->
+#     xhr.setRequestHeader "X-CSRFToken", CSRF_TOKEN
+#     return
+
+#   oldSync method, model, options

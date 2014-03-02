@@ -39,8 +39,10 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'pry'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
 end

@@ -9,6 +9,13 @@
     list: ->
       new ConferenceApp.List.Controller
 
+    newConference: (region) ->
+      new ConferenceApp.New.Controller
+        region: region
+
+  App.commands.setHandler "new:conference:single", (region) ->
+    API.newConference region
+
 
   App.addInitializer ->
     new ConferenceApp.Router

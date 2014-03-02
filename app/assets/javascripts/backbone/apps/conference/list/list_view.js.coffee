@@ -9,7 +9,6 @@
       newRegion:    "#new-region"
       conferenceRegion:   "#conference-region"
 
-    
 
   class List.Title extends App.Views.ItemView
     template: "conference/list/_title"
@@ -18,15 +17,18 @@
   class List.Panel extends App.Views.ItemView
     template: "conference/list/_panel"
 
+    triggers:
+      "click #new-conference" : "new:conference:button:clicked"
+
   class List.ConferenceSingle extends App.Views.ItemView
     template: "conference/list/_conference_single"
     className: 'conference_li'
     tagName: "li"
 
       
-    # triggers:
-    #   "click .crew-delete button" : "crew:delete:clicked"
-    #   "click"                     : "crew:member:clicked"
+    triggers:
+      "click .conference-delete button" : "conference:delete:clicked"
+      "click"                     : "conference:single:clicked"
 
   class List.Conference extends App.Views.CompositeView
     template: "conference/list/_conference"

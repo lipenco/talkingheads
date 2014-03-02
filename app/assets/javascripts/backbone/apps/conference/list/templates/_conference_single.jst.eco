@@ -25,9 +25,9 @@
         </div>
   </div> 
 
-<!-- <div class="crew-delete">
+<div class="conference-delete">
   <button class="button secondary tiny radius">
     <i class="general-enclosed foundicon-remove"></i>
     Delete
   </button>
-</div> -->
+</div>

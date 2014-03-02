@@ -15,21 +15,21 @@
         reset: true
       conferences
     
-    getConference: (id) ->
-      conference = new Entities.Conference
+    getSingle: (id) ->
+      single = new Entities.Conference
         id: id
-      conference.fetch()
-      conference
+      single.fetch()
+      single
     
-    newConference: ->
+    newSingle: ->
       new Entities.Conference
   
   App.reqres.setHandler "conference:entities", ->
     API.getConferences()
   
   App.reqres.setHandler "conference:entity", (id) ->
-    API.getConference id
+    API.getSingle id
   
   App.reqres.setHandler "new:conference:entity", ->
-    API.newConference()
+    API.newSingle()
 

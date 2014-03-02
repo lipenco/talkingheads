@@ -1,4 +1,5 @@
 class ConferencesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   respond_to :json
 
   def index
@@ -6,30 +7,33 @@ class ConferencesController < ApplicationController
     # color
   end
 
- 
-
   def new
-     @conference = Conference.new
+     @single = Conference.new(conference_params)
   end
 
   def create
-    @conference = Conference.new(conference_params)
-    if @conference.save
-      flash[:notice] = "Conference has been created."
-      redirect_to @conference
+    @single = Conference.new(conference_params)
+    if @single.save
+      render "conferences/show"
     else
-      # nothing, yet
-     end 
+      respond_with @single
+    end
   end
 
   def show
-    @conference = Conference.find(params[:id])
+    @single = Conference.find(params[:id])
+  end
+
+  def destroy
+    single = Conference.find params[:id]
+    single.destroy()
+    render json: {}
   end
 
   private
 
   def conference_params
-    params.require(:conference).permit(:name, :description, :date, :place, :organizer, :tags)
+    params.permit(:name, :date, :place, :tags, :description)
   end
 
 end
