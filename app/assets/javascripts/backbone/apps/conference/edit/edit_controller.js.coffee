@@ -6,7 +6,7 @@
       { conferences, id } = options
       conferences or= App.request "conference:entity", id
       
-      @listenTo conference, "updated", ->
+      @listenTo conferences, "updated", ->
         App.vent.trigger "conference:updated", conferences
       
       App.execute "when:fetched", conferences, =>
@@ -26,7 +26,7 @@
       editView = @getEditView conferences
       
       @listenTo editView, "form:cancel", ->
-        App.vent.trigger "conferences:cancelled", conferences
+        App.vent.trigger "conference:cancelled", conferences
       
       formView = App.request "form:wrapper", editView
       
@@ -34,13 +34,13 @@
     
     getTitleView: (conferences) ->
       new Edit.Title
-        model: conference
+        model: conferences
     
     getLayoutView: (conferences) ->
       new Edit.Layout
-        model: conference
+        model: conferences
     
     getEditView: (conferences) ->
-      new Edit.Conferences
-        model: conference
+      new Edit.Conference
+        model: conferences
 

@@ -15,7 +15,4 @@
   
   class Edit.Conference extends App.Views.ItemView
     template: "conference/edit/edit_conference"
-    # 
-    # onFormSubmit: (data) ->
-    #   console.log "Edit.Conference onFormSubmit", data
-    #   false
+  

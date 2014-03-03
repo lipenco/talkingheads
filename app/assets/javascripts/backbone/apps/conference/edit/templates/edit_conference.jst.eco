@@ -3,21 +3,21 @@
     <legend>Details</legend>
     <div class="row">
       <div class="large-3 columns">
-        <label class="right inline">Age</label>
+        <label class="right inline">Name</label>
           </div>
           <div class="large-9 columns">
         <div class="large-5">
-          <input type="text" name="age" class="large-2" value="<%= @date %>" />
+          <input type="text" name="name" class="large-2" value="<%= @name %>" />
         </div>
           </div>
     </div>
     <div class="row">
       <div class="large-3 columns">
-        <label class="right inline">Name</label>
+        <label class="right inline">Date</label>
           </div>
           <div class="large-9 columns">
         <div class="large-5">
-          <input type="text" name="name" value="<%= @name %>" />
+          <input type="text" name="date" value="<%= @date %>" />
         </div>
           </div>
     </div>
@@ -27,7 +27,7 @@
           </div>
           <div class="large-9 columns">
         <div class="large-5">
-          <input type="text" name="avatar"value="<%= @place %>" />
+          <input type="text" name="place"value="<%= @place %>" />
         </div>
           </div>
     </div>
@@ -37,46 +37,46 @@
           </div>
           <div class="large-9 columns">
         <div class="large-5 left">
-          <input type="text" name="title" value="<%= @tags %>" />
+          <input type="text" name="tags" value="<%= @tags %>" />
         </div>
-        <div class="large-7 columns">
+      <!--   <div class="large-7 columns">
           <h6 class="subheader hint">Job Title at Planet Express</h6>
-        </div>
+        </div> -->
           </div>
     </div>
     <div class="row">
       <div class="large-3 columns">
-        <label class="right inline">Species</label>
+        <label class="right inline">Organizers</label>
           </div>
       <div class="large-9 columns">
         <div class="large-5 left">
-          <input type="text" name="species" value="<%= @species %>" />
+          <input type="text" name="species" value="<%= @organizers %>" />
         </div>
-        <div class="large-7 columns">
+     <!--    <div class="large-7 columns">
           <h6 class="subheader hint">Ex: Human, Robot, Mutant</h6>
-        </div>
+        </div> -->
           </div>
     </div>
     <div class="row">
-      <div class="large-3 columns">
+     <!--  <div class="large-3 columns">
         <label class="right inline">Origin</label>
-          </div>
+          </div> -->
       <div class="large-9 columns">
-        <div class="large-5 left">
+     <!--    <div class="large-5 left">
           <input type="text" name="origin" value="<%= @origin %>" />
-        </div>
-        <div class="large-7 columns">
+        </div> -->
+      <!--   <div class="large-7 columns">
           <h6 class="subheader hint">Planet they were born on</h6>
-        </div>
+        </div> -->
           </div>
     </div>
   </fieldset>
   <fieldset>
-    <legend>Quote</legend>
+    <legend>Description</legend>
     <div class="row">
-      <div class="large-3 columns">
+   <!--    <div class="large-3 columns">
         <label class="right inline">Favorite Quote</label>
-          </div>
+          </div> -->
           <div class="large-9 columns left">
         <textarea name="quote" class="large-6"><%= @description %></textarea>
           </div>

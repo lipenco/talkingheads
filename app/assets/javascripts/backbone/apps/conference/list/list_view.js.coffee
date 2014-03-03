@@ -27,8 +27,9 @@
 
       
     triggers:
-      "click .conference-delete button" : "conference:delete:clicked"
-      "click"                     : "conference:single:clicked"
+      "click .conference-delete" : "conference:delete:clicked"
+      "click .conference-edit"   : "conference:single:edit"
+      "click"                    : "conference:single:details"
 
   class List.Conference extends App.Views.CompositeView
     template: "conference/list/_conference"

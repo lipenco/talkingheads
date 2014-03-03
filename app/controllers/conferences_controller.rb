@@ -20,20 +20,29 @@ class ConferencesController < ApplicationController
     end
   end
 
+  def update
+    @single = Conference.find params[:id]
+    if @single.update_attributes conference_params
+      render "conferences/show"
+    else
+      respond_with @single
+    end
+  end
+
   def show
     @single = Conference.find(params[:id])
   end
 
   def destroy
     single = Conference.find params[:id]
-    single.destroy()
+    single.destroy
     render json: {}
   end
 
   private
 
   def conference_params
-    params.permit(:name, :date, :place, :tags, :description)
+    params.permit(:name, :tags, :date, :organizer, :description, :place)
   end
 
 end

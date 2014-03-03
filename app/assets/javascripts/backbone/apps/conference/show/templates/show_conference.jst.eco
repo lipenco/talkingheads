@@ -1,0 +1,9 @@
+<div id="show-conference">
+    <legend>Details</legend>
+    <p><%= @name %></p>
+     <p><%= @date %></p>
+     <p><%= @place %></p>
+      <p><%= @tags %></p>
+     <p> <%= @organizers %></p>
+     <p><%= @description %></p>
+ </div>

@@ -6,6 +6,7 @@
       conference = App.request "new:conference:entity"
       
       @listenTo conference, "created", ->
+        console.log "created"
         App.vent.trigger "conference:created", conference
       
       newView = @getNewView conference

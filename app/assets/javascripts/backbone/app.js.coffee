@@ -1,7 +1,6 @@
 @Demo = do (Backbone, Marionette) ->
 	
 	App = new Marionette.Application
-
 	
 	App.addRegions
 		headerRegion: "#header-region"

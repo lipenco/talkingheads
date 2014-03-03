@@ -3,8 +3,8 @@
   <section>
     <div class="row">
       <div class="col-md-3 col-md-offset-3 columns">
-        <h3>Edit</h3>
-        <div id="form-region"></div>
+        <h3>Show</h3>
+        <div id="conference-region"></div>
       </div>
     </div>
   </section>
