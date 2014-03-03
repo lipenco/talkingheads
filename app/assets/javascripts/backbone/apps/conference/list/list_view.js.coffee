@@ -10,12 +10,15 @@
       conferenceRegion:   "#conference-region"
 
 
+
+
   class List.Title extends App.Views.ItemView
     template: "conference/list/_title"
     className: "col-centred"
 
   class List.Panel extends App.Views.ItemView
     template: "conference/list/_panel"
+    tagName: "ul"
 
     triggers:
       "click #new-conference" : "new:conference:button:clicked"
@@ -39,9 +42,9 @@
        @childElementsFadeIn()
     
     childElementsFadeIn: ->
-      duration = 500;
+      duration = 200;
       @$el.find('.conference_li').each (index) ->
         $(this).hide()
-        $(this).delay((index+1) * duration).fadeIn(500)
+        $(this).delay((index+1) * duration).fadeIn(400)
 
 

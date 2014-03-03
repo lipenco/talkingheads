@@ -1,85 +1,27 @@
 <div id="edit-conference">
-  <fieldset>
     <legend>Details</legend>
-    <div class="row">
-      <div class="large-3 columns">
-        <label class="right inline">Name</label>
-          </div>
-          <div class="large-9 columns">
-        <div class="large-5">
-          <input type="text" name="name" class="large-2" value="<%= @name %>" />
-        </div>
-          </div>
+  
+    <label class="right inline">Name</label>
+
+    <input type="text" name="name" value="<%= @name %>" />
+
+    <label class="right inline">Date</label>
+
+    <input type="text" name="date" value="<%= @date %>" />
+
+    <label class="right inline">Place</label>
+
+    <input type="text" name="place"value="<%= @place %>" />
+
+    <label class="right inline">Tags</label>
+
+    <input type="text" name="tags" value="<%= @tags %>" />
+
+    <label class="right inline">Organizers</label>
+
+    <input type="text" name="organizers" value="<%= @organizers %>" />
+    <label class="right inline">Description</label>
+    <input type="text" name="description" value="<%= @description %>" />
     </div>
-    <div class="row">
-      <div class="large-3 columns">
-        <label class="right inline">Date</label>
-          </div>
-          <div class="large-9 columns">
-        <div class="large-5">
-          <input type="text" name="date" value="<%= @date %>" />
-        </div>
-          </div>
-    </div>
-    <div class="row">
-      <div class="large-3 columns">
-        <label class="right inline">Place</label>
-          </div>
-          <div class="large-9 columns">
-        <div class="large-5">
-          <input type="text" name="place"value="<%= @place %>" />
-        </div>
-          </div>
-    </div>
-    <div class="row">
-      <div class="large-3 columns">
-        <label class="right inline">Tags</label>
-          </div>
-          <div class="large-9 columns">
-        <div class="large-5 left">
-          <input type="text" name="tags" value="<%= @tags %>" />
-        </div>
-      <!--   <div class="large-7 columns">
-          <h6 class="subheader hint">Job Title at Planet Express</h6>
-        </div> -->
-          </div>
-    </div>
-    <div class="row">
-      <div class="large-3 columns">
-        <label class="right inline">Organizers</label>
-          </div>
-      <div class="large-9 columns">
-        <div class="large-5 left">
-          <input type="text" name="species" value="<%= @organizers %>" />
-        </div>
-     <!--    <div class="large-7 columns">
-          <h6 class="subheader hint">Ex: Human, Robot, Mutant</h6>
-        </div> -->
-          </div>
-    </div>
-    <div class="row">
-     <!--  <div class="large-3 columns">
-        <label class="right inline">Origin</label>
-          </div> -->
-      <div class="large-9 columns">
-     <!--    <div class="large-5 left">
-          <input type="text" name="origin" value="<%= @origin %>" />
-        </div> -->
-      <!--   <div class="large-7 columns">
-          <h6 class="subheader hint">Planet they were born on</h6>
-        </div> -->
-          </div>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>Description</legend>
-    <div class="row">
-   <!--    <div class="large-3 columns">
-        <label class="right inline">Favorite Quote</label>
-          </div> -->
-          <div class="large-9 columns left">
-        <textarea name="quote" class="large-6"><%= @description %></textarea>
-          </div>
-    </div>
-  </fieldset>
-</div>
+        
+ 

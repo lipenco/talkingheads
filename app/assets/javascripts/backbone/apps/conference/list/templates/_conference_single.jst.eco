@@ -19,7 +19,7 @@
                     <li><a><span class="icon-rss"></span></a></li>
                     <li><a><span class="icon-comment"></span></a></li>
                     <li><a><span class="icon-share "></span><div class="conference-edit">edit</div></a></li>
-                    <li><a><span class="icon-remove"><div class="conference-delete"> X
+                    <li><a><span class="icon-remove"><div class="conference-delete"> del
                       </div>
                     </span>
                 </a></li>

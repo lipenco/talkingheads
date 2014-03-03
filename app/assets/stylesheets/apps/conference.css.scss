@@ -1,10 +1,5 @@
 
 
-.container .row{
-
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
 
 
 .center_wrapper {
@@ -21,11 +16,12 @@
   position: relative;
   width: 230px;
 /*  height: 320px;*/
-  margin: auto 10px;
+  margin: auto 20px;
   color: #2c3e50;
   background: #97C02F;
   overflow: hidden;
   float: left;
+  margin-bottom: 30px;
 }
 .note:before {
   content: "";
@@ -412,13 +408,21 @@ a.link {
   list-style: none; }
 
 ul.table > li {
-  display: table-cell; }
-
-.conference-delete  {
-  position: absolute;
-  left: 5%;
-  top: 5%;
+  display: table-cell; 
 }
+
+
+
+.row{
+
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+ul li .conference_li {
+  margin-bottom: 30px;
+}
+
 
 /*.conference-delete        {  position: absolute; z-index: 9999; top: 10px; right: 10px; display: none; font-weight: normal; font-size: 14px;
     button        {  color: #C00000;  }

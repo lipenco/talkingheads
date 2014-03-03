@@ -4,7 +4,6 @@ class ConferencesController < ApplicationController
 
   def index
     @conferences = Conference.all
-    # color
   end
 
   def new
