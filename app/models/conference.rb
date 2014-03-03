@@ -1,12 +1,12 @@
 class Conference < ActiveRecord::Base
-   validates :name, :tags, presence: true
+  validates :name, presence: true
 
   def color
-    ColorPicker.pick(self.tags)
+    ColorPicker.pick(self.tags) if tags?
   end
 
   def thumb
-    GetThumbs.get(self.tags)   
+    GetThumbs.get(self.tags) if tags?
   end
 
 end
