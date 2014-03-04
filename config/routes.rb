@@ -3,7 +3,9 @@ Talkingheads::Application.routes.draw do
   # root "conferences#index"
   root "application#index"
 
-  resources :conferences
+  resources :conferences do
+      resources :talks
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
