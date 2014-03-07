@@ -1,5 +1,5 @@
 
-  <div id="conference_<%= @id %>" class="note <%= @color %> rounded">
+  <div id="conference_<%=@id%>" class="note <%= @color %> rounded">
       <div class="user-card card">
           <div class="user-avatar"><div class="user-bg"><img src="<%= @thumb %>" class="user-pic"></div> </div>
           <header>
@@ -9,7 +9,7 @@
           </header>
           <article>
           <div class="comments-status"><a><%= @place %></a>, <%= @date %></div>
-
+       
               <!--  <img class="icon-status" src="img/issue.png"> -->
              <div class="status"><%= @description %></div>
              <div class="comments-status"><a> 3 talks</a>, 13 kudos</div>
@@ -19,12 +19,12 @@
                     <li><a><span class="icon-rss"></span></a></li>
                     <li><a><span class="icon-comment"></span></a></li>
                     <li><a><span class="icon-share "></span><div class="conference-edit">edit</div></a></li>
-                    <li><a><span class="icon-remove"><div class="conference-delete"> del
-                      </div>
+                    <li><a><span class="icon-remove"><div class="conference-delete">del</div>
                     </span>
                 </a></li>
                   </ul>
             </div>
         </div>
+        
+  </div> 
 
-  </div>
