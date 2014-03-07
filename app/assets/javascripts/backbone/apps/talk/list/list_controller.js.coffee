@@ -37,15 +37,15 @@
     talkRegion: (talks) ->
       talkView = @gettalkView talks
       
-      // @listenTo conferenceView, "childview:conference:single:edit", (child, args) ->
-      //   App.vent.trigger "conference:single:edit", args.model
+      @listenTo talkView, "childview:talk:single:edit", (child, args) ->
+        App.vent.trigger "talk:single:edit", args.model
 
-      // @listenTo conferenceView, "childview:conference:single:details", (child, args) ->
-      //   App.vent.trigger "conference:single:details", args.model
+      @listenTo talkView, "childview:talk:single:play", (child, args) ->
+        App.vent.trigger "conference:single:play", args.model
       
-      // @listenTo conferenceView, "childview:conference:delete:clicked", (child, args) ->
-      //   model = args.model
-      //   if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
+      @listenTo talkView, "childview:talk:delete:clicked", (child, args) ->
+        model = args.model
+        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
       
       @layout.talkRegion.show talkView
 

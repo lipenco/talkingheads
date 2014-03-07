@@ -4,42 +4,42 @@
   class TalkApp.Router extends Marionette.AppRouter
     appRoutes:
       "conferences/:id/talks": "list"
-      // "conferences/:id/talk/:id/edit" : "edit"
-      // "conferences/:id/talk/:id" : "show"
+      "conferences/:id/talk/:id/edit" : "edit"
+      "conferences/:id/talk/:id" : "show"
 
   API = 
     list: ->
-      new TalkApp.List.Controller
+      new TalkApp.List.Controller  
 
-    // newConference: (region) ->
-    //   new ConferenceApp.New.Controller
-    //     region: region
+    newTalk: (region) ->
+      new TalkApp.New.Controller
+        region: region
 
-    // edit: (id, single) ->
-    //   new ConferenceApp.Edit.Controller
-    //     id: id
-    //     conferences: single
+    edit: (id, single) ->
+      new TalkApp.Edit.Controller
+        id: id
+        talks: single
 
-    // show: (id, single) ->
-    //   new ConferenceApp.Show.Controller
-    //     id: id
-    //     conferences: single
+    show: (id, single) ->
+      new TalksApp.Show.Controller
+        id: id
+        talks: single
 
-  // App.commands.setHandler "new:conference:single", (region) ->
-  //   API.newConference region
+  App.commands.setHandler "new:talk:single", (region) ->
+    API.newTalk region
 
-  // App.vent.on "conference:single:edit conference:created", (single) ->
-  //   App.navigate Routes.edit_conference_path(single.id)
-  //   API.edit single.id, single
+  App.vent.on "talk:single:edit talk:created", (single) ->
+    App.navigate Routes.edit_conference_talk_path(single.id)
+    API.edit single.id, single
 
-  // App.vent.on "conference:single:details", (single) ->
-  //   App.navigate Routes.conference_path(single.id)
-  //   API.show single.id, single
+  App.vent.on "talk:single:play", (single) ->
+    App.navigate Routes.conference_talk_path(single.id)
+    API.show single.id, single
   
   
-  // App.vent.on "conference:cancelled conference:updated", (conferences) ->
-  //   App.navigate Routes.conferences_path()
-  //   API.list()
+  App.vent.on "talk:cancelled talk:updated", (talks) ->
+    App.navigate Routes.conference_talks_path()
+    API.list()
 
 
   App.addInitializer ->
