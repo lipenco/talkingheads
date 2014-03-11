@@ -1,5 +1,5 @@
 @Demo.module "TalkApp.List", (List, App, Backbone, Marionette, $, _) ->
-  
+
   class List.Layout extends App.Views.Layout
     template: "talk/list/list_layout"
 
@@ -26,23 +26,14 @@
     className: 'talk_li'
     tagName: "li"
 
-      
-    triggers:
-      "click .talk-delete" : "talk:delete:clicked"
-      "click .talk-edit"   : "talk:single:edit"
-      "click"              : "talk:single:play"
+
+
+    # triggers:
+    #   "click .talk-delete" : "talk:delete:clicked"
+    #   "click .talk-edit"   : "talk:single:edit"
+    #   "click"              : "talk:single:play"
 
   class List.Talk extends App.Views.CompositeView
     template: "talk/list/_talk"
     itemView: List.Talk
     itemViewContainer: "ul"
-    onRender: ->
-       @childElementsFadeIn()
-    
-    childElementsFadeIn: ->
-      duration = 200;
-      @$el.find('.talk_li').each (index) ->
-        $(this).hide()
-        $(this).delay((index+1) * duration).fadeIn(400)
-
-

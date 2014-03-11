@@ -2,6 +2,7 @@
   
   class Entities.Conference extends App.Entities.Model
     urlRoot: -> Routes.conferences_path()
+      
   
   class Entities.ConferenceCollection extends App.Entities.Collection
     model: Entities.Conference

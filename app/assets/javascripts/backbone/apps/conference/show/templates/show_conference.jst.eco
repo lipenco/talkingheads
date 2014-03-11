@@ -1,5 +1,5 @@
 <div id="show-conference">
-   
+
     <p><%= @name %></p>
      <p><%= @date %></p>
      <p><%= @place %></p>
@@ -7,11 +7,5 @@
      <p> <%= @organizers %></p>
      <p><%= @description %></p>
 
-<% if @talks.length: %>
-  <% for talks in @talks: %>
-    <h2><%= talks.title %></h2>
-    <p><%= talks.video_url %></p>
-  <% end %>
-<% end %>
 
  </div>
