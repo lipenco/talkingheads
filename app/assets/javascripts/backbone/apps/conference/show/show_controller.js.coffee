@@ -5,12 +5,6 @@
     initialize: (options) ->
         { single, id, talks } = options
         single or= App.request "conference:entity", id
-        talks or= App.request "talk:entities"
-
-
-        App.execute "when:fetched", talks, =>
-          console.log talks
-
 
         App.execute "when:fetched", single, =>
           @layout = @getLayoutView single
@@ -31,13 +25,6 @@
       conferenceView = @getConferenceView single
       @layout.conferenceRegion.show conferenceView
 
-    talkContainerRegion: ->
-      talkView = @getTalksViews
-      @layout.talkContainerRegion.show talkView
-
-    getTalksVies: (talks) ->
-      new App.TalkApp.List.Layout
-        collection: talks
 
     getTitleView: (single) ->
       new Show.Title

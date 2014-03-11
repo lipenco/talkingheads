@@ -6,10 +6,6 @@
         <legend>Details conference-region</legend>
         <div id="conference-region"></div>
       </div>
-      <div class="col-md-3 columns">
-        <legend>Details talk-region</legend>
-        <div id="talk-container"></div>
-      </div>
     </div>
   </section>
 </div>

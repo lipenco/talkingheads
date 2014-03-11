@@ -1,39 +1,25 @@
 @Demo.module "TalkApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  class List.Layout extends App.Views.Layout
-    template: "talk/list/list_layout"
+	class List.Layout extends App.Views.Layout
+		template: "talk/list/list_layout"
 
-    regions:
-      titleRegion:  "#title-region"
-      panelRegion:  "#panel-region"
-      newRegion:    "#new-region"
-      talkRegion:   "#talk-region"
+		regions:
+			panelRegion: "#panel-region"
+			talksRegion: "#talk-region"
 
+	class List.Panel extends App.Views.ItemView
+		template: "talk/list/_panel"
 
-  class List.Title extends App.Views.ItemView
-    template: "talk/list/_title"
-    className: "col-centred"
+	class List.Talk extends App.Views.ItemView
+		template: "talk/list/_talk"
+		tagName: "li"
 
-  class List.Panel extends App.Views.ItemView
-    template: "talk/list/_panel"
-    tagName: "ul"
+	class List.Empty extends App.Views.ItemView
+		template: "talk/list/_empty"
+		tagName: "li"
 
-    triggers:
-      "click #new-talk" : "new:talk:button:clicked"
-
-  class List.Talk extends App.Views.ItemView
-    template: "talk/list/_talk_single"
-    className: 'talk_li'
-    tagName: "li"
-
-
-
-    # triggers:
-    #   "click .talk-delete" : "talk:delete:clicked"
-    #   "click .talk-edit"   : "talk:single:edit"
-    #   "click"              : "talk:single:play"
-
-  class List.Talk extends App.Views.CompositeView
-    template: "talk/list/_talk"
-    itemView: List.Talk
-    itemViewContainer: "ul"
+	class List.Talks extends App.Views.CompositeView
+		template: "talk/list/templates/_talks"
+		itemView: List.Talk
+		emptyView: List.Empty
+		itemViewContainer: "ul"

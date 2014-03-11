@@ -1,4 +1,9 @@
 @Demo.module "TalkApp", (TalkApp, App, Backbone, Marionette, $, _) ->
+  @startWithParent = false
 
+  API =
+    listTalks: ->
+      new TalkApp.List.Controller
 
-  class TalkApp.Router extends Marionette.AppRouter
+  TalkApp.on "start", ->
+    API.listTalks()

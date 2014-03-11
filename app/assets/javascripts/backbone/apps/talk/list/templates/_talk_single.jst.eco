@@ -1,6 +1,0 @@
-  <div id="talk_<%=@id%>">
-      <header>
-         <h1><%= @title %></h1>
-        <p><%= @video_url %></p>
-      </header>    
-  </div> 

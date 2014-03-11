@@ -2,55 +2,35 @@
 
   class List.Controller extends App.Controllers.Base
 
-    initialize: (options) ->
-      { talks } = options
-      talks or= App.request "talk:entities"
-
-
+    initialize: ->
+      talks = App.request "talk:entities"
       App.execute "when:fetched", talks, =>
 
-        @layout = @getLayoutView talks
-        @listenTo @layout, "close", @close
+        @layout = @getTalksLayoutView()
 
         @listenTo @layout, "show", =>
-          @titleRegion()
-          @panelRegion()
-          @talkRegion talks
+          @listPanel talks
+          @talksRrgion talks
 
-        @show @layout
-
-
-    titleRegion: ->
-      titleView = @getTitleView()
-      @layout.titleRegion.show titleView
-
-    panelRegion: ->
-      panelView = @getPanelView()
-
-      @listenTo panelView, "new:talk:button:clicked", =>
-        @newRegion()
-
-      @layout.panelRegion.show panelView
-
-    newRegion: ->
-      App.execute "new:talk:single", @layout.newRegion
-
-    talkRegion: (talks) ->
-      talkView = @getTalkView talks
-
-      @layout.talkRegion.show talkView
+        App.talkRegion.show @layout
 
 
-    getTalkView: (talks) ->
-      new List.Talk
-        collection: talks
+  		listPanel: (talks) ->
+  			panelView = @getPanelView talks
+  			@layout.panelRegion.show panelView
 
-    getPanelView: ->
-      new List.Panel
+  		talksRrgion: (talks) ->
+  			talksView = @getTalksView talks
+  			@layout.talksRegion.show talksView
 
-    getTitleView: ->
-      new List.Title
+  		getTalksView: (talks) ->
+  			new List.Talks
+  				collection: talks
 
-    getLayoutView: (talks) ->
-      new List.Layout
-        collection: talks
+  		getPanelView: (talks) ->
+  			new List.Panel
+  				collection: talks
+
+  		getTalksLayoutView: (talks) ->
+  			new List.Layout
+          collection: talks
