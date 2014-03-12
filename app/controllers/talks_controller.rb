@@ -3,7 +3,7 @@ class TalksController < ApplicationController
   respond_to :json
 
   def index
-    @talks = Conference.all
+    @talks = Talk.all
   end
 
 

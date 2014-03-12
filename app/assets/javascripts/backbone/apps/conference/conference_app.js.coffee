@@ -21,7 +21,9 @@
         conferences: single
 
     show: (id, single) ->
-      App.module("TalkApp").start()
+      new App.TalkApp.List.Controller
+        id: id
+
 
       new ConferenceApp.Show.Controller
         id: id

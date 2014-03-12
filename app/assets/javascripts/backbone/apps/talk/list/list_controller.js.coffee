@@ -2,10 +2,11 @@
 
   class List.Controller extends App.Controllers.Base
 
-    initialize: ->
-      talks = App.request "talk:entities"
-      App.execute "when:fetched", talks, =>
+    initialize: (options) ->
+      { id } = options
+      talks = App.request "talk:entities", id
 
+      App.execute "when:fetched", talks, =>
         @layout = @getTalksLayoutView()
 
         @listenTo @layout, "show", =>

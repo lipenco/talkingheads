@@ -8,19 +8,20 @@
       relatedModel: Entities.Conference
     ]
 
-    url: -> Routes.conferences_path()
+    url: -> Routes.conference_talk_path()
 
 
 
   class Entities.TalkCollection extends App.Entities.Collection
     model: Entities.Talk
 
-    url: -> Routes.conferences_path()
+    url: -> Routes.conference_talks_path(1)
 
 
   API =
-    getTalks: ->
+    getTalks: (id)->
       talks = new Entities.TalkCollection
+        id: id
       talks.fetch
         reset: true
       talks
@@ -35,8 +36,8 @@
     newTalk: ->
       new Entities.Talk
 
-  App.reqres.setHandler "talk:entities", ->
-    API.getTalks()
+  App.reqres.setHandler "talk:entities", (id) ->
+    API.getTalks id
 
   App.reqres.setHandler "talk:entity", (id) ->
     API.getTalk id

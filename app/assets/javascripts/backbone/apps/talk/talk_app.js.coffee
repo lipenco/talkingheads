@@ -1,4 +1,5 @@
 @Demo.module "TalkApp", (TalkApp, App, Backbone, Marionette, $, _) ->
+
   @startWithParent = false
 
   API =
