@@ -13,6 +13,7 @@
 //= require jquery
 //= require lib/underscore
 //= require lib/backbone
+//= require lib/backbone-associations
 //= require lib/marionette
 //= require js-routes
 //= require_tree ./vendor
