@@ -1,6 +1,6 @@
 @Demo.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
   
-  class Entities.Model extends Backbone.Model
+  class Entities.Model extends Backbone.RelationalModel
     
     destroy: (options = {}) ->
       _.defaults options,
