@@ -15,8 +15,15 @@
   class Show.Conference extends App.Views.ItemView
     template: "conference/show/show_conference"
 
+  class Show.TalkSingle extends App.Views.ItemView
+    template: "conference/show/_talk_single"
+    className: 'talk_li'
+    tagName: "li"
+
   class Show.Talks extends App.Views.CompositeView
     template: "conference/show/show_talks"
+    itemView: Show.TalkSingle
+    itemViewContainer: "ul"
     # initialize: ->
     #   @collection = @model.get("childcollection")
     #   console.log @model.get("childcollection")

@@ -1,0 +1,19 @@
+<div id="talk_<%= @id %>" class="note green rounded">
+    <div class="user-card card">
+        <header>
+           <h1><%= @title %></h1>
+          <p><%= @video_url %></p>
+          <div class="divider"></div>
+        </header>
+
+         <div class="user-menu card">
+                <ul class="unstyled table fullwidth">
+                  <li><a><span class="icon-rss"></span></a></li>
+                  <li><a><span class="icon-comment"></span></a></li>
+                  <li><a><span class="icon-share "></span><div class="">edit</div></a></li>
+                  <li><a><span class="icon-remove"></span><div class=""> del</div></a></li>
+                </ul>
+          </div>
+      </div>
+
+</div>

@@ -2,10 +2,10 @@
   <div id="title-region"></div>
   <section>
     <div class="row">
-      <div class="col-md-3 col-md-offset-3 columns">
+      <div class="col-md-3  columns">
         <div id="conference-region"></div>
       </div>
-      <div class="col-md-3 col-md-offset-3 columns">
+      <div class="col-md-3  columns">
         <div id="talks-region"></div>
       </div>
     </div>

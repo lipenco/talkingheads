@@ -32,9 +32,9 @@
 
     getTalksView: (single) ->
       new Show.Talks
-        model: single
-        # collection: single.get("childcollection")
-        # console.log single.get("childcollection")
+        # model: single
+        collection: new Backbone.Collection single.get("talks")
+        # console.log new Backbone.Collection single.get("talks")
         #change model for associated
 
     getTitleView: (single) ->

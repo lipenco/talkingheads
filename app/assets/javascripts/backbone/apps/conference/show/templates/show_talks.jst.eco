@@ -1,6 +1,5 @@
-<% if @talks.length: %>
-  <% for talks in @talks: %>
-    <a href=""><%= talks.title %></a>
-    <p><%= talks.video_url %></p>
-  <% end %>
-<% end %>
+<legend>Talks</legend>
+<div class="row">
+
+   <ul></ul>
+</div>
