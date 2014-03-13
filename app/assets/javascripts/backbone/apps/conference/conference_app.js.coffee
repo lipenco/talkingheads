@@ -7,7 +7,7 @@
       "conferences/:id/edit" : "edit"
       "conferences/:id" : "show"
 
-  API = 
+  API =
     list: ->
       new ConferenceApp.List.Controller
 
@@ -35,8 +35,8 @@
   App.vent.on "conference:single:details", (single) ->
     App.navigate Routes.conference_path(single.id)
     API.show single.id, single
-  
-  
+
+
   App.vent.on "conference:cancelled conference:updated", (conferences) ->
     App.navigate Routes.conferences_path()
     API.list()

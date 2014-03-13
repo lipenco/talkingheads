@@ -35,7 +35,7 @@
     newTalk: ->
       new Entities.Talk
 
-  App.reqres.setHandler "talk:entities" ->
+  App.reqres.setHandler "talk:entities", ->
     API.getTalks
 
   App.reqres.setHandler "talk:entity", (id) ->

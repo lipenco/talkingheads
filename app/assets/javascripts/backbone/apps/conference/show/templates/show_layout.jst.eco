@@ -3,8 +3,10 @@
   <section>
     <div class="row">
       <div class="col-md-3 col-md-offset-3 columns">
-        <h3>Show</h3>
         <div id="conference-region"></div>
+      </div>
+      <div class="col-md-3 col-md-offset-3 columns">
+        <div id="talks-region"></div>
       </div>
     </div>
   </section>
