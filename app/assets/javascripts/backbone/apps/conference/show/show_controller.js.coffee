@@ -27,8 +27,10 @@
 
       @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
         model = args.model
-        window.s = args
-        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy( conference_id = 1 ) else false
+        # conference_id = model.get("conference_id")
+        # id = model.get("id")
+        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy() else false
+
 
       @layout.talksREgion.show talksView
 

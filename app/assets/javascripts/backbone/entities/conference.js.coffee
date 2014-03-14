@@ -2,7 +2,7 @@
 
   class Entities.Talk extends App.Entities.Model
 
-    url: -> Routes.conference_talk_path()
+    url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
 
 
 
@@ -27,16 +27,6 @@
     model: Entities.Conference
 
     url: -> Routes.conferences_path()
-
-    # parse: (response) ->
-    #   if _.isArray response
-    #     _.each response, (obj) ->
-    #       obj.talks = new Entities.TalkCollection obj.talks
-    #   else
-    #     response.talks = new Entities.TalkCollection response.talks
-    #
-    #   return response
-
 
 
   API =
