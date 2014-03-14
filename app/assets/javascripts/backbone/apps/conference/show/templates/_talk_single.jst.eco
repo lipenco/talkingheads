@@ -10,8 +10,8 @@
                 <ul class="unstyled table fullwidth">
                   <li><a><span class="icon-rss"></span></a></li>
                   <li><a><span class="icon-comment"></span></a></li>
-                  <li><a><span class="icon-share "></span><div class="">edit</div></a></li>
-                  <li><a><span class="icon-remove"></span><div class=""> del</div></a></li>
+                  <li><a><span class="icon-share "></span><div class="talk-edit">edit</div></a></li>
+                  <li><a><span class="icon-remove"></span><div class="talk-delete"> del</div></a></li>
                 </ul>
           </div>
       </div>

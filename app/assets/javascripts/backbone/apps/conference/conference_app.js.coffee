@@ -41,6 +41,11 @@
     App.navigate Routes.conferences_path()
     API.list()
 
+  App.vent.on "talk:cancelled", (single) ->
+    App.navigate Routes.conferences_path(single.id)
+    API.show single.id, single
+
+
 
   App.addInitializer ->
     new ConferenceApp.Router

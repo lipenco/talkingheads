@@ -20,10 +20,15 @@
     className: 'talk_li'
     tagName: "li"
 
+    triggers:
+      "click .talk-delete" : "talk:delete:clicked"
+      "click .talk-edit"   : "talk:single:edit"
+      "click"              : "talk:single:plays"
+    initialize: ->
+      window.ts = this
+
+
   class Show.Talks extends App.Views.CompositeView
     template: "conference/show/show_talks"
     itemView: Show.TalkSingle
     itemViewContainer: "ul"
-    # initialize: ->
-    #   @collection = @model.get("childcollection")
-    #   console.log @model.get("childcollection")

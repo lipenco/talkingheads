@@ -5,7 +5,8 @@
     initialize: (options) ->
         { single, id } = options
         single or= App.request "conference:entity", id
-
+        # talks or= App.request "talk:entities"
+        window.conference = single
         App.execute "when:fetched", single, =>
           @layout = @getLayoutView single
 
@@ -23,7 +24,14 @@
 
     talksRegion: (single) ->
       talksView = @getTalksView single
+
+      @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
+        model = args.model
+        window.s = args
+        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy( conference_id = 1 ) else false
+
       @layout.talksREgion.show talksView
+
 
     conferenceRegion: (single) ->
       conferenceView = @getConferenceView single
@@ -32,10 +40,8 @@
 
     getTalksView: (single) ->
       new Show.Talks
-        # model: single
-        collection: new Backbone.Collection single.get("talks")
-        # console.log new Backbone.Collection single.get("talks")
-        #change model for associated
+        collection: single.get("talks")
+
 
     getTitleView: (single) ->
       new Show.Title
