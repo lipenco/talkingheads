@@ -16,6 +16,7 @@
 //= require lib/backbone-associations
 //= require lib/marionette
 //= require js-routes
+//= require lib/popcorn
 //= require_tree ./vendor
 //= require_tree ./backbone/config
 //= require backbone/app
@@ -24,5 +25,3 @@
 //= require_tree ./backbone/entities
 //= require_tree ./backbone/components
 //= require_tree ./backbone/apps
-
-

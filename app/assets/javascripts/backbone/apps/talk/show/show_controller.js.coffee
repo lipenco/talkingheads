@@ -28,6 +28,10 @@
     videoRegion: (talk) ->
       videoView = @getVideoView talk
       @layout.videoRegion.show videoView
+      video = talk.get("video_url")
+
+      pop = Popcorn.youtube( "#youtube", "#{video}" )
+
 
     nextRegion: (talk) ->
       nextView = @getNextView talk
