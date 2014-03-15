@@ -2,17 +2,13 @@
 
   class TalkApp.Router extends Marionette.AppRouter
     appRoutes:
-      "conferences/:id/talk/:id" : "showTalk"
+      "conferences/:id/talks/:id" : "showTalk"
 
   API =
-    show: (id, talk) ->
+    showTalk: (id, talk_id, talk) ->
       new TalkApp.Show.Controller
         id: id
-        talks: talk
-
-    showTalk: (id, talk) ->
-      new TalkApp.Show.Controller
-        id: id
+        talk_id: talk_id
         talk: talk
 
 
@@ -22,10 +18,6 @@
     App.navigate Routes.conference_talk_path(conference_id, id)
     API.showTalk  id, talk
 
-
-  # App.vent.on "talk:cancelled", (single) ->
-  #   App.navigate Routes.conferences_path(single.id)
-  #   API.show single.id, single
 
 
 

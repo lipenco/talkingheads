@@ -7,6 +7,7 @@
       "conferences/:id/edit" : "edit"
       "conferences/:id" : "show"
 
+
   API =
     list: ->
       new ConferenceApp.List.Controller
@@ -24,6 +25,7 @@
       new ConferenceApp.Show.Controller
         id: id
         conferences: single
+
 
 
   App.commands.setHandler "new:conference:single", (region) ->

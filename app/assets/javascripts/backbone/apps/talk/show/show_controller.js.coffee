@@ -3,10 +3,11 @@
   class Show.Controller extends App.Controllers.Base
 
     initialize: (options) ->
-        { id, talk } = options
+        { id, talk_id, talk } = options
         window.talk =  talk
         window.id =  id
-        talk or= App.request "talk:entity", id
+        talk or= App.request "talk:entity", id, talk_id
+        window.talk_id = id
 
         App.execute "when:fetched", talk, =>
 

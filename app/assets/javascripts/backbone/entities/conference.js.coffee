@@ -49,9 +49,11 @@
         reset: true
       talks
 
-    getTalk: (id) ->
+    getTalk: (id, talk_id) ->
+      console.log talk_id
       talks = new Entities.Talk
-        id: id
+        conference_id: id
+        id: talk_id
       talks.fetch
         reset: true
       talks
@@ -73,5 +75,5 @@
   App.reqres.setHandler "talk:entities", (id) ->
     API.getTalks(id)
 
-  App.reqres.setHandler "talk:entity", (id) ->
-    API.getTalk(id)
+  App.reqres.setHandler "talk:entity", (id, talk_id) ->
+    API.getTalk(id, talk_id)
