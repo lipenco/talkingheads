@@ -1,27 +1,23 @@
 <div id="edit-conference">
-    <legend>Details</legend>
-  
-    <label class="right inline">Name</label>
 
+    <legend>Details</legend>
+
+    <label class="">Name</label>
     <input type="text" name="name" value="<%= @name %>" />
 
-    <label class="right inline">Date</label>
-
+    <label class="">Date</label>
     <input type="text" name="date" value="<%= @date %>" />
 
-    <label class="right inline">Place</label>
-
+    <label class="">Place</label>
     <input type="text" name="place"value="<%= @place %>" />
 
-    <label class="right inline">Tags</label>
-
+    <label class="">Tags</label>
     <input type="text" name="tags" value="<%= @tags %>" />
 
-    <label class="right inline">Organizers</label>
-
+    <label class="">Organizers</label>
     <input type="text" name="organizers" value="<%= @organizers %>" />
-    <label class="right inline">Description</label>
+
+    <label class="">Description</label>
     <input type="text" name="description" value="<%= @description %>" />
-    </div>
-        
- 
+
+</div>

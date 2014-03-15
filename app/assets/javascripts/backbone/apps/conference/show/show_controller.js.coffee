@@ -25,10 +25,12 @@
     talksRegion: (single) ->
       talksView = @getTalksView single
 
+      @listenTo talksView, "childview:talk:single:clicked", (child, args) ->
+        # window.s = args.model
+        App.vent.trigger "talk:single:clicked", args.model
+
       @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
         model = args.model
-        # conference_id = model.get("conference_id")
-        # id = model.get("id")
         if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy() else false
 
 

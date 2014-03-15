@@ -49,6 +49,13 @@
         reset: true
       talks
 
+    getTalk: (id) ->
+      talks = new Entities.Talk
+        id: id
+      talks.fetch
+        reset: true
+      talks
+
 
     newSingle: ->
       new Entities.Conference
@@ -65,3 +72,6 @@
 
   App.reqres.setHandler "talk:entities", (id) ->
     API.getTalks(id)
+
+  App.reqres.setHandler "talk:entity", (id) ->
+    API.getTalk(id)
