@@ -6,7 +6,7 @@
     regions:
       titleRegion:  "#title-region"
       conferenceRegion:   "#conference-region"
-      talksREgion: "#talks-region"
+      talksRegion: "#talks-region"
 
   class Show.Title extends App.Views.ItemView
     template: "conference/show/show_title"

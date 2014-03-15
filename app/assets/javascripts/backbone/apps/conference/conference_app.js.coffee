@@ -6,7 +6,6 @@
       "conferences": "list"
       "conferences/:id/edit" : "edit"
       "conferences/:id" : "show"
-      "conferences/:id/talk/:id" : "showTalk"
 
   API =
     list: ->
@@ -26,10 +25,6 @@
         id: id
         conferences: single
 
-    showTalk: (id, talk) ->
-      new App.TalkApp.Show.Controller
-        id: id
-        talk: talk
 
   App.commands.setHandler "new:conference:single", (region) ->
     API.newConference region
@@ -46,13 +41,6 @@
   App.vent.on "conference:cancelled conference:updated", (conferences) ->
     App.navigate Routes.conferences_path()
     API.list()
-
-  App.vent.on "talk:single:clicked", (talk) ->
-    id = talk.get("id")
-    conference_id = talk.get("conference_id")
-    App.navigate Routes.conference_talk_path(conference_id, id)
-    API.showTalk  id, talk
-
 
 
 

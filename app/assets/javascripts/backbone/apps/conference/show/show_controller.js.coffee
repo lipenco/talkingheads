@@ -5,8 +5,6 @@
     initialize: (options) ->
         { single, id } = options
         single or= App.request "conference:entity", id
-        # talks or= App.request "talk:entities"
-        window.conference = single
         App.execute "when:fetched", single, =>
           @layout = @getLayoutView single
 
@@ -34,7 +32,7 @@
         if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy() else false
 
 
-      @layout.talksREgion.show talksView
+      @layout.talksRegion.show talksView
 
 
     conferenceRegion: (single) ->

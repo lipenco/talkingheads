@@ -23,6 +23,15 @@
     titleRegion: (talk) ->
       titleView = @getTitleView talk
       @layout.titleRegion.show titleView
+
+    videoRegion: (talk) ->
+      videoView = @getVideoView talk
+      @layout.videoRegion.show videoView
+
+    nextRegion: (talk) ->
+      nextView = @getNextView talk
+      @layout.nextRegion.show nextView
+
     #
     # talksRegion: (single) ->
     #   talksView = @getTalksView single
@@ -36,19 +45,23 @@
     #     if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy() else false
     #
     #
-    #   @layout.talksREgion.show talksView
+    #   @layout.talksRegion.show talksView
     #
     #
     # conferenceRegion: (single) ->
     #   conferenceView = @getConferenceView single
     #   @layout.conferenceRegion.show conferenceView
-    #
-    #
-    # getTalksView: (single) ->
-    #   new Show.Talks
-    #     collection: single.get("talks")
-    #
-    #
+
+    getNextView: (talk) ->
+      new Show.Next
+        model: talk
+
+
+    getVideoView: (talk) ->
+      new Show.Video
+        model: talk
+
+
     getTitleView: (talk) ->
       new Show.Title
         model: talk
@@ -56,7 +69,3 @@
     getLayoutView: (talk) ->
       new Show.Layout
         model: talk
-    #
-    # getConferenceView: (single) ->
-    #   new Show.Conference
-    #     model: single
