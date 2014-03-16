@@ -6,6 +6,7 @@
     regions:
       titleRegion:  "#title-region"
       videoRegion:  "#video-region"
+      talksRegion:  "#talks-region"
       nextRegion:  "#next-region"
 
   class Show.Title extends App.Views.ItemView
@@ -17,6 +18,19 @@
 
   class Show.Next extends App.Views.ItemView
     template: "talk/show/_next"
+
+  class Show.Talk extends App.Views.ItemView
+    template: "talk/show/_talk"
+    className: 'talk_li'
+    tagName: "li"
+
+
+  class Show.Talks extends App.Views.CompositeView
+    template: "talk/show/_talks"
+    itemView: Show.Talk
+    itemViewContainer: "ul"
+
+
 
   # class Show.TalkSingle extends App.Views.ItemView
   #   template: "conference/show/_talk_single"

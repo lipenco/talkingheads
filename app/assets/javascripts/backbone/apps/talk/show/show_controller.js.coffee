@@ -5,7 +5,6 @@
     initialize: (options) ->
         { id, talk_id, talk } = options
         talk or= App.request "talk:entity", id, talk_id
-        id = id
         window.id = id
         talks = App.request "talk:entities", id
         window.talks = talks
@@ -18,8 +17,13 @@
             @titleRegion talk
             @videoRegion talk
             @nextRegion talk
+            @talksRegion talks
 
           @show @layout
+
+    talksRegion: (talks) ->
+      talksView = @getTalksView talks
+      @layout.talksRegion.show talksView
 
 
     titleRegion: (talk) ->
@@ -61,6 +65,10 @@
     getNextView: (talk) ->
       new Show.Next
         model: talk
+
+    getTalksView: (talks) ->
+      new Show.Talks
+        collection: talks
 
 
     getVideoView: (talk) ->
