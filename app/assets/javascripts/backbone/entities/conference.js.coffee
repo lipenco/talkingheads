@@ -8,8 +8,7 @@
 
   class Entities.TalkCollection extends App.Entities.Collection
     model: Entities.Talk
-
-    url: -> Routes.conference_talks_path()
+    url: -> Routes.conference_talks_path(id)
 
 
 
@@ -23,10 +22,14 @@
           ]
 
 
+
   class Entities.ConferenceCollection extends App.Entities.Collection
     model: Entities.Conference
 
     url: -> Routes.conferences_path()
+
+
+
 
 
   API =
@@ -42,25 +45,36 @@
       single.fetch()
       single
 
-    getTalks: (id) ->
-      talks = new Entities.TalkCollection
-        id: id
-      talks.fetch
-        reset: true
-      talks
+    # getTalks: (id) ->
+    #   talks = new Entities.TalkCollection
+    #     id: id
+    #   talks.fetch
+    #     reset: true
+    #   talks
+
 
     getTalk: (id, talk_id) ->
-      console.log talk_id
-      talks = new Entities.Talk
+      talk = new Entities.Talk
         conference_id: id
         id: talk_id
-      talks.fetch
-        reset: true
+      talk.fetch()
+      talk
+
+    # getTalks: (id) ->
+    #   talks = new Entities.TalkCollection
+    #     id = id
+      # window.idds = id
+
+    getTalks:(id) ->
+      talks = new Entities.TalkCollection
+        id: id
+      talks.fetch()
       talks
 
 
     newSingle: ->
       new Entities.Conference
+
 
   App.reqres.setHandler "conference:entities", ->
     API.getConferences()
@@ -73,6 +87,7 @@
     API.newSingle()
 
   App.reqres.setHandler "talk:entities", (id) ->
+    window.is = id
     API.getTalks(id)
 
   App.reqres.setHandler "talk:entity", (id, talk_id) ->

@@ -36,3 +36,18 @@
     saveError: (model, xhr, options) =>
       ## set errors directly on the model unless status returned was 500 or 404
       @set _errors: $.parseJSON(xhr.responseText)?.errors unless xhr.status is 500 or xhr.status is 404
+
+
+    # nextElement: ->
+    #   index = @collection.indexOf(this)
+    #
+    #   #It's the last model in the collection so return null
+    #   return null  if (index + 1) is @collection.length
+    #   @collection.at index + 1
+    #
+    # previousElement: ->
+    #   index = @collection.indexOf(this)
+    #
+    #   #It's the first element in the collection so return null
+    #   return null  if index is 0
+    #   @collection.at index - 1

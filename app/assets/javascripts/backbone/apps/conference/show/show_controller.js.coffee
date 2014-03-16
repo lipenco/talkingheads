@@ -24,8 +24,10 @@
       talksView = @getTalksView single
 
       @listenTo talksView, "childview:talk:single:clicked", (child, args) ->
-        # window.s = args.model
-        App.vent.trigger "talk:single:clicked", args.model
+        model = args.model
+        id = model.get("conference_id")
+        talk_id = model.get("id")
+        App.vent.trigger "talk:single:clicked", id, talk_id, args.model
 
       @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
         model = args.model

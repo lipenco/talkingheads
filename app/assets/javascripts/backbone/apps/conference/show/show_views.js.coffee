@@ -23,8 +23,7 @@
     triggers:
       "click .talk-delete" : "talk:delete:clicked"
       "click"              : "talk:single:clicked"
-    initialize: ->
-      window.ts = this
+
 
 
   class Show.Talks extends App.Views.CompositeView

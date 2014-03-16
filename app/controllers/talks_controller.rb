@@ -7,6 +7,10 @@ class TalksController < ApplicationController
     @talk = Talk.find params[:id]
   end
 
+  def index
+    @talks = Talk.all
+  end
+
 
   def destroy
     talk = Talk.find params[:id]
