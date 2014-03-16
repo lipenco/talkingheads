@@ -45,13 +45,6 @@
       single.fetch()
       single
 
-    # getTalks: (id) ->
-    #   talks = new Entities.TalkCollection
-    #     id: id
-    #   talks.fetch
-    #     reset: true
-    #   talks
-
 
     getTalk: (id, talk_id) ->
       talk = new Entities.Talk
@@ -60,15 +53,12 @@
       talk.fetch()
       talk
 
-    # getTalks: (id) ->
-    #   talks = new Entities.TalkCollection
-    #     id = id
-      # window.idds = id
 
     getTalks:(id) ->
       talks = new Entities.TalkCollection
         id: id
-      talks.fetch()
+      talks.fetch
+        reset: true
       talks
 
 
