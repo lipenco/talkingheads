@@ -23,6 +23,13 @@
 
     talksRegion: (talks) ->
       talksView = @getTalksView talks
+
+      @listenTo talksView, "childview:talk:single:render", (child, args) ->
+        App.vent.trigger "talk:single:render", args.model
+        @titleRegion args.model
+        @videoRegion args.model
+
+
       @layout.talksRegion.show talksView
 
 

@@ -24,6 +24,9 @@
     className: 'talk_li'
     tagName: "li"
 
+    triggers:
+      "click"      : "talk:single:render"
+
 
   class Show.Talks extends App.Views.CompositeView
     template: "talk/show/_talks"
