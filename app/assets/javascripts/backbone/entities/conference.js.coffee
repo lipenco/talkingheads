@@ -6,10 +6,13 @@
 
 
 
-  class Entities.TalkCollection extends App.Entities.Collection
-    model: Entities.Talk
-    url: -> Routes.conference_talks_path(id)
+  class Entities.TalkCollection  extends App.Entities.Collection
 
+    model: Entities.Talk
+
+
+    initialize: (@id) ->
+    url: -> Routes.conference_talks_path(@id)
 
 
   class Entities.Conference extends App.Entities.Model
@@ -55,10 +58,11 @@
 
 
     getTalks:(id) ->
-      talks = new Entities.TalkCollection
-        id: id
+      talks = new Entities.TalkCollection(id)
+        # id: id
       talks.fetch
         reset: true
+        # id: id
       talks
 
 
