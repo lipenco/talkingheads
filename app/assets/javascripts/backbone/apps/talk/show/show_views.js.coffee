@@ -20,34 +20,17 @@
     template: "talk/show/_next"
 
   class Show.Talk extends App.Views.ItemView
+    # initialize: (@id) ->
+
     template: "talk/show/_talk"
-    className: 'talk_li'
     tagName: "li"
 
     triggers:
       "click"      : "talk:single:render"
 
 
+
   class Show.Talks extends App.Views.CompositeView
     template: "talk/show/_talks"
     itemView: Show.Talk
     itemViewContainer: "ul"
-
-
-
-  # class Show.TalkSingle extends App.Views.ItemView
-  #   template: "conference/show/_talk_single"
-  #   className: 'talk_li'
-  #   tagName: "li"
-  #
-  #   triggers:
-  #     "click .talk-delete" : "talk:delete:clicked"
-  #     "click"              : "talk:single:clicked"
-  #   initialize: ->
-  #     window.ts = this
-  #
-  #
-  # class Show.Talks extends App.Views.CompositeView
-  #   template: "conference/show/show_talks"
-  #   itemView: Show.TalkSingle
-  #   itemViewContainer: "ul"

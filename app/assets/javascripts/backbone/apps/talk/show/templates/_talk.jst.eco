@@ -1,2 +1,4 @@
 
+    <div class="talk_li talk<%=@id %>">
      <p><%= @title %></p>
+   </div>

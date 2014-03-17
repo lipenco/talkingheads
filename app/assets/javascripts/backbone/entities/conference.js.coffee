@@ -81,7 +81,7 @@
     API.newSingle()
 
   App.reqres.setHandler "talk:entities", (id) ->
-    window.is = id
+    # window.is = id
     API.getTalks(id)
 
   App.reqres.setHandler "talk:entity", (id, talk_id) ->

@@ -15,14 +15,15 @@
             @titleRegion talk
             @videoRegion talk
             @nextRegion talk
-            @talksRegion talks
+            @talksRegion talks, talk
 
           @show @layout
 
 
 
-    talksRegion: (talks) ->
-      talksView = @getTalksView talks
+    talksRegion: (talks, talk) ->
+      talksView = @getTalksView talks, talk
+
 
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         App.vent.trigger "talk:single:render", args.model
@@ -46,22 +47,9 @@
       pop = Popcorn.youtube( "#youtube", "#{video}" )
 
 
-    manageHighlight: (childview) ->
-      window.view = childview
-      @currentActiveView.removeHighlight() if @currentActiveView
-      @currentActiveView = childview
-      @highlight(childview)
-
-    removeHighlight: ->
-      @$el.removeClass('highlight')
-      # @render()
-
-    highlight: (childview) ->
-      childview.addClass('highlight')
-      console.log childview
-      # @render()
-
-
+    manageHighlight: (childView) ->
+      $("li").removeClass('highlight')
+      childView.addClass('highlight')
 
 
     nextRegion: (talk) ->
@@ -74,9 +62,10 @@
       new Show.Next
         model: talk
 
-    getTalksView: (talks) ->
+    getTalksView: (talks, talk) ->
       new Show.Talks
         collection: talks
+        model: talk
 
 
     getVideoView: (talk) ->

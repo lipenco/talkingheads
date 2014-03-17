@@ -1,5 +1,5 @@
 @Demo.module "ConferenceApp.List", (List, App, Backbone, Marionette, $, _) ->
-  
+
   class List.Layout extends App.Views.Layout
     template: "conference/list/list_layout"
 
@@ -28,7 +28,7 @@
     className: 'conference_li'
     tagName: "li"
 
-      
+
     triggers:
       "click .conference-delete" : "conference:delete:clicked"
       "click .conference-edit"   : "conference:single:edit"
@@ -40,11 +40,9 @@
     itemViewContainer: "ul"
     onRender: ->
        @childElementsFadeIn()
-    
+
     childElementsFadeIn: ->
       duration = 200;
       @$el.find('.conference_li').each (index) ->
         $(this).hide()
         $(this).delay((index+1) * duration).fadeIn(400)
-
-
