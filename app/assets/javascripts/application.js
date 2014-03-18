@@ -11,12 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require lib/underscore
-//= require lib/backbone
-//= require lib/backbone-associations
-//= require lib/marionette
+//= require underscore
+//= require backbone
+//= require backbone-associations
+//= require marionette
 //= require js-routes
-//= require lib/popcorn
+//= require popcorn
 //= require_tree ./vendor
 //= require_tree ./backbone/config
 //= require backbone/app
