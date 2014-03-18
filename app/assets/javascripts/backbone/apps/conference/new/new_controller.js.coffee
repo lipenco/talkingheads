@@ -1,6 +1,6 @@
 @Demo.module "ConferenceApp.New", (New, App, Backbone, Marionette, $, _) ->
 
-  class New.Controller extends App.Controllers.Base
+  class New.Controller extends App.Controllers.Application
 
     initialize: ->
       conference = App.request "new:conference:entity"

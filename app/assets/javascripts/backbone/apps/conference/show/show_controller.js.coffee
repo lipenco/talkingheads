@@ -1,24 +1,25 @@
 @Demo.module "ConferenceApp.Show", (Show, App, Backbone, Marionette, $, _) ->
 
-  class Show.Controller extends App.Controllers.Base
+  class Show.Controller extends App.Controllers.Application
 
     initialize: (options) ->
-        { single, id } = options
-        single or= App.request "conference:entity", id
-        App.execute "when:fetched", single, =>
-          @layout = @getLayoutView single
+      { single, id } = options
+      single or= App.request "conference:entity", id
+      # App.execute "when:fetched", single, =>
+      @layout = @getLayoutView single
 
-          @listenTo @layout, "show", =>
-            @titleRegion single
-            @conferenceRegion single
-            @talksRegion single
+      @listenTo @layout, "show", =>
+        @titleRegion single
+        @conferenceRegion single
+        @talksRegion single
 
-          @show @layout
+      @show @layout, loading: true
 
 
     titleRegion: (single) ->
       titleView = @getTitleView single
-      @layout.titleRegion.show titleView
+      @show titleView, region: @layout.titleRegion
+      # @layout.titleRegion.show titleView
 
     talksRegion: (single) ->
       talksView = @getTalksView single
@@ -35,11 +36,13 @@
 
 
       @layout.talksRegion.show talksView
+      # @show talksView region: @layout.talksRegion
 
 
     conferenceRegion: (single) ->
       conferenceView = @getConferenceView single
       @layout.conferenceRegion.show conferenceView
+      # @show conferenceView region: @layout.conferenceRegion
 
 
     getTalksView: (single) ->

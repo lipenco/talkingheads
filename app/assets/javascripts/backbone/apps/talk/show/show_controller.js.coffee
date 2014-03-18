@@ -1,23 +1,23 @@
 @Demo.module "TalkApp.Show", (Show, App, Backbone, Marionette, $, _) ->
 
-  class Show.Controller extends App.Controllers.Base
+  class Show.Controller extends App.Controllers.Application
 
     initialize: (options) ->
-        { id, talk_id, talk } = options
-        talk or= App.request "talk:entity", id, talk_id
-        talks = App.request "talk:entities", id
+      { id, talk_id, talk } = options
+      talk or= App.request "talk:entity", id, talk_id
+      talks = App.request "talk:entities", id
 
-        App.execute "when:fetched", talk, =>
+      # App.execute "when:fetched", talk, =>
 
-          @layout = @getLayoutView talk
+      @layout = @getLayoutView talk
 
-          @listenTo @layout, "show", =>
-            @titleRegion talk
-            @videoRegion talk
-            @nextRegion talk
-            @talksRegion talks, talk
+      @listenTo @layout, "show", =>
+        @titleRegion talk
+        @videoRegion talk
+        @nextRegion talk
+        @talksRegion talks, talk
 
-          @show @layout
+      @show @layout, loading: true
 
 
 
