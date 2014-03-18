@@ -1,4 +1,4 @@
 
     <div class="talk_li talk<%=@id %>">
-     <p><%= @title %></p>
+     <a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><p><%= @title %></p></a>
    </div>

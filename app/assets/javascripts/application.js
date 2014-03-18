@@ -18,11 +18,14 @@
 //= require js-routes
 //= require syphon
 //= require jquery.spin
+//= require backbone-chooser
+//= require backbone-routefilter
 //= require popcorn
 //= require_tree ./config
 //= require backbone/app
 
 
+//= require_tree ./backbone/lib/concerns
 //= require_tree ./backbone/lib/entities
 //= require_tree ./backbone/lib/utilities
 //= require_tree ./backbone/lib/views
