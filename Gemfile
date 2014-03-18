@@ -19,6 +19,8 @@ gem 'rabl'
 gem 'oj'
 gem 'gon'
 gem 'js-routes'
+gem 'eco'
+gem 'spinjs-rails'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -27,8 +29,7 @@ gem 'js-routes'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'eco'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

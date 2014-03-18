@@ -16,12 +16,20 @@
 //= require backbone-associations
 //= require marionette
 //= require js-routes
+//= require syphon
+//= require jquery.spin
 //= require popcorn
-//= require_tree ./vendor
-//= require_tree ./backbone/config
+//= require_tree ./config
 //= require backbone/app
-//= require_tree ./backbone/controllers
-//= require_tree ./backbone/views
+
+
+
+//= require_tree ./backbone/lib/views
+//= require_tree ./backbone/lib/entities
+//= require_tree ./backbone/lib/utilities
+//= require_tree ./backbone/lib/controllers
+//= require_tree ./backbone/lib/components
+
+
 //= require_tree ./backbone/entities
-//= require_tree ./backbone/components
 //= require_tree ./backbone/apps
