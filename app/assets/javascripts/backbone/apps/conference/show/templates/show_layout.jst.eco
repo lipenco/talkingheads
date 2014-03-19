@@ -6,6 +6,7 @@
         <div id="conference-region"></div>
       </div>
       <div class="col-md-9  columns">
+        <div id="talks-panel-region"></div>
         <div id="talks-region"></div>
       </div>
     </div>

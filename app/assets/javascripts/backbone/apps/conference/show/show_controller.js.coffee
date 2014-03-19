@@ -10,6 +10,7 @@
 
       @listenTo @layout, "show", =>
         @titleRegion single
+        @panelRegion single
         @conferenceRegion single
         @talksRegion single
 
@@ -20,6 +21,17 @@
       titleView = @getTitleView single
       @show titleView, region: @layout.titleRegion
       # @layout.titleRegion.show titleView
+
+    panelRegion: (single) ->
+      panelView = @getPanelView()
+      @listenTo panelView, "new:talk:button:clicked", =>
+        @newRegion(single)
+
+      @show panelView, region: @layout.panelRegion
+
+    newRegion: (single) ->
+      conference_id = single.id
+      App.execute "new:talk:single", conference_id, @layout.newRegion
 
     talksRegion: (single) ->
       talksView = @getTalksView single
@@ -48,6 +60,9 @@
     getTalksView: (single) ->
       new Show.Talks
         collection: single.get("talks")
+
+    getPanelView: ->
+      new Show.Panel
 
 
     getTitleView: (single) ->

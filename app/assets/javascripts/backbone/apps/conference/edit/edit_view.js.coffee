@@ -16,6 +16,3 @@
 
   class Edit.Conference extends App.Views.ItemView
     template: "conference/edit/edit_conference"
-
-    triggers:
-       "click #new-talk" : "new:talk:button:clicked"

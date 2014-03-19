@@ -2,15 +2,14 @@
 
   class Entities.Talk extends App.Entities.Model
 
-    url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
+    url: -> Routes.conference_talks_path()
 
+    url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
 
 
   class Entities.TalkCollection  extends App.Entities.Collection
 
     model: Entities.Talk
-
-
     initialize: (@id) ->
     url: -> Routes.conference_talks_path(@id)
 
@@ -67,10 +66,10 @@
     newSingle: ->
       new Entities.Conference
 
-    newTalk: (id) ->
-      console.log id
-      new Entities.Talk(id)
-        # id: id
+    newTalk: (conference_id) ->
+      id = conference_id
+      new Entities.Talk
+        id: id
 
 
   App.reqres.setHandler "conference:entities", ->
@@ -83,11 +82,10 @@
   App.reqres.setHandler "new:conference:entity", ->
     API.newSingle()
 
-  App.reqres.setHandler "new:talk:entity", (id) ->
-    API.newTalk(id)
+  App.reqres.setHandler "new:talk:entity", (conference_id) ->
+    API.newTalk(conference_id)
 
   App.reqres.setHandler "talk:entities", (id) ->
-    # window.is = id
     API.getTalks(id)
 
   App.reqres.setHandler "talk:entity", (id, talk_id) ->

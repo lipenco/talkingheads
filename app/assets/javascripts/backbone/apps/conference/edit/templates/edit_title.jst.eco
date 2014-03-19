@@ -2,7 +2,7 @@
   <div class="row">
     <div class="large-12 columns">
       <h1><%= @name %></h1>
-      <h4>description gere</h4>
+      <h4><%= @description %></h4>
     </div>
   </div>
 </div>

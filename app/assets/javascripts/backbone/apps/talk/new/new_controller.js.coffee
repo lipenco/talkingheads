@@ -2,13 +2,13 @@
 
   class New.Controller extends App.Controllers.Application
 
-    initialize: (region) ->
-      id = region.id
-      talk = App.request "new:talk:entity", id
-
+    initialize: (options) ->
+      { conference_id } = options
+      console.log conference_id
+      talk = App.request "new:talk:entity", conference_id
 
       @listenTo talk, "created", ->
-        console.log "talk created"
+        console.log "created"
         App.vent.trigger "talk:created", talk
 
       newView = @getNewView talk
@@ -19,7 +19,6 @@
 
       @show formView
 
-    getNewView: (talk, id) ->
+    getNewView: (talk) ->
       new New.Talk
         model: talk
-        id: id
