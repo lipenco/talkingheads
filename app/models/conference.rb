@@ -12,4 +12,8 @@ class Conference < ActiveRecord::Base
     GetThumbs.get(self.tags) if tags?
   end
 
+  def talks_num
+    self.talks.count
+  end
+
 end

@@ -8,6 +8,7 @@ class ConferencesController < ApplicationController
 
   def new
      @single = Conference.new(conference_params)
+     @new_talk = @single.talks.build
   end
 
   def create

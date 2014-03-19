@@ -2,22 +2,32 @@
 
     <legend>Details</legend>
 
+
+   <p>
     <label class="">Name</label>
     <input type="text" name="name" value="<%= @name %>" />
-
+  </p>
+   <p>
     <label class="">Date</label>
     <input type="text" name="date" value="<%= @date %>" />
-
+  </p>
+<p>
     <label class="">Place</label>
     <input type="text" name="place"value="<%= @place %>" />
-
+  </p>
+<p>
     <label class="">Tags</label>
     <input type="text" name="tags" value="<%= @tags %>" />
-
+  </p>
+<p>
     <label class="">Organizers</label>
     <input type="text" name="organizers" value="<%= @organizers %>" />
-
+  </p>
+<p>
     <label class="">Description</label>
     <input type="text" name="description" value="<%= @description %>" />
+  </p>
+
+  <div id="new-talk" class="btn"> Add Talk </div>
 
 </div>

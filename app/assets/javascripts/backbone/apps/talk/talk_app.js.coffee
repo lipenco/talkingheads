@@ -11,6 +11,12 @@
         talk_id: talk_id
         talk: talk
 
+    newTalk: (region, id) ->
+      new TalkApp.New.Controller
+        region: region
+        id: id
+
+
 
   App.vent.on "talk:single:clicked", (id, talk_id, talk) ->
     talk_id = talk.get("id")
@@ -23,13 +29,10 @@
     id = talk.get("conference_id")
     App.navigate Routes.conference_talk_path(id, talk_id)
 
-  # App.vent.on "talk:next:clicked", (talk) ->
-  #   conference_id = talk.get("conference_id")
-  #
-  #   next = talk.nextElement()
-  #   window.next = next
-  #   # App.navigate Routes.conference_talk_path(conference_id, id)
-  #   # API.showTalk conference_id talk_id
+
+  App.commands.setHandler "new:talk:single", (region, id) ->
+    console.log region
+    API.newTalk region, id
 
 
 

@@ -36,6 +36,9 @@
     newRegion: ->
       App.execute "new:conference:single", @layout.newRegion
 
+    newTalkRegion: ->
+      App.execute "new:talk:single", @layout.newTalkRegion
+
     conferenceRegion: (conferences) ->
       conferenceView = @getConferenceView conferences
 

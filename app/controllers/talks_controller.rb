@@ -11,6 +11,10 @@ class TalksController < ApplicationController
     @talks = Talk.all
   end
 
+  def new
+     @talk = Talk.new(talk_params)
+  end
+
 
   def destroy
     talk = Talk.find params[:id]

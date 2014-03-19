@@ -20,13 +20,14 @@
     template: "talk/show/_next"
 
   class Show.Talk extends App.Views.ItemView
-    # initialize: (@id) ->
-
     template: "talk/show/_talk"
     tagName: "li"
 
     triggers:
       "click"      : "talk:single:render"
+
+    # onRender: ->
+    #   App.vent.trigger 'app:show'
 
 
 

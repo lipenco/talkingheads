@@ -33,8 +33,6 @@
 
 
 
-
-
   API =
     getConferences: ->
       conferences = new Entities.ConferenceCollection
@@ -69,6 +67,11 @@
     newSingle: ->
       new Entities.Conference
 
+    newTalk: (id) ->
+      console.log id
+      new Entities.Talk(id)
+        # id: id
+
 
   App.reqres.setHandler "conference:entities", ->
     API.getConferences()
@@ -79,6 +82,9 @@
 
   App.reqres.setHandler "new:conference:entity", ->
     API.newSingle()
+
+  App.reqres.setHandler "new:talk:entity", (id) ->
+    API.newTalk(id)
 
   App.reqres.setHandler "talk:entities", (id) ->
     # window.is = id

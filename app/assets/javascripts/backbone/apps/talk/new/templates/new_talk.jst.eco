@@ -1,0 +1,20 @@
+<legend>Talk Details</legend>
+
+
+<p>
+<label class="">Title</label>
+<input type="text" name="name" value="<%= @title %>" />
+</p>
+<p>
+<label class="">video_url</label>
+<input type="text" name="date" value="<%= @video_url %>" />
+</p>
+<p>
+<label class="">speaker</label>
+<input type="text" name="place"value="<%= @speaker %>" />
+</p>
+
+
+<div id="new-talk" class="btn"> Add Talk </div>
+
+</div>

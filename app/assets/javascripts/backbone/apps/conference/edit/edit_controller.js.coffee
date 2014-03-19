@@ -23,8 +23,18 @@
       @show titleView, region: @layout.titleRegion
       # @layout.titleRegion.show titleView
 
+
+    newTalkRegion:(conferences)  ->
+      id = conferences.get('id')
+      App.execute "new:talk:single", @layout.newTalkRegion, id
+
+
     formRegion: (conferences) ->
       editView = @getEditView conferences
+
+      @listenTo editView, "new:talk:button:clicked", =>
+        @newTalkRegion(conferences)
+
 
       @listenTo editView, "form:cancel", ->
         App.vent.trigger "conference:cancelled", conferences

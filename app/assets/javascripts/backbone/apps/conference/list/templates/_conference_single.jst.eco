@@ -12,7 +12,7 @@
 
               <!--  <img class="icon-status" src="img/issue.png"> -->
              <div class="status"><%= @description %></div>
-             <div class="comments-status"><a> 3 talks</a>, 13 kudos</div>
+             <div class="comments-status"><a> <%= @talks_num %> talks</a>, 13 kudos</div>
            </article>
            <div class="user-menu card">
                   <ul class="unstyled table fullwidth">
