@@ -22,6 +22,7 @@ class ConferencesController < ApplicationController
 
   def update
     @single = Conference.find params[:id]
+    binding.pry
     if @single.update_attributes conference_params
       render "conferences/show"
     else
@@ -42,9 +43,7 @@ class ConferencesController < ApplicationController
   private
 
   def conference_params
-    params.permit(:name, :tags, :date, :organizer, :description, :place, :talks => [:conference_id, :id, :title, :video_url])
-
-
+    params.permit(:name, :tags, :date, :organizer, :description, :place, :talks_attributes => [:title, :video_url])
   end
 
 end

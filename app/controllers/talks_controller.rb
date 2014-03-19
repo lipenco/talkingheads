@@ -25,7 +25,7 @@ class TalksController < ApplicationController
   end
 
   def update
-    @talk = Talk.find params[:id]
+    @talk = Talk.find_or_create_by(params[:id])
     if @talk.update_attributes talk_params
       render "conferences/show"
     else
@@ -43,7 +43,7 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.permit(:title, :video_url, :description, :slides_url, :speaker, :conference_id)
+    params.require(:talk).permit(:title, :video_url, :description, :slides_url, :speaker, :conference_id)
   end
 
 
