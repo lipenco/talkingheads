@@ -42,7 +42,9 @@ class ConferencesController < ApplicationController
   private
 
   def conference_params
-    params.permit(:name, :tags, :date, :organizer, :description, :place)
+    params.permit(:name, :tags, :date, :organizer, :description, :place, :talks => [:conference_id, :id, :title, :video_url])
+
+
   end
 
 end

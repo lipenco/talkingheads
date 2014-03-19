@@ -7,9 +7,13 @@
       console.log conference_id
       talk = App.request "new:talk:entity", conference_id
 
-      @listenTo talk, "created", ->
-        console.log "created"
-        App.vent.trigger "talk:created", talk
+      @listenTo talk, "updated", ->
+        console.log "updated"
+        App.vent.trigger "talk:updated", talk
+
+      # @listenTo talk, "created", ->
+      #   console.log "created"
+      #   App.vent.trigger "talk:created", talk
 
       newView = @getNewView talk
       formView = App.request "form:wrapper", newView

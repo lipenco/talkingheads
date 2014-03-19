@@ -2,7 +2,6 @@
 
   class Entities.Talk extends App.Entities.Model
 
-    url: -> Routes.conference_talks_path()
 
     url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
 
@@ -83,7 +82,7 @@
     API.newSingle()
 
   App.reqres.setHandler "new:talk:entity", (conference_id) ->
-    API.newTalk(conference_id)
+    API.getSingle(conference_id)
 
   App.reqres.setHandler "talk:entities", (id) ->
     API.getTalks(id)

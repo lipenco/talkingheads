@@ -15,6 +15,24 @@ class TalksController < ApplicationController
      @talk = Talk.new(talk_params)
   end
 
+  def create
+    @talk = Talk.new(talk_params)
+    if @talk.save
+      render "talk/show"
+    else
+      respond_with @talk
+    end
+  end
+
+  def update
+    @talk = Talk.find params[:id]
+    if @talk.update_attributes talk_params
+      render "conferences/show"
+    else
+      respond_with @single
+    end
+  end
+
 
   def destroy
     talk = Talk.find params[:id]
@@ -25,7 +43,7 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.permit(:title, :video_url, :description, :slides_url, :speaker)
+    params.permit(:title, :video_url, :description, :slides_url, :speaker, :conference_id)
   end
 
 

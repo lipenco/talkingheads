@@ -35,7 +35,7 @@
     App.navigate Routes.edit_conference_path(single.id)
     API.edit single.id, single
 
-  App.vent.on "conference:single:details", (single) ->
+  App.vent.on "conference:single:details talk:updated", (single) ->
     App.navigate Routes.conference_path(single.id)
     API.show single.id, single
 
