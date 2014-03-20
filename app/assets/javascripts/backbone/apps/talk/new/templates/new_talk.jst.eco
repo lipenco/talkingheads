@@ -3,9 +3,13 @@
     <div class="col-md-6 columns">
       <p>What is the title of the Talk?</p>
       <div class="col-md-6">
-<!--         <input type="integer" name="id" placeholder="id" /> -->
-        <input type="text" name="talks_attributes[1][title]" placeholder="Talk Title" />
-        <input type="text" name="talks_attributes[1][video_url]" placeholder="url" />
+
+        <input type="text" name="title" placeholder="Talk Title" />
+        <input type="text" name="video_url" placeholder="video_url" />
+        <input type="text" name="speaker" placeholder="speaker" />
+
+<!--         <input type="text" name="talks_attributes[1][title]" placeholder="Talk Title" />
+        <input type="text" name="talks_attributes[1][video_url]" placeholder="url" /> -->
       </div>
     </div>
   </div>

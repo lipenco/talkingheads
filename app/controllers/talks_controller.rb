@@ -16,17 +16,22 @@ class TalksController < ApplicationController
   end
 
   def create
-    @talk = Talk.new(talk_params)
+    @talk = Talk.new(talk_params.merge(:conference_id => params[:conference_id]))
+    # binding.pry
     if @talk.save
-      render "talk/show"
+      @single = Conference.find(params[:conference_id])
+      # @single.talks << @talk
+      render "conferences/show"
     else
-      respond_with @talk
+      respond_with @single
     end
   end
 
   def update
-    @talk = Talk.find_or_create_by(params[:id])
+    @talk = Talk.find_or_create_by(id: params[:id])
+    binding.pry
     if @talk.update_attributes talk_params
+      @single = Conference.find(params[:conference_id])
       render "conferences/show"
     else
       respond_with @single
