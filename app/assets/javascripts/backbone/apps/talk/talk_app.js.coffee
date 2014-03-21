@@ -11,9 +11,10 @@
         talk_id: talk_id
         talk: talk
 
-    newTalk: (conference_id) ->
+    newTalk: (conference_id, region) ->
       new TalkApp.New.Controller
         conference_id: conference_id
+        region: region
 
 
 
@@ -29,9 +30,8 @@
     id = talk.get("conference_id")
     App.navigate Routes.conference_talk_path(id, talk_id)
 
-  App.commands.setHandler "new:talk:single", (conference_id) ->
-    console.log conference_id
-    API.newTalk conference_id
+  App.commands.setHandler "new:talk:single", (conference_id, region) ->
+    API.newTalk conference_id, region
 
 
 

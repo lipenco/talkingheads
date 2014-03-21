@@ -1,12 +1,19 @@
 <div id="edit-conference-layout">
-  <div id="title-region"></div>
+<div class="row">
+  <div class="col-md-6  columns">
+     <div id="title-region"></div>
+  </div>
+  <div class="col-md-3  columns">
+    <div id="talks-panel-region"></div>
+  </div>
+</div>
   <section>
     <div class="row">
       <div class="col-md-3  columns">
         <div id="conference-region"></div>
       </div>
       <div class="col-md-9  columns">
-        <div id="talks-panel-region"></div>
+         <div id="new-talk-region"></div>
         <div id="talks-region"></div>
       </div>
     </div>

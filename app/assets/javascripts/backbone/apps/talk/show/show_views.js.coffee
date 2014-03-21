@@ -7,7 +7,8 @@
       titleRegion:  "#title-region"
       videoRegion:  "#video-region"
       talksRegion:  "#talks-region"
-      nextRegion:  "#next-region"
+      nextRegion:   "#next-region"
+
 
   class Show.Title extends App.Views.ItemView
     template: "talk/show/_title"

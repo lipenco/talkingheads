@@ -4,10 +4,10 @@
     template: "conference/list/list_layout"
 
     regions:
-      titleRegion:  "#title-region"
-      panelRegion:  "#panel-region"
-      newRegion:    "#new-region"
-      conferenceRegion:   "#conference-region"
+      titleRegion:      "#title-region"
+      panelRegion:      "#panel-region"
+      newRegion:        "#new-region"
+      conferenceRegion: "#conference-region"
 
 
 
