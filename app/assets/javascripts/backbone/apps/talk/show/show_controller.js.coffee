@@ -35,7 +35,8 @@
         childview = child.$el
         @manageHighlight(childview)
 
-      @layout.talksRegion.show talksView
+      # @layout.talksRegion.show talksView
+      @show talksView, region: @layout.talksRegion, loading: true
 
 
     titleRegion: (talk) ->

@@ -8,6 +8,7 @@ class TalksController < ApplicationController
   end
 
   def index
+    sleep 3
     @conference = Conference.find params[:conference_id]
     @talks = @conference.talks
   end

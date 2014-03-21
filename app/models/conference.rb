@@ -1,6 +1,7 @@
 class Conference < ActiveRecord::Base
   validates :name, presence: true
   has_many :talks
+  belongs_to :user
 
   # accepts_nested_attributes_for :talks, :allow_destroy => true
 

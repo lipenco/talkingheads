@@ -3,6 +3,7 @@ class ConferencesController < ApplicationController
   respond_to :json
 
   def index
+    @current_user = current_user
     @conferences = Conference.all
   end
 

@@ -25,6 +25,14 @@ gem 'eco'
 gem 'spinjs-rails'
 
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-identity'
+
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
