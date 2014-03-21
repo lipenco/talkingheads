@@ -2,15 +2,7 @@
 
   class Entities.Talk extends App.Entities.Model
 
-    # url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
-    # initialize: (@conference_id, @talk_id) ->
-    #
-    # url: -> "/conferences/#{@conference_id}/talks/"
-    #
-    # url: -> "/conferences/#{@conference_id}/talks/#{@talk_id}"
-
     initialize: (@conference_id, @talk_id) ->
-
     url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 
@@ -18,7 +10,8 @@
 
     model: Entities.Talk
     initialize: (@id) ->
-    url: -> Routes.conference_talks_path(@id)
+
+    url: -> "/conferences/#{@id}/talks/"
 
 
   class Entities.Conference extends App.Entities.Model

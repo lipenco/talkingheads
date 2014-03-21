@@ -8,7 +8,8 @@ class TalksController < ApplicationController
   end
 
   def index
-    @talks = Talk.all
+    @conference = Conference.find params[:conference_id]
+    @talks = @conference.talks
   end
 
   def new
