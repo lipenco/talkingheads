@@ -5,7 +5,9 @@
     initialize: (options) ->
       { id, talk_id, talk } = options
       talk or= App.request "talk:entity", id, talk_id
+      window.tal = id
       talks = App.request "talk:entities", id
+      # window.tals = talks
 
       # App.execute "when:fetched", talk, =>
 

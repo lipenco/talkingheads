@@ -58,8 +58,9 @@
 
 
     getTalksView: (single) ->
+      talks = single.get("talks")
       new Show.Talks
-        collection: single.get("talks")
+        collection: talks
 
     getPanelView: ->
       new Show.Panel

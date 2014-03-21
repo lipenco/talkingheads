@@ -3,8 +3,15 @@
   class Entities.Talk extends App.Entities.Model
 
     # url: -> Routes.conference_talk_path( this.get("conference_id") , this.get("id") )
-    initialize: (@conference_id) ->
-    url: -> "/conferences/#{@conference_id}/talks/"
+    # initialize: (@conference_id, @talk_id) ->
+    #
+    # url: -> "/conferences/#{@conference_id}/talks/"
+    #
+    # url: -> "/conferences/#{@conference_id}/talks/#{@talk_id}"
+
+    initialize: (@conference_id, @talk_id) ->
+
+    url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 
   class Entities.TalkCollection  extends App.Entities.Collection
@@ -47,9 +54,9 @@
 
 
     getTalk: (id, talk_id) ->
-      talk = new Entities.Talk
-        conference_id: id
-        id: talk_id
+      talk = new Entities.Talk(id, talk_id)
+        # conference_id: id
+        # id: talk_id
       talk.fetch()
       talk
 
