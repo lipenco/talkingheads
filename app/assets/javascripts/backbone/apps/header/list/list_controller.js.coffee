@@ -5,7 +5,6 @@
     listHeader: ->
       currentUser = App.request "get:current:user"
       currentUserName = currentUser.get("name")
-      window.uss = currentUserName
       links = App.request "header:entities", (currentUserName)
 
       headerView = @getHeaderView links

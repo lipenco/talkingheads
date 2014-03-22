@@ -12,5 +12,4 @@
 
 
 	App.reqres.setHandler "set:current:user", (currentUser) ->
-		window.ent = currentUser
 		API.setCurrentUser currentUser

@@ -10,7 +10,6 @@
 	App.rootRoute = Routes.conferences_path()
 
 	App.on "initialize:before", (options) ->
-		window.opt = options.currentUser
 		@currentUser = App.request "set:current:user", options.currentUser
 
 	App.reqres.setHandler "get:current:user", ->

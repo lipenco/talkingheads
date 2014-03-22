@@ -4,8 +4,8 @@
     <ul class="nav nav-pills pull-right"></ul>
 
   <h3 class="text-muted">Talking Heads</h3>
-<h2><a href="/auth/twitter">Twitter</h2>
-  <p> <%= @currentUser.name %> </p>
+
+
 
 
 

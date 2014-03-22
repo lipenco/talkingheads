@@ -1,0 +1,6 @@
+
+<ul>
+  <li><p><a href="/auth/twitter">Sign in with Twitter</a></p></li>
+  <li><p><a href="/auth/facebook">Sign in with Facebook</a></p></li>
+  <li><p><a href="/auth/facebook">Sign in with Github</a></p></li>
+</ul>

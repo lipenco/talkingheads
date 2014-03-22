@@ -1,0 +1,7 @@
+
+
+<% if @currentUser.id?: %>
+  <p> Welcome <%= @currentUser.name %> </p>
+<% else: %>
+  <p>Please Sign up to comment, upvote and add new talks</p>
+<% end %>
