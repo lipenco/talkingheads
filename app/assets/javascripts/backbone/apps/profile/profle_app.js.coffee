@@ -7,6 +7,7 @@
   API =
     show: ->
       App.vent.trigger "header:choose", "Profile"
+      meny.open()
       new ProfileApp.Show.Controller
 
 

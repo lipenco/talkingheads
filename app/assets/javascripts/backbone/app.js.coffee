@@ -3,9 +3,11 @@
 	App = new Marionette.Application
 
 	App.addRegions
+		menyRegion: "#meny"
 		headerRegion: "#header-region"
 		mainRegion:		"#main-region"
 		footerRegion: "#footer-region"
+
 
 	App.rootRoute = Routes.conferences_path()
 

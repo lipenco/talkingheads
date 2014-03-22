@@ -21,6 +21,7 @@
 //= require backbone-chooser
 //= require backbone-routefilter
 //= require popcorn
+//= require meny
 //= require_tree ./config
 //= require backbone/app
 

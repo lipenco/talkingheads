@@ -17,7 +17,8 @@
 
         # @logoutRegion currentUserName
 
-      @show @layout, loading: true
+      # @show @layout, loading: true
+      App.menyRegion.show @layout
 
     loginRegion: ->
       loginView = @getLoginView()
