@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'pry'
 
+
 gem 'rabl'
 gem 'oj'
 gem 'gon'

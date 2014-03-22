@@ -1,6 +1,7 @@
 Talkingheads::Application.routes.draw do
 
   root "application#index"
+  # root to: "application#index"
 
   resources :conferences do
       resources :talks

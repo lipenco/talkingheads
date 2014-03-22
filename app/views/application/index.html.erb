@@ -6,7 +6,9 @@
 <div id="footer-region"></div>
 
 <%= javascript_tag do %>
-  $(function(){
-     Demo.start();
-  });
+	$(function() {
+		Demo.start({
+			currentUser: gon
+		});
+	});
 <% end %>

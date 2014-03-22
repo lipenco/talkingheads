@@ -9,6 +9,13 @@
 
 	App.rootRoute = Routes.conferences_path()
 
+	App.on "initialize:before", (options) ->
+		window.opt = options.currentUser
+		@currentUser = App.request "set:current:user", options.currentUser
+
+	App.reqres.setHandler "get:current:user", ->
+		App.currentUser
+
 	App.addInitializer ->
 		App.module("HeaderApp").start()
 		App.module("FooterApp").start()
