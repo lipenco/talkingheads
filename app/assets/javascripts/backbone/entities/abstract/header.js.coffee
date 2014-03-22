@@ -6,12 +6,12 @@
     model: Entities.Header
 
   API =
-    getHeaders: ->
+    getHeaders: (currentUserName) ->
       new Entities.HeaderCollection [
         { name: "Favorites" ,  url: "#favorites", icon:'glyphicon glyphicon-heart' }
         { name: "About",       url: "#about", icon: '' }
-        { name: "Sign up" ,      url: "#login", icon: 'glyphicon glyphicon-user'  }
+        { name:  currentUserName || "Sign up",    url: "#login", icon: 'glyphicon glyphicon-user'  }
       ]
 
-  App.reqres.setHandler "header:entities", ->
-    API.getHeaders()
+  App.reqres.setHandler "header:entities", (currentUserName) ->
+    API.getHeaders(currentUserName)

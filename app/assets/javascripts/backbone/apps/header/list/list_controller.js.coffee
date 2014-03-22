@@ -3,13 +3,15 @@
   List.Controller =
 
     listHeader: ->
-      # currentUser = App.request "get:current:user"
-      links = App.request "header:entities"
+      currentUser = App.request "get:current:user"
+      currentUserName = currentUser.get("name")
+      window.uss = currentUserName
+      links = App.request "header:entities", (currentUserName)
 
       headerView = @getHeaderView links
       App.headerRegion.show headerView
 
 
-    getHeaderView: (links) ->
+    getHeaderView: (links, currentUserName) ->
       new List.Headers
         collection: links
