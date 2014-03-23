@@ -1,11 +1,15 @@
 class ConferencesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :new]
-  before_action :set_current_user, only: [:destroy, :create, :update, :new]
+  before_action :set_current_user, only: [:destroy, :create, :update, :new, :user_list]
   respond_to :json
 
   def index
     @conferences = Conference.all
+  end
+
+  def user_list
+    @user_list = @current_user.conferences.all
   end
 
   def new
@@ -36,7 +40,8 @@ class ConferencesController < ApplicationController
   end
 
   def destroy
-    single = Conference.find params[:id]
+    single = @current_user.conferences.find params[:id]
+
     single.destroy
     render json: {}
   end

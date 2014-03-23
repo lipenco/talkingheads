@@ -5,7 +5,7 @@
     initialize: ->
       currentUser = App.request "get:current:user"
       currentUserId = currentUser.get("id")
-      window.u = currentUserId
+      user_list = App.request "user_list:entities" if currentUserId
 
       # if currentUserName == undefined
 
@@ -15,11 +15,27 @@
         @nameRegion currentUser
         @loginRegion() if currentUserId is undefined
         @panelRegion() if currentUserId
+        @conferencesRegion(user_list) if currentUserId
 
         # @logoutRegion currentUserName
 
       # @show @layout, loading: true
       App.menyRegion.show @layout
+
+    conferencesRegion: (user_list) ->
+      listView = @getListView user_list
+
+      @listenTo listView, "childview:conference:single:edit", (child, args) ->
+        App.vent.trigger "conference:single:edit", args.model
+
+      @listenTo listView, "childview:conference:single:details", (child, args) ->
+        App.vent.trigger "conference:single:details", args.model
+
+      @listenTo listView, "childview:conference:delete:clicked", (child, args) ->
+        model = args.model
+        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy(model.id) else false
+
+      @show listView, region: @layout.conferencesRegion
 
     panelRegion: ->
       panelView = @getPanelView()
@@ -35,6 +51,11 @@
 
     newRegion: ->
       App.execute "new:conference:single", @layout.newRegion
+
+    getListView: (user_list) ->
+      new Show.User_List
+        collection: user_list
+
 
 
     nameRegion: (currentUser) ->

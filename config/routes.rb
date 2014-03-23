@@ -9,4 +9,8 @@ Talkingheads::Application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
 
+  get 'user_list', to: 'conferences#user_list'
+
+
+
 end

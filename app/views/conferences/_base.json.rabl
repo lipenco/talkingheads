@@ -1,4 +1,4 @@
-attributes :id, :name, :tags, :date, :organizer, :description, :place, :created_at, :updated_at, :color, :thumb, :talks_num
+attributes :id, :name, :tags, :date, :organizer, :description, :place, :created_at, :updated_at, :color, :thumb, :talks_num, :user_id
 
 
 node do |conference|

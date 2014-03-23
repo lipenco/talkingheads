@@ -1,0 +1,5 @@
+<div class="row">
+    <h4><%= @name %></h4>
+    <a><span class="icon-share"></span><div class="conference-edit">edit</div></a>
+    <a><span class="icon-remove"><div class="conference-delete"> del</div></span></a>
+</div>

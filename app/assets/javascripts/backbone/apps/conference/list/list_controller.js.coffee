@@ -3,6 +3,7 @@
   class List.Controller extends App.Controllers.Application
 
     initialize: ->
+      meny.close()
       conferences = App.request "conference:entities"
 
       # App.execute "when:fetched", conferences, =>

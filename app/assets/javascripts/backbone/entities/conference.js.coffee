@@ -67,10 +67,7 @@
       new Entities.Conference
 
     newTalk: (conference_id) ->
-      console.log("thi" + conference_id)
       new Entities.Talk(conference_id)
-      # @id = conference_id
-      # @talk_id = "new"
 
 
   App.reqres.setHandler "conference:entities", ->
