@@ -26,3 +26,6 @@
 
   class Edit.Conference extends App.Views.ItemView
     template: "conference/edit/edit_conference"
+
+    triggers:
+      "click .conference-delete" : "conference:delete:clicked"

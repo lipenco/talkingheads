@@ -26,6 +26,9 @@
        <label class="">Description</label>
        <input type="text" name="description" value="<%= @description %>" />
      </p>
+     <p>
+       <label class="conference-delete"><span class="glyphicon glyphicon-remove"></span> Delete this conference</label>
+      </p>
   </div>
 
     <div class="col-md-5 ">

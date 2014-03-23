@@ -33,10 +33,6 @@
       @listenTo listView, "childview:conference:single:details", (child, args) ->
         App.vent.trigger "conference:single:details", args.model
 
-      @listenTo listView, "childview:conference:delete:clicked", (child, args) ->
-        model = args.model
-        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy(model.id) else false
-
       @show listView, region: @layout.conferencesRegion
 
     panelRegion: ->

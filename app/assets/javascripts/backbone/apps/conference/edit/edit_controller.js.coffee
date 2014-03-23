@@ -43,6 +43,11 @@
       @listenTo editView, "form:cancel", ->
         App.vent.trigger "conference:cancelled", conferences
 
+      @listenTo editView, "conference:delete:clicked", (conferences) ->
+        model = conferences.model
+        if confirm "Are you sure you want to delete #{model.get("name")} and all the talks?" then model.destroy(model.id) else false
+        App.vent.trigger "conference:cancelled", conferences
+
       formView = App.request "form:wrapper", editView
 
       # @layout.formRegion.show
