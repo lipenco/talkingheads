@@ -1,11 +1,14 @@
-<div id="meny"></div>
 
-  <div id="wrap">
-    <div id="header-region"></div>
-    <div id="main-region" class="container"></div>
-    <div id="push"></div>
+
+<div id="meny" class="col-md-3"></div>
+
+   <div id="page">
+    <div id="wrap">
+      <div id="header-region"></div>
+      <div id="main-region" class="container"></div>
+    </div>
+    <div id="footer-region"></div>
   </div>
-  <div id="footer-region"></div>
 
 
 <%= javascript_tag do %>
@@ -14,7 +17,7 @@ var meny = Meny.create({
     menuElement: document.getElementById( 'meny' ),
 
     // The contents that gets pushed aside while Meny is active
-    contentsElement: document.getElementById( 'wrap' ),
+    contentsElement: document.getElementById( 'page' ),
 
     // The alignment of the menu (top/right/bottom/left)
     position: 'right',

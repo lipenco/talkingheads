@@ -5,6 +5,7 @@
     initialize: (options) ->
       { single, id } = options
       single or= App.request "conference:entity", id
+      meny.close()
       # App.execute "when:fetched", single, =>
       @layout = @getLayoutView single
 

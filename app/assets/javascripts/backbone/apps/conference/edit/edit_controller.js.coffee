@@ -5,6 +5,7 @@
     initialize: (options) ->
       { conferences, id } = options
       conferences or= App.request "conference:entity", id
+      meny.close()
 
       @listenTo conferences, "updated", ->
         App.vent.trigger "conference:updated", conferences

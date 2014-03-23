@@ -28,7 +28,6 @@
 
 
     triggers:
-      "click .conference-delete" : "conference:delete:clicked"
       "click .conference-edit"   : "conference:single:edit"
       "click"                    : "conference:single:details"
 

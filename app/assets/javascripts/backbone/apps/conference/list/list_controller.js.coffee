@@ -41,9 +41,6 @@
       @listenTo conferenceView, "childview:conference:single:details", (child, args) ->
         App.vent.trigger "conference:single:details", args.model
 
-      @listenTo conferenceView, "childview:conference:delete:clicked", (child, args) ->
-        model = args.model
-        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
 
       # @layout.conferenceRegion.show conferenceView
       @show conferenceView, region: @layout.conferenceRegion

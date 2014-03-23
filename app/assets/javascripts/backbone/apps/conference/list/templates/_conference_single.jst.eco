@@ -15,15 +15,12 @@
              <div class="comments-status"><a> <%= @talks_num %> talks</a>, 13 kudos</div>
            </article>
            <div class="user-menu card">
-                  <ul class="unstyled table fullwidth">
-                    <li><a><span class="icon-rss"></span></a></li>
-                    <li><a><span class="icon-comment"></span></a></li>
-                    <li><a><span class="icon-share "></span><div class="conference-edit">edit</div></a></li>
-                    <li><a><span class="icon-remove"><div class="conference-delete"> del
-                      </div>
-                    </span>
-                </a></li>
-                  </ul>
+              <ul class="unstyled table fullwidth">
+                <li><a><span class="icon-rss"></span></a></li>
+                <li><a><span class="icon-comment"></span></a></li>
+                <li><a><span class="icon-share "></span></a></li>
+                <li><a><span class="icon-remove"></span></a></li>
+              </ul>
             </div>
         </div>
 

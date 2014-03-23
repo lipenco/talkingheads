@@ -5,6 +5,15 @@ ul {
   list-style-type: none;
 }
 
-.opacity    { 
-  opacity: 0.4;  
+.opacity    {
+  opacity: 0.4;
   }
+
+#page {
+  min-height: 100%;
+  position:relative;
+}
+
+#wrap {
+      padding-bottom: 60px;   /* This value is the height of your footer */
+}
