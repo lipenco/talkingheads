@@ -15,12 +15,14 @@
         @nameRegion currentUser
         @loginRegion() if currentUserId is undefined
         @panelRegion() if currentUserId
+        @favRegion() if currentUserId
         @conferencesRegion(user_list) if currentUserId
 
         # @logoutRegion currentUserName
 
       # @show @layout, loading: true
       App.menyRegion.show @layout
+
 
     conferencesRegion: (user_list) ->
       listView = @getListView user_list
@@ -45,6 +47,11 @@
 
       @show panelView, region: @layout.panelRegion
 
+    favRegion: ->
+      favView = @getFavView()
+      @show favView , region: @layout.favRegion
+
+
     loginRegion: ->
       loginView = @getLoginView()
       @layout.loginRegion.show loginView
@@ -52,14 +59,13 @@
     newRegion: ->
       App.execute "new:conference:single", @layout.newRegion
 
-    getListView: (user_list) ->
-      new Show.User_List
-        collection: user_list
-
-
 
     nameRegion: (currentUser) ->
       nameView = @getNameView currentUser
+
+      @listenTo nameView, "close:button:clicked", ->
+        meny.close()
+
       @layout.nameRegion.show nameView
 
 
@@ -69,6 +75,12 @@
     getLoginView: ->
       new Show.Login
 
+    getFavView: ->
+      new Show.Fav
+
+    getListView: (user_list) ->
+      new Show.User_List
+        collection: user_list
 
     getNameView: (currentUser)  ->
       new Show.Name

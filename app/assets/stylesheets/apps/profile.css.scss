@@ -1,0 +1,137 @@
+#top-links {
+  display: block;
+  height: 50px;
+  background-color: #333;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  overflow: hidden;
+  color: #bbb;
+  padding-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+#top-links li.user {
+width: 78%;
+border-left: 1px solid #000;
+}
+
+#top-links #close-menu span{
+padding: 1em;
+}
+
+#top-links li {
+float: left;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+position: relative;
+text-decoration: none;
+}
+
+#top-links li.user a {
+  text-decoration: none;
+padding-left: 20px;
+line-height: 50px;
+font-size: 1.4rem;
+font-weight: 600;
+color: #fefefe;
+}
+
+ul#bottom-links {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: #3a3a3a;
+z-index: 9000;
+height: 40px;
+margin:0;
+padding: 0;
+
+}
+
+ul#bottom-links li {
+float: left;
+width: 33.33%;
+display: list-item;
+text-align: -webkit-match-parent;
+padding: 0.5em;
+border-right: 1px solid #444;
+text-align: center;
+
+}
+
+ul#bottom-links li a {
+  color: #fefefe;
+  text-decoration:  none;
+
+}
+
+
+#meny dl {
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  bottom: 40px;
+  width: 280px;
+  padding-bottom: 40px;
+}
+
+#meny dl dt {
+font-size: 1.8rem;
+font-weight: 200;
+text-transform: uppercase;
+letter-spacing: 2px;
+padding: 30px 20px 7px;
+color: #888;
+}
+
+dd {
+display: block;
+
+}
+
+#meny dl dd.empty {
+margin: 0 20px 3px;
+padding: 10px;
+background-color: #666;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+text-align: left;
+}
+
+
+#meny dl dd.empty p.small {
+margin-bottom: 0;
+color: #222;
+font-size: 0.8em;
+}
+
+dl dd.empty p.button {
+margin: 10px auto 0;
+}
+
+a #new-conference {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+
+
+#meny dl dd.item a {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  display: block;
+  padding: 7px 20px 7px 0;
+  position: relative;
+  font-weight: 500;
+  color: #a2a2a2;
+}
+
+#meny dl dd.item a:hover {
+color: #f56363;
+}

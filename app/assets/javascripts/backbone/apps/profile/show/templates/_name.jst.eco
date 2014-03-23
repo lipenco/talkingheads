@@ -1,7 +1,23 @@
 
-
+<ul id="top-links">
+  <li id="close-menu">
+    <span class="glyphicon glyphicon-remove"></span>
+  </li>
 <% if @currentUser.id?: %>
-  <p> Welcome <%= @currentUser.name %> </p>
+  <li class="user">
+  	<a href="">
+  		<span class="user-wrap">
+  		  <%= @currentUser.name %> </p>
+  		</span>
+  	</a>
+  </li>
 <% else: %>
-  <p>Please Sign up to comment, upvote and add new talks</p>
+  <li class="user">
+    <a href="">
+      <span class="user-wrap">
+        Hello!
+      </span>
+    </a>
+  </li>
 <% end %>
+</ul>

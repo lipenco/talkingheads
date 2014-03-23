@@ -1,6 +1,12 @@
-
+<dt>Join Us</dt>
 <ul>
-  <li><p><a href="/auth/twitter">Sign in with Twitter</a></p></li>
+  <dd class="item">
+     <li><p><a href="/auth/twitter">Sign in with Twitter</a></p></li>
+  </dd>
+  <dd class="item">
   <li><p><a href="/auth/facebook">Sign in with Facebook</a></p></li>
+</dd>
+  <dd class="item">
   <li><p><a href="/auth/facebook">Sign in with Github</a></p></li>
+</dd>
 </ul>

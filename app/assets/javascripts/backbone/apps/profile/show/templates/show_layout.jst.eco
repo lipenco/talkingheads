@@ -1,6 +1,18 @@
 <div id="name-region"></div>
-<div id="login-region"></div>
-<div id="panel-region"></div>
-<div id="new-region"></div>
-<div id="conferences-region"></div>
-<div id="logout-region">#logout-region</div>
+
+
+<!-- <div id="new-region"></div> -->
+
+<!-- <div id="logout-region">#logout-region</div> -->
+
+<dl>
+  <div id="login-region"></div>
+  <div id="panel-region"></div>
+  <div id="conferences-region"></div>
+  <div id="fav-region"></div>
+</dl>
+<ul id="bottom-links">
+  <li><a href="/settings">Account</a></li>
+  <li><a href="/tools">Tools</a></li>
+  <li><a href="/logout">Sign Out</a></li>
+</ul>

@@ -10,10 +10,14 @@
       panelRegion: "#panel-region"
       newRegion: "#new-region"
       conferencesRegion: "#conferences-region"
+      favRegion: "#fav-region"
 
 
   class Show.Name extends App.Views.ItemView
     template: "profile/show/_name"
+
+    triggers:
+      "click #close-menu" : "close:button:clicked"
 
 
   class Show.Login extends App.Views.ItemView
@@ -24,6 +28,9 @@
 
     triggers:
       "click #new-conference" : "new:conference:button:clicked"
+
+  class Show.Fav extends App.Views.ItemView
+    template: "profile/show/_fav"
 
   class Show.Conference extends App.Views.ItemView
     template: "profile/show/_conf_single"

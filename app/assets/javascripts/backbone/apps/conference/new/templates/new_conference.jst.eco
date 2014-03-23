@@ -1,10 +1,6 @@
 <div id="new-conference">
-  <div class="row">
-    <div class="col-md-6 columns">
-      <p>What is the name of the Conference?</p>
-      <div class="col-md-6">
-        <input type="text" name="name" placeholder="Conference Name" />
-      </div>
-    </div>
-  </div>
+  <p>
+    <label class="">What is the name of the Conference?</label>
+    <input type="text" name="name" placeholder="Conference Name" />
+  </p>
 </div>

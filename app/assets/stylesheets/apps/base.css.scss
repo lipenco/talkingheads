@@ -8,21 +8,23 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+	text-decoration: none;
+
 
 
 }
 
 body {
-  background: #d95d5d;
-  background-image: -moz-linear-gradient(#65a383, #58ca8e);
-  background-image: -webkit-linear-gradient(#65a383, #58ca8e);
-  background-image: linear-gradient(#65a383, #58ca8e);
-  // color: #333333;
+  background-image: -moz-linear-gradient(#3a3a3a, #252525);
+  background-image: -webkit-linear-gradient(#3a3a3a, #252525);
+  background-image: linear-gradient(#3a3a3a, #252525);
+	background-image: url('/assets/bg.jpg');
   height: 100%;
   background-attachment: fixed;
 	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 	color: #333;
 	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
 
 }
 
@@ -30,6 +32,7 @@ body {
 
 ul {
   list-style-type: none;
+	text-decoration: none;
 }
 
 .opacity    {
@@ -78,23 +81,23 @@ ul {
 
 
 
-#meny {
- background: #d95d5d;
- background-image: -moz-linear-gradient(#65a383, #58ca8e);
- background-image: -webkit-linear-gradient(#65a383, #58ca8e);
- background-image: linear-gradient(#65a383, #58ca8e);
- color: #333333;
- // overflow: visible;
- // height: 100%;
- // position: fixed;
- // max-height: 100%;
-
-  position: fixed;
-  top: 0;
-  right:0;
-  bottom:0;
+#meny, .meny-active #meny {
+ color: #555;
   border-radius: 0;
   overflow-y: hidden;
+
+	font-size: 1.6rem;
+	font-weight: 400;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100%;
+
+	bottom: 0;
+	width: 280px;
+	background-color: #252525;
+	overflow: hidden;
+	display: none;
+	padding:0;
 
 
 }

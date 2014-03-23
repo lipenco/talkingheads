@@ -1,3 +1,12 @@
-<div class="col-md-4">
+<!-- <div class="col-md-4">
     <button id="new-conference" type="submit" class="btn btn-primary">Add New Conference</button>
-</div>
+</div> -->
+
+
+<dt>New Conference</dt>
+
+<dd class="empty">
+  <p class="small">Did you organize a conference? Show your videos and make your event famous.</p>
+  <a id="new-conference" class="button small black"> + Create New Conference</a>
+  <div id="new-region"></div>
+</dd>
