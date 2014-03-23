@@ -26,15 +26,9 @@
 
     panelRegion: ->
       panelView = @getPanelView()
-
-      @listenTo panelView, "new:conference:button:clicked", =>
-        @newRegion()
-
       @show panelView, region: @layout.panelRegion
       # @layout.panelRegion.show panelView
 
-    newRegion: ->
-      App.execute "new:conference:single", @layout.newRegion
 
 
     conferenceRegion: (conferences) ->

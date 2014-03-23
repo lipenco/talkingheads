@@ -1,5 +1,7 @@
 class ConferencesController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  before_action :require_login, only: [:destroy, :create, :update, :new]
+  before_action :set_current_user, only: [:destroy, :create, :update, :new]
   respond_to :json
 
   def index
@@ -12,7 +14,7 @@ class ConferencesController < ApplicationController
   end
 
   def create
-    @single = Conference.new(conference_params)
+    @single = @current_user.conferences.new(conference_params)
     if @single.save
       render "conferences/show"
     else
@@ -22,7 +24,6 @@ class ConferencesController < ApplicationController
 
   def update
     @single = Conference.find params[:id]
-    binding.pry
     if @single.update_attributes conference_params
       render "conferences/show"
     else
@@ -41,6 +42,17 @@ class ConferencesController < ApplicationController
   end
 
   private
+
+  def set_current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      render json: {} # halts request cycle
+    end
+  end
 
   def conference_params
     params.permit(:name, :tags, :date, :organizer, :description, :place, :talks_attributes => [:title, :video_url])

@@ -9,6 +9,14 @@
       App.vent.trigger "header:choose", "Profile"
       meny.open()
       new ProfileApp.Show.Controller
+  #
+  #   newConference: (region) ->
+  #     new App.ConferenceApp.New.Controller
+  #       region: region
+  #
+  #
+  # App.commands.setHandler "new:conference:single", (region) ->
+  #   API.newConference region
 
 
   App.addInitializer ->

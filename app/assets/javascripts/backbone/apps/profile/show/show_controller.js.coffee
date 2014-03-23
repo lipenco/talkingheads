@@ -14,15 +14,27 @@
       @listenTo @layout, "show", =>
         @nameRegion currentUser
         @loginRegion() if currentUserId is undefined
+        @panelRegion() if currentUserId
 
         # @logoutRegion currentUserName
 
       # @show @layout, loading: true
       App.menyRegion.show @layout
 
+    panelRegion: ->
+      panelView = @getPanelView()
+
+      @listenTo panelView, "new:conference:button:clicked", =>
+        @newRegion()
+
+      @show panelView, region: @layout.panelRegion
+
     loginRegion: ->
       loginView = @getLoginView()
       @layout.loginRegion.show loginView
+
+    newRegion: ->
+      App.execute "new:conference:single", @layout.newRegion
 
 
     nameRegion: (currentUser) ->
@@ -30,6 +42,8 @@
       @layout.nameRegion.show nameView
 
 
+    getPanelView: ->
+      new Show.Panel
 
     getLoginView: ->
       new Show.Login

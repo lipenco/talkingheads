@@ -20,8 +20,6 @@
     template: "conference/list/_panel"
     tagName: "ul"
 
-    triggers:
-      "click #new-conference" : "new:conference:button:clicked"
 
   class List.ConferenceSingle extends App.Views.ItemView
     template: "conference/list/_conference_single"

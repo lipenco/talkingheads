@@ -1,10 +1,7 @@
 <div class="row">
-  <div class="col-md-4">
-      <button id="new-conference" type="submit" class="btn btn-primary">Add New Conference</button>
-  </div>
   <div class="col-md-8">
     <div class="sub-nav">
-   <!--    <dt>Sort:</dt>
+<!--       <dt>Sort:</dt>
       <dd class="active">
         <a href="#">Name</a>
       </dd>
