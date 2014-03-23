@@ -1,4 +1,4 @@
-<p> video goes here </p>
+
 
 <p> <%= @video_url %> </p>
 

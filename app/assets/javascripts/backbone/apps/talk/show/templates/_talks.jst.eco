@@ -1,4 +1,3 @@
-<legend>Talks</legend>
-  <div class="row">
-     <ul></ul>
-  </div>
+
+    <h4>Other Talks</h4>
+     <ul class="talks" id="talks-menu"></ul>

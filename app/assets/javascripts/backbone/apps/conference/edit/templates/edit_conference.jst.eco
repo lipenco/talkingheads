@@ -29,7 +29,7 @@
   </div>
 
     <div class="col-md-5 ">
-    <ul id="talks">
+    <ul class="talks">
       <% if @talks.length: %>
           <% for talk in @talks: %>
 
