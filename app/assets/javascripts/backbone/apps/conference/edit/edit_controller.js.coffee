@@ -16,6 +16,7 @@
       @listenTo @layout, "show", =>
         @titleRegion conferences
         @formRegion conferences
+        @panelRegion conferences
 
       @show @layout, loading: true
 
@@ -23,6 +24,17 @@
       titleView = @getTitleView conferences
       @show titleView, region: @layout.titleRegion
       # @layout.titleRegion.show titleView
+
+    panelRegion: (conferences) ->
+      panelView = @getPanelView()
+      @listenTo panelView, "new:talk:button:clicked", =>
+        @newRegion(conferences)
+
+      @show panelView, region: @layout.panelRegion
+
+    newRegion: (conferences) ->
+      conference_id = conferences.id
+      App.execute "new:talk:single", conference_id, @layout.newRegion
 
 
     formRegion: (conferences) ->
@@ -43,6 +55,9 @@
     getLayoutView: (conferences) ->
       new Edit.Layout
         model: conferences
+
+    getPanelView: ->
+      new Edit.Panel
 
     getEditView: (conferences) ->
       new Edit.Conference

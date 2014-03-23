@@ -7,18 +7,10 @@
       titleRegion:  "#title-region"
       conferenceRegion: "#conference-region"
       talksRegion:     "#talks-region"
-      panelRegion:     "#talks-panel-region"
-      newRegion:        "#new-talk-region"
+
 
   class Show.Title extends App.Views.ItemView
     template: "conference/show/show_title"
-
-  class Show.Panel extends App.Views.ItemView
-    template: "conference/show/_panel"
-    tagName: "ul"
-
-    triggers:
-      "click #new-talk" : "new:talk:button:clicked"
 
 
   class Show.Conference extends App.Views.ItemView

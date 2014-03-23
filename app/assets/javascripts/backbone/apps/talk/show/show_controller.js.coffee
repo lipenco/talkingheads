@@ -51,10 +51,6 @@
       pop = Popcorn.youtube( "#youtube", "#{video}" )
 
 
-    childElementsFadeIn: ->
-      console.log "triggered"
-
-
     manageHighlight: (childView) ->
       $("li").removeClass('highlight')
       childView.addClass('highlight')

@@ -6,7 +6,17 @@
     regions:
       titleRegion:  "#title-region"
       formRegion:   "#form-region"
-      newTalkRegion:  "#new-talk-region"
+      panelRegion:  "#talks-panel-region"
+      newRegion:    "#new-talk-region"
+
+
+  class Edit.Panel extends App.Views.ItemView
+    template: "conference/edit/_panel"
+    tagName: "ul"
+
+    triggers:
+      "click #new-talk" : "new:talk:button:clicked"
+
 
   class Edit.Title extends App.Views.ItemView
     template: "conference/edit/edit_title"

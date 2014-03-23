@@ -31,11 +31,11 @@
   App.commands.setHandler "new:conference:single", (region) ->
     API.newConference region
 
-  App.vent.on "conference:single:edit conference:created", (single) ->
+  App.vent.on "conference:single:edit conference:created talk:created", (single) ->
     App.navigate Routes.edit_conference_path(single.id)
     API.edit single.id, single
 
-  App.vent.on "conference:single:details talk:created", (single) ->
+  App.vent.on "conference:single:details", (single) ->
     App.navigate Routes.conference_path(single.id)
     API.show single.id, single
 
