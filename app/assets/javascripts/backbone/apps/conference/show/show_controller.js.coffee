@@ -49,6 +49,7 @@
 
 
     getTalksView: (single) ->
+      window.single = single
       talks = single.get("talks")
       new Show.Talks
         collection: talks

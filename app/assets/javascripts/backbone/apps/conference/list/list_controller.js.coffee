@@ -35,9 +35,6 @@
     conferenceRegion: (conferences) ->
       conferenceView = @getConferenceView conferences
 
-      @listenTo conferenceView, "childview:conference:single:edit", (child, args) ->
-        App.vent.trigger "conference:single:edit", args.model
-
       @listenTo conferenceView, "childview:conference:single:details", (child, args) ->
         App.vent.trigger "conference:single:details", args.model
 

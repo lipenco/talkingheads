@@ -17,6 +17,7 @@
         region: region
 
     edit: (id, single) ->
+      window.idd = single
       new ConferenceApp.Edit.Controller
         id: id
         conferences: single
@@ -40,7 +41,7 @@
     API.show single.id, single
 
 
-  App.vent.on "conference:cancelled conference:updated", (conferences) ->
+  App.vent.on "conference:cancelled conference:updated menu:closed", (conferences) ->
     App.navigate Routes.conferences_path()
     API.list()
 

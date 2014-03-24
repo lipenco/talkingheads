@@ -11,7 +11,7 @@
                   <li><a><span class="icon-rss"></span></a></li>
                   <li><a><span class="icon-comment"></span></a></li>
                   <li><a><span class="icon-share "></span></a></li>
-                  <li><a><span class="icon-remove"></span><div class="talk-delete"> del</div></a></li>
+                  <li><a><span class="icon-remove"></span></a></li>
                 </ul>
           </div>
       </div>

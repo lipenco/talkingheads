@@ -16,6 +16,7 @@
       @listenTo @layout, "show", =>
         @titleRegion conferences
         @formRegion conferences
+        @talksListRegion conferences
         @panelRegion conferences
 
       @show @layout, loading: true
@@ -24,6 +25,11 @@
       titleView = @getTitleView conferences
       @show titleView, region: @layout.titleRegion
       # @layout.titleRegion.show titleView
+
+    talksListRegion: (conferences) ->
+      talksListView = @getTalksListView conferences
+      @show talksListView, region: @layout.talksListRegion
+
 
     panelRegion: (conferences) ->
       panelView = @getPanelView()
@@ -56,6 +62,11 @@
     getTitleView: (conferences) ->
       new Edit.Title
         model: conferences
+
+    getTalksListView: (conferences) ->
+      talks = conferences.get("talks")
+      new Edit.Talks
+        collection: talks
 
     getLayoutView: (conferences) ->
       new Edit.Layout

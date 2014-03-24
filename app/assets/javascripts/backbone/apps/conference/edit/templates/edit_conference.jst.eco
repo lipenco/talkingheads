@@ -1,7 +1,4 @@
 <div id="edit-conference">
-
-  <div class="row">
-    <div class="col-md-4 col-md-offset-1">
       <p>
        <label class="">Name</label>
        <input type="text" name="name" value="<%= @name %>" />
@@ -29,42 +26,5 @@
      <p>
        <label class="conference-delete"><span class="glyphicon glyphicon-remove"></span> Delete this conference</label>
       </p>
-  </div>
-
-    <div class="col-md-5 ">
-    <ul class="talks">
-      <% if @talks.length: %>
-          <% for talk in @talks: %>
-
-      <li class="next">
-          <span class="dot"></span>
-          <h2><a href="#conferences/<%= @id %>/talks/<%= talk.id %>"><%= talk.title %></a></h2>
-          <p class="small meta">
-            <a href="" target="_blank">22 comments</a>
-            <span>•</span>
-            <a href="" class="popup">1111 views</a>
-            <span>•</span>
-            <a href="">30 upvotes</a>
-          </p>
-      </li>
-          <% end %>
-        <% else: %>
-      <li class="next">
-        <span class="dot"></span>
-        <h2><a href="">No Talks Here Yet</a></h2>
-        <p class="small meta">
-          Please add talks, your conference cannot go public without them.
-        </p>
-      </li>
-     <% end %>
-   </ul>
-     <div id="talks-panel-region"></div>
-     <div id="new-talk-region"></div>
-   </div>
- </div>
-
-
-
-<!--   <div id="new-talk" class="btn"> Add Talk </div> -->
 
 </div>

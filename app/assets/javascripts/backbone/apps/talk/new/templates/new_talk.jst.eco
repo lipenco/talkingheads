@@ -1,17 +1,21 @@
-<div id="new-conference">
-  <div class="row">
-    <div class="col-md-6 columns">
-      <p>What is the title of the Talk?</p>
-      <div class="col-md-6">
 
-        <input type="text" name="title" placeholder="Talk Title" />
-        <input type="text" name="video_url" placeholder="video_url" />
-        <input type="text" name="video_url" placeholder="slides_url" />
-        <input type="text" name="speaker" placeholder="speaker" />
-
-<!--         <input type="text" name="talks_attributes[1][title]" placeholder="Talk Title" />
-        <input type="text" name="talks_attributes[1][video_url]" placeholder="url" /> -->
-      </div>
-    </div>
-  </div>
-</div>
+<p>
+ <label class="">Title</label>
+ <input type="text" name="title" placeholder="Title" />
+</p>
+<p>
+ <label class="">Description</label>
+ <input type="text" name="description" placeholder="Description" />
+</p>
+<p>
+ <label class="">Video url (youtube.com, vimeo.com)</label>
+ <input type="text" name="video_url" placeholder="video_url" />
+</p>
+<p>
+  <label class="">Slides url</label>
+  <input type="text" name="slides_url" placeholder="slides_url" />
+</p>
+<p>
+  <label class="">Speaker</label>
+  <input type="text" name="speaker" placeholder="speaker"/>
+</p>

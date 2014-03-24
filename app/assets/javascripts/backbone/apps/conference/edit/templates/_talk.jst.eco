@@ -1,0 +1,14 @@
+
+  <li class="next">
+    <span class="dot glyphicon glyphicon-chevron-right"></span>
+    <h2><a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><%= @title %></a></h2>
+    <p class="small meta">
+      <a href="" target="_blank">22 comments</a>
+      <span>•</span>
+      <a href="" class="popup">1111 views</a>
+      <span>•</span>
+      <a href="">30 upvotes</a>
+      <span>•</span>
+      <a class="edit-talk">edit</a>
+    </p>
+  </li>

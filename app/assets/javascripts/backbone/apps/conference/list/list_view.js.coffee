@@ -26,9 +26,7 @@
     className: 'conference_li'
     tagName: "li"
 
-
     triggers:
-      "click .conference-edit"   : "conference:single:edit"
       "click"                    : "conference:single:details"
 
   class List.Conference extends App.Views.CompositeView

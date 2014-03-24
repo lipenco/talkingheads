@@ -1,17 +1,6 @@
 
+<p> <%= @description %> </p>
 
 <p> <%= @video_url %> </p>
 
-
-
 <div id="youtube" style="width:600px;height:400px;"></div>
-<div id="foo"></div>
-
-
-<script>
-
-
-
-
-
-</script>

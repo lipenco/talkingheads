@@ -28,6 +28,7 @@
       listView = @getListView user_list
 
       @listenTo listView, "childview:conference:single:edit", (child, args) ->
+        window.child = args
         App.vent.trigger "conference:single:edit", args.model
 
       @listenTo listView, "childview:conference:single:details", (child, args) ->
@@ -60,6 +61,7 @@
       nameView = @getNameView currentUser
 
       @listenTo nameView, "close:button:clicked", ->
+        App.vent.trigger "menu:closed"
         meny.close()
 
       @layout.nameRegion.show nameView

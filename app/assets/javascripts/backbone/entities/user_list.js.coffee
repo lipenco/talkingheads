@@ -4,6 +4,12 @@
     # initialize: (@conference_id) ->
     urlRoot: -> Routes.conferences_path()
 
+    relations : [
+          type: Backbone.Many,
+          key : 'talks',
+          relatedModel : Entities.Talk
+          ]
+
   class Entities.UserListCollection extends Entities.Collection
   	model: Entities.UserList
   	url: -> '/user_list'

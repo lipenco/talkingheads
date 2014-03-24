@@ -1,0 +1,7 @@
+ <li class="next">
+      <span class="dot glyphicon glyphicon-chevron-right"></span>
+      <h2><a href="">No Talks Here Yet</a></h2>
+      <p class="small meta">
+        Please add talks, your conference cannot go public without them.
+      </p>
+  </li>
