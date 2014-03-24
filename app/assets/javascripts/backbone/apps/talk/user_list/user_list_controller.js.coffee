@@ -1,6 +1,6 @@
-@Demo.module "TalkApp.List", (List, App, Backbone, Marionette, $, _) ->
+@Demo.module "TalkApp.UserTalkList", (UserTalkList, App, Backbone, Marionette, $, _) ->
 
-  class List.Controller extends App.Controllers.Application
+  class UserTalkList.Controller extends App.Controllers.Application
 
     initialize: (options) ->
       { conference_id, talks } = options
@@ -16,14 +16,18 @@
 
     talksRegion: (talks) ->
       talksView = @getTalksView talks
+
+      @listenTo talksView, "childview:talk:single:render", (child, args) ->
+        App.vent.trigger "talk:single:render", args.model
+
       @show talksView, region: @layout.talksRegion
 
 
 
     getTalksView: (talks) ->
-      new List.Talks
+      new UserTalkList.Talks
         collection: talks
 
 
     getLayoutView: ->
-      new List.Layout
+      new UserTalkList.Layout

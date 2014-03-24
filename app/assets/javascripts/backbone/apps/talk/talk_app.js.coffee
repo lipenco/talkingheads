@@ -16,8 +16,8 @@
         conference_id: conference_id
         region: region
 
-    listTalk: (conference_id, talks, region) ->
-      new TalkApp.List.Controller
+    userListTalk: (conference_id, talks, region) ->
+      new TalkApp.UserTalkList.Controller
         conference_id: conference_id
         talks: talks
         region: region
@@ -35,13 +35,16 @@
     talk_id = talk.get("id")
     id = talk.get("conference_id")
     App.navigate Routes.conference_talk_path(id, talk_id)
+    API.showTalk  id, talk_id
 
   App.commands.setHandler "new:talk:single", (conference_id, region) ->
     API.newTalk conference_id, region
 
 
   App.commands.setHandler "talk:edit:list", (conference_id, talks, region) ->
-    API.listTalk conference_id, talks, region
+    API.userListTalk conference_id, talks, region
+
+
 
 
 
