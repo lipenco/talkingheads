@@ -6,6 +6,8 @@
 
     regions:
       talksRegion:  "#talks-region"
+      panelRegion:  "#talks-panel-region"
+      newRegion:    "#new-talk-region"
 
 
 
@@ -23,8 +25,18 @@
     tagName: "li"
 
 
+
   class UserTalkList.Talks extends App.Views.CompositeView
     template: "talk/user_list/_talks"
     itemView: UserTalkList.Talk
     emptyView: UserTalkList.Empty
     itemViewContainer: "ul"
+
+
+
+  class UserTalkList.Panel extends App.Views.ItemView
+    template: "talk/user_list/_panel"
+    tagName: "ul"
+
+    triggers:
+      "click #new-talk" : "new:talk:button:clicked"

@@ -11,8 +11,22 @@
 
       @listenTo @layout, "show", =>
         @talksRegion talks
+        @panelRegion conference_id
 
       @show @layout, loading: true
+
+
+
+    panelRegion: (conference_id) ->
+      panelView = @getPanelView()
+      @listenTo panelView, "new:talk:button:clicked", =>
+        @newRegion(conference_id)
+
+      @show panelView, region: @layout.panelRegion
+
+    newRegion:(conference_id) ->
+
+      App.execute "new:talk:single", conference_id, @layout.newRegion
 
 
     talksRegion: (talks) ->
@@ -20,10 +34,6 @@
 
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         App.vent.trigger "talk:single:render", args.model
-
-      @listenTo talksView, "render", ->
-        console.log "listening"
-
 
       @show talksView, region: @layout.talksRegion
 
@@ -33,6 +43,8 @@
       new UserTalkList.Talks
         collection: talks
 
+    getPanelView: ->
+      new UserTalkList.Panel
 
     getLayoutView: ->
       new UserTalkList.Layout
