@@ -13,7 +13,7 @@ class TalksController < ApplicationController
   end
 
   def new
-     @talk = Talk.new(talk_params)
+    @talk = Talk.new(talk_params)
   end
 
   def create

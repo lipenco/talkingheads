@@ -4,7 +4,8 @@
 
     initialize: (options) ->
       { conference_id, talks } = options
-      talks = talks
+      # talks = talks
+      talks or= App.request "talk:entities", conference_id
 
       @layout = @getLayoutView talks
 
@@ -19,6 +20,10 @@
 
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         App.vent.trigger "talk:single:render", args.model
+
+      @listenTo talksView, "render", ->
+        console.log "listening"
+
 
       @show talksView, region: @layout.talksRegion
 
