@@ -4,12 +4,7 @@
 
     initialize: (options) ->
       { conference_id } = options
-      console.log conference_id
       talk = App.request "new:talk:entity", conference_id
-
-      # @listenTo talk, "updated", ->
-      #   console.log "updated"
-      #   App.vent.trigger "talk:updated", talk
 
       @listenTo talk, "created", ->
         console.log "created"

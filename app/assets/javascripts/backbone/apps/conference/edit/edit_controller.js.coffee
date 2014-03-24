@@ -27,8 +27,9 @@
       # @layout.titleRegion.show titleView
 
     talksListRegion: (conferences) ->
-      talksListView = @getTalksListView conferences
-      @show talksListView, region: @layout.talksListRegion
+      conference_id = conferences.id
+      talks = conferences.get("talks")
+      App.execute "talk:edit:list", conference_id, talks, @layout.talksListRegion
 
 
     panelRegion: (conferences) ->
@@ -63,10 +64,6 @@
       new Edit.Title
         model: conferences
 
-    getTalksListView: (conferences) ->
-      talks = conferences.get("talks")
-      new Edit.Talks
-        collection: talks
 
     getLayoutView: (conferences) ->
       new Edit.Layout

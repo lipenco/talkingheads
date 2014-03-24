@@ -18,7 +18,6 @@ class TalksController < ApplicationController
 
   def create
     @talk = Talk.new(talk_params.merge(:conference_id => params[:conference_id]))
-    binding.pry
 
     if @talk.save
       @single = Conference.find(params[:conference_id])

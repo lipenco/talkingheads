@@ -30,23 +30,3 @@
 
     triggers:
       "click .conference-delete" : "conference:delete:clicked"
-
-
-  class Edit.Talk extends App.Views.ItemView
-    template: "conference/edit/_talk"
-    className: 'talk_li'
-    tagName: "li"
-
-    triggers:
-      "click .talk-delete" : "talk:delete:clicked"
-      "click"              : "talk:single:clicked"
-
-  class Edit.Empty extends App.Views.ItemView
-	   template: "conference/edit/_empty"
-	   tagName: "li"
-
-  class Edit.Talks extends App.Views.CompositeView
-    template: "conference/edit/_talks"
-    itemView: Edit.Talk
-    emptyView: Edit.Empty
-    itemViewContainer: "ul"

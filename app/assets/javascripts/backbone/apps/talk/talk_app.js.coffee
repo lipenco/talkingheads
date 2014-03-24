@@ -16,6 +16,12 @@
         conference_id: conference_id
         region: region
 
+    listTalk: (conference_id, talks, region) ->
+      new TalkApp.List.Controller
+        conference_id: conference_id
+        talks: talks
+        region: region
+
 
 
 
@@ -32,6 +38,10 @@
 
   App.commands.setHandler "new:talk:single", (conference_id, region) ->
     API.newTalk conference_id, region
+
+
+  App.commands.setHandler "talk:edit:list", (conference_id, talks, region) ->
+    API.listTalk conference_id, talks, region
 
 
 
