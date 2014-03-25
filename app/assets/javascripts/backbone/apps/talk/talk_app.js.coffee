@@ -44,7 +44,17 @@
   App.commands.setHandler "talk:edit:list", (conference_id, talks, region) ->
     API.userListTalk conference_id, talks, region
 
-  # App.vent.on "talk:created", (talk, talks, region) ->
+  App.vent.on "talk:created", (talk) ->
+
+
+    # App.vent.trigger "nav:choose", "Deliveries"
+
+  # App.commands.setHandler "talk:created" ->
+    # API.newCrew region
+
+
+
+
   #   conference_id = talk.conference_id
   #   API.userListTalk conference_id, talks, region
 
@@ -53,6 +63,8 @@
   #   API.userListTalk conference_id, talk
   #   App.navigate Routes.edit_conference_path(talk.conference_id)
   #   API.edit talk.conference_id, talk
+
+
 
 
 

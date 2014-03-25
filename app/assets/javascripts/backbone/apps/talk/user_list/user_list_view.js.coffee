@@ -24,6 +24,9 @@
     template: "talk/user_list/_empty"
     tagName: "li"
 
+    modelEvents:
+      "updated" : "talk:created"
+      "created" : "talk:created"
 
 
   class UserTalkList.Talks extends App.Views.CompositeView

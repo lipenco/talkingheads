@@ -7,7 +7,9 @@
       talk = App.request "new:talk:entity", conference_id
 
       @listenTo talk, "created", ->
-        console.log "created"
+        @region.close()
+        # console.log "created"
+        # App.execute "new:talk:added", @talksRegion
         App.vent.trigger "talk:created", talk
 
       newView = @getNewView talk

@@ -6,10 +6,13 @@
     url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 
-  class Entities.TalkCollection  extends App.Entities.Collection
 
+  class Entities.TalkCollection  extends App.Entities.Collection
     model: Entities.Talk
+
     initialize: (@id) ->
+       @on "render", console.log "added"
+        # this.on(‘change’,console.log "changeed",this)
 
     url: -> "/conferences/#{@id}/talks/"
 

@@ -50,10 +50,10 @@
     App.navigate Routes.conferences_path()
     API.list()
 
-  App.vent.on "talk:created", (talk, talks, region) ->
-    conference_id = talk.conference_id
-    API.edit conference_id
-    # API.userListTalk conference_id, talks, region
+  # App.vent.on "talk:created", (talk, talks, region) ->
+  #   conference_id = talk.conference_id
+  #   API.edit conference_id
+  #
 
 
 
