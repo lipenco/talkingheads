@@ -2,7 +2,7 @@
 
   class TalkApp.Router extends Marionette.AppRouter
     appRoutes:
-      "conferences/:id/talks/:id" : "showTalk"
+      "conferences/:id/talks/:id"      : "showTalk"
       "conferences/:id/talks/:id/edit" : "editTalk"
 
   API =
@@ -12,12 +12,13 @@
         talk_id: talk_id
         talk: talk
 
-    editTalk: (id, talk_id, talk) ->
+    editTalk: (id, talk_id, talkk) ->
       new TalkApp.Edit.Controller
-        region: App.formRegion
         id: id
         talk_id: talk_id
-        talk: talk
+        talk: talkk
+        region: App.formRegion
+
 
 
     newTalk: (conference_id, region) ->
@@ -50,24 +51,19 @@
   App.commands.setHandler "new:talk:single", (conference_id, region) ->
     API.newTalk conference_id, region
 
-  App.vent.on "talk:edit:clicked", (id, talk_id, talk) ->
-    id = talk.get("conference_id")
-    talk_id = talk.get("id")
+  App.vent.on "talk:edit:clickedd", (id, talk_id, talkk) ->
     App.navigate Routes.edit_conference_talk_path(id, talk_id)
-    API.editTalk id, talk_id, talk
+    API.editTalk id, talk_id, talkk
 
   App.commands.setHandler "talk:edit:list", (conference_id, talks) ->
     API.userListTalk conference_id, talks
 
-  # App.vent.on "talk:created", (talk) ->
-  #   console.log "talk created do"
-  #   window.tt = talk
-  #   conference_id = talk.conference_id
-    # API.userListTalk conference_id
-
-  # App.vent.on "talk:created", (talk, talks, region) ->
-  #   conference_id = talk.conference_id
-  #   API.userListTalk conference_id
+  App.vent.on "talk:updated", (talk) ->
+    window.ttt = talk
+    talk_id = talk.talk_id
+    id = talk.id
+    App.navigate Routes.conference_talk_path(id, talk_id)
+    API.showTalk  id, talk_id
 
 
 

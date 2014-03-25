@@ -26,13 +26,12 @@
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         App.vent.trigger "talk:single:render", args.model
 
-      @listenTo talksView, "childview:talk:edit:clicked", (child, args) ->
-        talk = child.model
-        talk_id = child.model.id
-        conference_id = child.model.conference_id
-        childview = child.$el
-        @manageHighlight(childview)
-        App.vent.trigger "talk:edit:clicked", conference_id, talk_id, talk
+      @listenTo talksView, "childview:talk:edit:clicked", (talk) ->
+        talkk = talk.model
+        id = talkk.get("conference_id")
+        talk_id = talkk.get("id")
+        window.talk = talkk
+        App.vent.trigger "talk:edit:clickedd", id, talk_id, talkk
 
 
 

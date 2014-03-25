@@ -37,24 +37,17 @@
     App.navigate Routes.edit_conference_path(id)
     API.edit id, single
 
-  # App.vent.on "talk:created", (talk) ->
-  #   console.log talk
-  #   App.navigate Routes.edit_conference_path(talk.conference_id)
-  #   API.edit talk.conference_id, talk
 
   App.vent.on "conference:single:details", (single) ->
     App.navigate Routes.conference_path(single.id)
     API.show single.id, single
 
 
-  App.vent.on "conference:cancelled conference:updated menu:closed", (conferences) ->
+  App.vent.on "conference:cancelled conference:updated menu:closed talk:cancelled", (conferences) ->
     App.navigate Routes.conferences_path()
     API.list()
 
-  # App.vent.on "talk:created", (talk, talks, region) ->
-  #   conference_id = talk.conference_id
-  #   API.edit conference_id
-    # API.userListTalk conference_id, talks, region
+
 
 
 
