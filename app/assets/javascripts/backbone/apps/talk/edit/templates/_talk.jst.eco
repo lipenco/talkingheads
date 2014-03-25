@@ -1,0 +1,27 @@
+<div id="edit-conference">
+      <p>
+       <label class="">Title</label>
+       <input type="text" name="title" value="<%= @title %>" />
+     </p>
+      <p>
+       <label class="">Video url</label>
+       <input type="text" name="video_url" value="<%= @video_url %>" />
+     </p>
+     <p>
+       <label class="">Slides</label>
+       <input type="text" name="slides_url" value="<%= @slides_url %>" />
+     </p>
+     <p>
+       <label class="">Speaker</label>
+       <input type="text" name="speaker" value="<%= @speaker %>" />
+     </p>
+     <p>
+       <label class="">Description</label>
+       <input type="text" name="description" value="<%= @description %>" />
+     </p>
+
+     <p>
+       <label class="talk-delete"><span class="glyphicon glyphicon-remove"></span> Delete this conference</label>
+      </p>
+
+</div>

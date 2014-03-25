@@ -3,6 +3,7 @@
   class TalkApp.Router extends Marionette.AppRouter
     appRoutes:
       "conferences/:id/talks/:id" : "showTalk"
+      "conferences/:id/talks/:id/edit" : "editTalk"
 
   API =
     showTalk: (id, talk_id, talk) ->
@@ -10,6 +11,13 @@
         id: id
         talk_id: talk_id
         talk: talk
+
+    editTalk: (id, talk_id, talk) ->
+      new TalkApp.Edit.Controller
+        id: id
+        talk_id: talk_id
+        talk: talk
+
 
     newTalk: (conference_id, region) ->
       new TalkApp.New.Controller
@@ -40,22 +48,14 @@
   App.commands.setHandler "new:talk:single", (conference_id, region) ->
     API.newTalk conference_id, region
 
+  App.vent.on "talk:edit:clicked", (id, talk_id, talk) ->
+    id = talk.get("conference_id")
+    talk_id = talk.get("id")
+    App.navigate Routes.edit_conference_talk_path(id, talk_id)
+    API.editTalk id, talk_id, talk
 
   App.commands.setHandler "talk:edit:list", (conference_id, talks, region) ->
     API.userListTalk conference_id, talks, region
-
-  # App.vent.on "talk:created", (talk, talks, region) ->
-  #   conference_id = talk.conference_id
-  #   API.userListTalk conference_id, talks, region
-
-  # App.vent.on "talk:created", (talk) ->
-  #   conference_id = talk.conference_id
-  #   API.userListTalk conference_id, talk
-  #   App.navigate Routes.edit_conference_path(talk.conference_id)
-  #   API.edit talk.conference_id, talk
-
-
-
 
 
 

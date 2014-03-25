@@ -15,7 +15,7 @@
     tagName: "li"
 
     triggers:
-      # "click .talk-delete" : "talk:delete:clicked"
+      "click .talk-edit"   : "talk:edit:clicked"
       "click"              : "talk:single:render"
 
   class UserTalkList.Empty extends App.Views.ItemView

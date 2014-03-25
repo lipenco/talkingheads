@@ -21,8 +21,11 @@
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         App.vent.trigger "talk:single:render", args.model
 
-      @listenTo talksView, "render", ->
-        console.log "listening"
+      @listenTo talksView, "childview:talk:edit:clicked", (child, args) ->
+        talk = child.model
+        talk_id = child.model.id
+        conference_id = child.model.conference_id.conference_id
+        App.vent.trigger "talk:edit:clicked", conference_id, talk_id, talk
 
 
       @show talksView, region: @layout.talksRegion

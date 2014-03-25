@@ -1,0 +1,17 @@
+<div id="edit-conference-layout">
+  <div id="title-region"></div>
+  <section>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1">
+        <div id="form-region"></div>
+      </div>
+      <div class="col-md-5 ">
+<!--         <div id="talk-list-region"></div> -->
+      </div>
+    </div>
+
+<!--         <div id="talks-panel-reg"></div>ion"></div>
+        <div id="new-talk-region"></div> -->
+  </section>
+
+</div>
