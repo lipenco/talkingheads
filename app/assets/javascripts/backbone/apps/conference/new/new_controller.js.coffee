@@ -9,6 +9,10 @@
       @listenTo conference, "created", ->
         meny.close()
         console.log "created"
+        id = conference.id
+        App.vent.trigger "conference:created", id, conference
+
+
 
 
       newView = @getNewView conference
