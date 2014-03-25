@@ -10,18 +10,18 @@
   #         relatedModel : Entities.Talk
   #         ]
 
-  class Entities.UserListCollection extends Entities.Collection
-  	model: Entities.Conference
-  	url: -> '/user_list'
-
-  API =
-    getCurrentUserList: ->
-      user_list = new Entities.UserListCollection
-      user_list.fetch
-        reset: true
-      user_list
-      # window.ss = user_list
-
-
-  App.reqres.setHandler "user_list:entities", ->
-    API.getCurrentUserList()
+  # class Entities.UserListCollection extends Entities.Collection
+  # 	model: Entities.Conference
+  # 	url: -> '/user_list'
+  #
+  # API =
+  #   getCurrentUserList: ->
+  #     user_list = new Entities.UserListCollection
+  #     user_list.fetch
+  #       reset: true
+  #     user_list
+  #     # window.ss = user_list
+  #
+  #
+  # App.reqres.setHandler "user_list:entities", ->
+  #   API.getCurrentUserList()

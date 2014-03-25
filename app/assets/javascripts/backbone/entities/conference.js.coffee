@@ -4,8 +4,6 @@
 
     initialize: (@conference_id, @talk_id) ->
 
-    # url: -> "/conferences/75/talks/#{@model.id or ""}"
-
     url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 
@@ -15,6 +13,7 @@
     initialize: (@id) ->
 
     url: -> "/conferences/#{@id}/talks"
+
 
 
   class Entities.Conference extends App.Entities.Model
@@ -34,6 +33,11 @@
     url: -> Routes.conferences_path()
 
 
+  class Entities.UserListCollection extends Entities.Collection
+    model: Entities.Conference
+    url: -> '/user_list'
+
+
 
   API =
     getConferences: ->
@@ -49,8 +53,8 @@
       single
 
 
-    getTalk: (id, talk_id) ->
-      talk = new Entities.Talk(id, talk_id)
+    getTalk: (conference_id, talk_id) ->
+      talk = new Entities.Talk(conference_id, talk_id)
         # conference_id: id
         # id: talk_id
       talk.fetch()
@@ -66,11 +70,25 @@
       talks
 
 
+    getCurrentUserList: ->
+      user_list = new Entities.UserListCollection
+      user_list.fetch
+        reset: true
+      user_list
+      # window.ss = user_list
+
+
+
     newSingle: ->
       new Entities.Conference
 
-    newTalk: (conference_id) ->
-      new Entities.Talk(conference_id)
+    newTalk: (id) ->
+      new Entities.Talk(id)
+
+
+
+  App.reqres.setHandler "user_list:entities", ->
+    API.getCurrentUserList()
 
 
   App.reqres.setHandler "conference:entities", ->
@@ -86,11 +104,11 @@
   # App.reqres.setHandler "new:talk:entity", (conference_id) ->
   #   API.getSingle(conference_id)
 
-  App.reqres.setHandler "talk:entities", (id) ->
-    API.getTalks(id)
+  App.reqres.setHandler "talk:entities", (conference_id) ->
+    API.getTalks(conference_id)
 
-  App.reqres.setHandler "new:talk:entity", (conference_id) ->
-    API.newTalk(conference_id)
+  App.reqres.setHandler "new:talk:entity", (id) ->
+    API.newTalk(id)
 
-  App.reqres.setHandler "talk:entity", (id, talk_id) ->
-    API.getTalk(id, talk_id)
+  App.reqres.setHandler "talk:entity", (conference_id, talk_id) ->
+    API.getTalk(conference_id, talk_id)

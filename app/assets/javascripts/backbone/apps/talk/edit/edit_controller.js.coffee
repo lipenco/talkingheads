@@ -3,9 +3,8 @@
   class Edit.Controller extends App.Controllers.Application
 
     initialize: (options) ->
-      {id, talk_id, talk} = options
-      window.conf = talk
-      talk or= App.request "talk:entity", id , talk_id
+      {id, talk_id } = options
+      talk = App.request "talk:entity", id, talk_id
 
       @listenTo talk, "updated", ->
         App.vent.trigger "talk:updated", talk

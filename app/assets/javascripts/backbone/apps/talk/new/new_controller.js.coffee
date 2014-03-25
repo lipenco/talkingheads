@@ -4,7 +4,8 @@
 
     initialize: (options) ->
       { conference_id } = options
-      talk = App.request "new:talk:entity", conference_id
+      id = conference_id
+      talk = App.request "new:talk:entity", id
 
       @listenTo talk, "created", ->
         console.log "created"

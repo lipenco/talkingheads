@@ -30,7 +30,7 @@
 
 
 	App.on "initialize:after", ->
-		@startHistory()
+		@startHistory(pushState: true)
 		@navigate(@rootRoute, trigger: true) unless @getCurrentRoute()
 
 	App
