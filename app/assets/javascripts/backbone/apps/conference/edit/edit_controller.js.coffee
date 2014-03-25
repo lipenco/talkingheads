@@ -7,6 +7,9 @@
       conferences or= App.request "conference:entity", id
       meny.close()
 
+      App.execute "talk:edit:list", id
+      App.mainRegion.close()
+
       @listenTo conferences, "updated", ->
         App.vent.trigger "conference:updated", conferences
 
@@ -16,20 +19,21 @@
       @listenTo @layout, "show", =>
         @titleRegion conferences
         @formRegion conferences
-        @talksListRegion conferences
+        # @talksListRegion conferences
         @panelRegion conferences
 
       @show @layout, loading: true
 
+
     titleRegion: (conferences) ->
       titleView = @getTitleView conferences
-      @show titleView, region: @layout.titleRegion
+      @show titleView, region: App.titleRegion
       # @layout.titleRegion.show titleView
 
-    talksListRegion: (conferences) ->
-      conference_id = conferences.id
-      talks = conferences.get("talks")
-      App.execute "talk:edit:list", conference_id, talks, @layout.talksListRegion
+    # talksListRegion: (conferences) ->
+    #   conference_id = conferences.id
+    #   talks = conferences.get("talks")
+    #   App.execute "talk:edit:list", conference_id, talks, @layout.talksListRegion
 
 
     panelRegion: (conferences) ->

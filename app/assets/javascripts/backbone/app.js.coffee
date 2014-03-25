@@ -7,6 +7,9 @@
 		headerRegion: "#header-region"
 		mainRegion:		"#main-region"
 		footerRegion: "#footer-region"
+		talksListRegion: "#talk-list-region"
+		formRegion: "#form-region"
+		titleRegion: "#title-region"
 
 
 	App.rootRoute = Routes.conferences_path()

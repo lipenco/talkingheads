@@ -24,11 +24,12 @@
         conference_id: conference_id
         region: region
 
-    userListTalk: (conference_id, talks, region) ->
+    userListTalk: (conference_id, talks) ->
       new TalkApp.UserTalkList.Controller
+        region: App.talksListRegion
         conference_id: conference_id
         talks: talks
-        region: region
+
 
 
 
@@ -54,8 +55,18 @@
     App.navigate Routes.edit_conference_talk_path(id, talk_id)
     API.editTalk id, talk_id, talk
 
-  App.commands.setHandler "talk:edit:list", (conference_id, talks, region) ->
-    API.userListTalk conference_id, talks, region
+  App.commands.setHandler "talk:edit:list", (conference_id, talks) ->
+    API.userListTalk conference_id, talks
+
+  # App.vent.on "talk:created", (talk) ->
+  #   console.log "talk created do"
+  #   window.tt = talk
+  #   conference_id = talk.conference_id
+    # API.userListTalk conference_id
+
+  # App.vent.on "talk:created", (talk, talks, region) ->
+  #   conference_id = talk.conference_id
+  #   API.userListTalk conference_id
 
 
 

@@ -8,7 +8,10 @@
 
       @listenTo talk, "created", ->
         console.log "created"
-        App.vent.trigger "talk:created", talk
+        id = talk.conference_id
+        # App.vent.trigger "talk:created", talk
+        App.execute "talk:edit:list", id
+        @region.close()
 
       newView = @getNewView talk
       formView = App.request "form:wrapper", newView
