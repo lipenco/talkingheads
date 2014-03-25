@@ -30,10 +30,19 @@
         talk = child.model
         talk_id = child.model.id
         conference_id = child.model.conference_id
+        childview = child.$el
+        @manageHighlight(childview)
         App.vent.trigger "talk:edit:clicked", conference_id, talk_id, talk
 
 
+
       @show talksView, region: @layout.talksRegion
+
+
+
+    manageHighlight: (childView) ->
+      $("li").removeClass('highlight')
+      childView.addClass('highlight')
 
 
 
