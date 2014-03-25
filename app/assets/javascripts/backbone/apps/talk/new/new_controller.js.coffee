@@ -9,7 +9,7 @@
       @listenTo talk, "created", ->
         console.log "created"
         id = talk.conference_id
-        # App.vent.trigger "talk:created", talk
+        window.tal = talk
         App.execute "talk:edit:list", id
         @region.close()
 

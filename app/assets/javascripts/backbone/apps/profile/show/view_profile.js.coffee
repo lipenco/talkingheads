@@ -39,7 +39,6 @@
 
     triggers:
       "click .conference-edit"   : "conference:single:edit"
-      "click"                    : "conference:single:details"
 
 
   class Show.User_List extends App.Views.CompositeView

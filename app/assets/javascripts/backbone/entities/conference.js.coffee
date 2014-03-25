@@ -3,6 +3,7 @@
   class Entities.Talk extends App.Entities.Model
 
     initialize: (@conference_id, @talk_id) ->
+
     url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 

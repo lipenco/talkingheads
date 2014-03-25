@@ -33,9 +33,9 @@
   App.commands.setHandler "new:conference:single", (region) ->
     API.newConference region
 
-  App.vent.on "conference:single:edit conference:created", (single) ->
-    App.navigate Routes.edit_conference_path(single.id)
-    API.edit single.id, single
+  App.vent.on "conference:single:edit conference:created", (id ,single) ->
+    App.navigate Routes.edit_conference_path(id)
+    API.edit id, single
 
   # App.vent.on "talk:created", (talk) ->
   #   console.log talk

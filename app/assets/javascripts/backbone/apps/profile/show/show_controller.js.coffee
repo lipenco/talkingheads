@@ -28,11 +28,10 @@
       listView = @getListView user_list
 
       @listenTo listView, "childview:conference:single:edit", (child, args) ->
-        window.child = args
-        App.vent.trigger "conference:single:edit", args.model
+        id = args.model.id
+        single = args.model
+        App.vent.trigger "conference:single:edit", id, single
 
-      @listenTo listView, "childview:conference:single:details", (child, args) ->
-        App.vent.trigger "conference:single:details", args.model
 
       @show listView, region: @layout.conferencesRegion
 

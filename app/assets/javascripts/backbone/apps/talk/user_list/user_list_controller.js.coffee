@@ -7,7 +7,7 @@
       # talks = talks
       talks or= App.request "talk:entities", conference_id
 
-      @listenTo talks, "model:created", (talk) ->
+      @listenTo talks, "created", (talk) ->
         console.log "from userlist event"
 
       @layout = @getLayoutView talks

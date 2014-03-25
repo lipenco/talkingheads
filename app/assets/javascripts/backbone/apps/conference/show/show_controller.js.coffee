@@ -6,6 +6,9 @@
       { single, id } = options
       single or= App.request "conference:entity", id
       meny.close()
+      App.talksListRegion.close()
+      App.formRegion.close()
+      App.titleRegion.close()
       # App.execute "when:fetched", single, =>
       @layout = @getLayoutView single
 

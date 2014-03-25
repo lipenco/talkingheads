@@ -3,7 +3,7 @@
   class Edit.Controller extends App.Controllers.Application
 
     initialize: (options) ->
-      { conferences, id } = options
+      { id, conferences } = options
       conferences or= App.request "conference:entity", id
       meny.close()
 

@@ -6,6 +6,9 @@
       { id, talk_id, talk } = options
       talk or= App.request "talk:entity", id, talk_id
       talks = App.request "talk:entities", id
+      App.talksListRegion.close()
+      App.formRegion.close()
+      App.titleRegion.close()
 
       @layout = @getLayoutView talk
 
