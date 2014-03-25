@@ -4,8 +4,12 @@ Talkingheads::Application.routes.draw do
   # root to: "application#index"
 
   resources :conferences do
-      resources :talks
+    resources :talks
   end
+
+  # resources :users do
+  #   resources :conferences
+  # end
 
   get '/auth/:provider/callback', to: 'sessions#create'
 

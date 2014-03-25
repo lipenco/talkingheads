@@ -13,8 +13,6 @@
         App.vent.trigger "conference:created", id, conference
 
 
-
-
       newView = @getNewView conference
       formView = App.request "form:wrapper", newView
 

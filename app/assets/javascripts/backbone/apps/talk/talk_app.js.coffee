@@ -14,6 +14,7 @@
 
     editTalk: (id, talk_id, talk) ->
       new TalkApp.Edit.Controller
+        region: App.formRegion
         id: id
         talk_id: talk_id
         talk: talk

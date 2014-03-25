@@ -4,6 +4,8 @@
 
     initialize: (@conference_id, @talk_id) ->
 
+    # url: -> "/conferences/75/talks/#{@model.id or ""}"
+
     url: -> "/conferences/#{@conference_id}/talks/#{@talk_id or ""}"
 
 
@@ -12,7 +14,7 @@
     model: Entities.Talk
     initialize: (@id) ->
 
-    url: -> "/conferences/#{@id}/talks/"
+    url: -> "/conferences/#{@id}/talks"
 
 
   class Entities.Conference extends App.Entities.Model
