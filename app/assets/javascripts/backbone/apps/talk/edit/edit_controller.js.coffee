@@ -31,10 +31,8 @@
         App.vent.trigger "talk:cancelled", talk
 
       @listenTo editView, "talk:delete:clicked", (talk) ->
-        window.t = talk
-        modell = talk.model
         model = talk.model
-        if confirm "Are you sure you want to delete #{modell.get("title")} and all the talks?" then model.destroy(model.id) else false
+        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy() else false
         App.vent.trigger "talk:cancelled", talk
 
       formView = App.request "form:wrapper", editView
