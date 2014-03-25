@@ -15,6 +15,8 @@
       @listenTo @layout, "show", =>
         @talksRegion talks
 
+      App.headerRegion.show
+
       @show @layout, loading: true
 
 

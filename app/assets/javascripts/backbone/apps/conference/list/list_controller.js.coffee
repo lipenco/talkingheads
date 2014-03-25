@@ -4,6 +4,9 @@
 
     initialize: ->
       meny.close()
+      App.talksListRegion.close()
+      App.formRegion.close()
+      App.titleRegion.close()
       conferences = App.request "conference:entities"
 
       # App.execute "when:fetched", conferences, =>

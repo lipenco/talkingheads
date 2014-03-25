@@ -1,7 +1,7 @@
 class ConferencesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :new]
-  before_action :set_current_user, only: [:destroy, :create, :update, :new, :user_list]
+  before_action :set_current_user, only: [:index, :destroy, :create, :update, :new, :user_list]
   respond_to :json
 
   def index

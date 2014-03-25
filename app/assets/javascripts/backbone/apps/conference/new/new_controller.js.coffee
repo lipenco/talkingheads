@@ -9,7 +9,7 @@
       @listenTo conference, "created", ->
         meny.close()
         console.log "created"
-        App.vent.trigger "conference:created", conference
+
 
       newView = @getNewView conference
       formView = App.request "form:wrapper", newView

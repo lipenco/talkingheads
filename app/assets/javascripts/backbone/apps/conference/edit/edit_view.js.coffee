@@ -6,7 +6,7 @@
     regions:
       titleRegion:  "#title-region"
       formRegion:   "#form-region"
-      talksListRegion:   "#talk-list-region"
+      # talksListRegion:   "#talk-list-region"
       panelRegion:  "#talks-panel-region"
       newRegion:    "#new-talk-region"
 
