@@ -3,7 +3,7 @@
     <div class="user-card card">
         <header>
            <h1><%= @title %></h1>
-          <p><%= @video_url %></p>
+           <p class="text-muted"><%= @speaker %></p>
           <div class="divider"></div>
         </header>
 

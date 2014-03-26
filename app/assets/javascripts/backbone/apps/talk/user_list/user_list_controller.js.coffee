@@ -6,8 +6,9 @@
       { conference_id, talks, talk } = options
       talks or= App.request "talk:entities", conference_id
 
-      @listenTo talks, "model:created", ->
-        console.log "from userlist event"
+      @listenTo talks, "model:created", (talk) ->
+        talk.render
+
 
       @layout = @getLayoutView talks
 
@@ -64,5 +65,6 @@
       new UserTalkList.Panel
         collection: talks
 
-    getLayoutView: ->
+    getLayoutView: (talks)->
       new UserTalkList.Layout
+        collection: talks

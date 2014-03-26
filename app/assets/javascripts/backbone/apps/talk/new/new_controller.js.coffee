@@ -4,13 +4,10 @@
 
     initialize: (options) ->
       {talks, conference_id } = options
-      id = conference_id
-      talk = App.request "new:talk:entity", id
+      talk = App.request "new:talk:entity", conference_id
 
       @listenTo talk, "created", ->
         console.log "created"
-        id = talk.conference_id
-        # App.execute "talk:edit:list", id
         @region.close()
 
       newView = @getNewView talk, talks

@@ -21,7 +21,7 @@
      </p>
 
      <p>
-       <label class="talk-delete"><span class="glyphicon glyphicon-remove"></span> Delete this conference</label>
+       <label class="talk-delete"><span class="glyphicon glyphicon-remove"></span> Delete this talk</label>
       </p>
 
 </div>
