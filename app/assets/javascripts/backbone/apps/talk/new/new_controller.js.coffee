@@ -3,17 +3,17 @@
   class New.Controller extends App.Controllers.Application
 
     initialize: (options) ->
-      { conference_id } = options
+      {talks, conference_id } = options
       id = conference_id
       talk = App.request "new:talk:entity", id
 
       @listenTo talk, "created", ->
         console.log "created"
         id = talk.conference_id
-        App.execute "talk:edit:list", id
+        # App.execute "talk:edit:list", id
         @region.close()
 
-      newView = @getNewView talk
+      newView = @getNewView talk, talks
       formView = App.request "form:wrapper", newView
 
       @listenTo newView, "form:cancel", =>
@@ -21,6 +21,7 @@
 
       @show formView
 
-    getNewView: (talk) ->
+    getNewView: (talk, talks) ->
       new New.Talk
         model: talk
+        collection: talks

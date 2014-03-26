@@ -24,7 +24,7 @@
     newTalk: (talks, conference_id, region) ->
       new TalkApp.New.Controller
         conference_id: conference_id
-        collection: talks
+        talks: talks
         region: region
 
     userListTalk: (conference_id, talks) ->

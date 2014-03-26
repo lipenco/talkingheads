@@ -5,8 +5,8 @@
     <p><span class="glyphicon glyphicon-time"></span><%= @date %></p>
     <p><span class="glyphicon glyphicon-map-marker"></span><%= @place %></p>
     <p><span class="glyphicon glyphicon-tags"></span><%= @tags %></p>
-<!--     <p><span class="glyphicon glyphicon-asterisk"></span> <%= @organizers %></p> -->
-    <p><span class="glyphicon glyphicon-asterisk"></span><%= @description %></p>
+    <p><span class="glyphicon glyphicon-asterisk"></span> <%= @organizers %></p>
+    <p><span class="glyphicon glyphicon-time"></span><%= @updated_at_formatted %></p>
 
 
  </div>

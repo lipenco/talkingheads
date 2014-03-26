@@ -2,8 +2,8 @@ class ColorPicker
 
   COLOR_MAP = {
     backbone:   :green,
-    marionette: :purple,
-    javascript: :yellow,
+    marionette: :yellow,
+    javascript: :purple,
     ruby:       :red,
 
   }
