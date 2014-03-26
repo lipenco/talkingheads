@@ -1,4 +1,5 @@
-<div id="talk_<%= @id %>" class="note green rounded">
+<div id="talk_<%= @id %>" class="note red rounded">
+  <div class="user-avatar"><div class="user-bg"></div></div>
     <div class="user-card card">
         <header>
            <h1><%= @title %></h1>

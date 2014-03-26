@@ -4,18 +4,18 @@
 
     initialize: (options) ->
       { conference_id, talks, talk } = options
-      # talks = talks
       talks or= App.request "talk:entities", conference_id
 
-      @listenTo talks, "created", (talk) ->
+      @listenTo talks, "model:created", ->
         console.log "from userlist event"
 
       @layout = @getLayoutView talks
 
       @listenTo @layout, "show", =>
         @talksRegion talks
+        @panelRegion talks, conference_id
 
-      App.headerRegion.show
+      # App.headerRegion.show
 
       @show @layout, loading: true
 
@@ -44,11 +44,25 @@
       childView.addClass('highlight')
 
 
+    panelRegion: (talks, conference_id) ->
+      panelView = @getPanelView()
+      @listenTo panelView, "new:talk:button:clicked", =>
+        @newRegion(talks, conference_id)
+
+      @show panelView, region: @layout.panelRegion
+
+    newRegion: (talks, conference_id) ->
+      App.execute "new:talk:single", talks, conference_id, @layout.newRegion
+
+
 
     getTalksView: (talks) ->
       new UserTalkList.Talks
         collection: talks
 
+    getPanelView: (talks)->
+      new UserTalkList.Panel
+        collection: talks
 
     getLayoutView: ->
       new UserTalkList.Layout

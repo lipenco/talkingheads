@@ -6,6 +6,17 @@
 
     regions:
       talksRegion:  "#talks-region"
+      panelRegion:  "#talks-panel-region"
+      newRegion:    "#new-talk-region"
+
+
+
+  class UserTalkList.Panel extends App.Views.ItemView
+    template: "talk/user_list/_panel"
+    tagName: "ul"
+
+    triggers:
+      "click #new-talk" : "new:talk:button:clicked"
 
 
 
@@ -13,6 +24,7 @@
     template: "talk/user_list/_talk"
     className: 'talk_li'
     tagName: "li"
+
 
     triggers:
       "click .talk-edit"   : "talk:edit:clicked"

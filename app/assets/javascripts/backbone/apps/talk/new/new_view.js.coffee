@@ -3,6 +3,7 @@
   class New.Talk extends App.Views.ItemView
     template: "talk/new/new_talk"
 
+
     form:
       buttons:
         placement: "left"

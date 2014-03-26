@@ -20,7 +20,7 @@
         @titleRegion conferences
         @formRegion conferences
         # @talksListRegion conferences
-        @panelRegion conferences
+        # @panelRegion conferences
 
       @show @layout, loading: true
 
@@ -35,17 +35,17 @@
     #   talks = conferences.get("talks")
     #   App.execute "talk:edit:list", conference_id, talks, @layout.talksListRegion
 
-
-    panelRegion: (conferences) ->
-      panelView = @getPanelView()
-      @listenTo panelView, "new:talk:button:clicked", =>
-        @newRegion(conferences)
-
-      @show panelView, region: @layout.panelRegion
-
-    newRegion: (conferences) ->
-      conference_id = conferences.id
-      App.execute "new:talk:single", conference_id, @layout.newRegion
+    #
+    # panelRegion: (conferences) ->
+    #   panelView = @getPanelView()
+    #   @listenTo panelView, "new:talk:button:clicked", =>
+    #     @newRegion(conferences)
+    #
+    #   @show panelView, region: @layout.panelRegion
+    #
+    # newRegion: (conferences) ->
+    #   conference_id = conferences.id
+    #   App.execute "new:talk:single", conference_id, @layout.newRegion
 
 
     formRegion: (conferences) ->
@@ -73,8 +73,8 @@
       new Edit.Layout
         model: conferences
 
-    getPanelView: ->
-      new Edit.Panel
+    # getPanelView: ->
+    #   new Edit.Panel
 
     getEditView: (conferences) ->
       new Edit.Conference

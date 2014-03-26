@@ -1,11 +1,12 @@
 <div id="show-conference">
     <legend>Details</legend>
-    <p><%= @name %></p>
-     <p><%= @date %></p>
-     <p><%= @place %></p>
-      <p><%= @tags %></p>
-     <p> <%= @organizers %></p>
-     <p><%= @description %></p>
+
+    <p><span class="glyphicon glyphicon-asterisk"></span><%= @name %></p>
+    <p><span class="glyphicon glyphicon-time"></span><%= @date %></p>
+    <p><span class="glyphicon glyphicon-map-marker"></span><%= @place %></p>
+    <p><span class="glyphicon glyphicon-tags"></span><%= @tags %></p>
+<!--     <p><span class="glyphicon glyphicon-asterisk"></span> <%= @organizers %></p> -->
+    <p><span class="glyphicon glyphicon-asterisk"></span><%= @description %></p>
 
 
  </div>

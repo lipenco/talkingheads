@@ -1,5 +1,6 @@
 @Demo.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
+
   _remove = Marionette.View::remove
 
   _.extend Marionette.View::,

@@ -30,7 +30,6 @@
       talksView = @getTalksView single
 
       @listenTo talksView, "childview:talk:single:clicked", (child, args) ->
-        window.args = child
         model = args.model
         id = model.get("conference_id")
         talk_id = model.get("id")
