@@ -25,14 +25,8 @@
     talksRegion: (talks, talk) ->
       talksView = @getTalksView talks, talk
 
-        # $(".talk#{talk.id}").addClass('highlight')
-        # App.vent.trigger "talk:single:render", args.model
-
-
-
 
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
-        App.vent.trigger "talk:single:render", args.model
         @titleRegion args.model
         @videoRegion args.model
         childview = child.$el
