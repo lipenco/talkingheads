@@ -9,6 +9,8 @@ class TalksController < ApplicationController
     @talk = Talk.find params[:id]
   end
 
+
+
   def index
     @conference = Conference.find params[:conference_id]
     @talks = @conference.talks

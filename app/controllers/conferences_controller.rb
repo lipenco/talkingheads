@@ -10,7 +10,13 @@ class ConferencesController < ApplicationController
 
   def user_list
     @user_list = @current_user.conferences.all
+    @favourites = Talk.where(:id => @current_user.favourites.pluck(:talk_id))
   end
+
+  def favourites
+    Talk.where(:id => @current_user.favourites.pluck(:talk_id))
+  end
+
 
   def new
      @single = Conference.new(conference_params)

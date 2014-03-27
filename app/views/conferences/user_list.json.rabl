@@ -4,5 +4,5 @@ extends "conferences/_base"
 
 
 child :talks do
-  attributes :id, :title, :description, :video_url, :conference_id
+  attributes :id, :title, :description, :video_url, :slides_url, :speaker, :conference_id
 end

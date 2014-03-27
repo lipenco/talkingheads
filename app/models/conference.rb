@@ -17,4 +17,5 @@ class Conference < ActiveRecord::Base
     self.talks.count
   end
 
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322224346) do
+ActiveRecord::Schema.define(version: 20140327151447) do
 
   create_table "conferences", force: true do |t|
     t.string   "name"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20140322224346) do
   end
 
   add_index "conferences", ["user_id"], name: "index_conferences_on_user_id"
+
+  create_table "favourites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "talk_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favourites", ["talk_id"], name: "index_favourites_on_talk_id"
+  add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
 
   create_table "talks", force: true do |t|
     t.string   "title"

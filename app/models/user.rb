@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :conferences
   has_many :talks, through: :conferences
+  has_many :favourites
 
   # def self.initialize_with_auth(auth)
   #   user = User.find_or_initialize_by_uid_and_provider(auth[:uid], auth[:provider])
@@ -9,7 +10,6 @@ class User < ActiveRecord::Base
   #   user.email ||= auth[:info][:email] if auth[:info][:email]
   #   user
   # end
-
 
 
 

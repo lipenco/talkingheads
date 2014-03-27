@@ -15,6 +15,8 @@ Talkingheads::Application.routes.draw do
 
   get 'user_list', to: 'conferences#user_list'
 
+  get 'favourites', to: 'favourites#list'
+
 
 
 end
