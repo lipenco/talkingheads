@@ -1,20 +1,13 @@
-<div id="talk_<%= @id %>" class="note red rounded">
-  <div class="user-avatar"><div class="user-bg"></div></div>
-    <div class="user-card card">
-        <header>
-           <h1><%= @title %></h1>
-           <p class="text-muted"><%= @speaker %></p>
-          <div class="divider"></div>
-        </header>
 
-         <div class="user-menu card">
-                <ul class="unstyled table fullwidth">
-                  <li><a><span class="icon-rss"></span></a></li>
-                  <li><a><span class="icon-comment"></span></a></li>
-                  <li><a><span class="icon-share "></span></a></li>
-                  <li><a><span class="icon-remove"></span></a></li>
-                </ul>
-          </div>
-      </div>
 
+<div class="talk-container col-md-4">
+  <div class="talk-head">
+      <h1><%= @title %></h1>
+      <%= @speaker %>
+  </div>
+  <div class="talk-foot">
+    <a href="#" class="footItem1"><span class="glyphicon glyphicon-star"></span>102</a>
+    <a href="#" class="footItem2"><span class="glyphicon glyphicon-eye-open"></span>4,587</a>
+    <a href="#" class="footItem3"><span class="glyphicon glyphicon-pencil"></span>84,023</a>
+  </div>
 </div>

@@ -443,3 +443,33 @@ ul li .conference_li {
 
   padding-right:0;
 }
+
+
+
+a { text-decoration: none; -webkit-transition: all .4s; }
+
+
+
+
+
+
+.talk-head { overflow: auto; padding: 20px; background: #eaedf1; border-radius: 5px 5px 0 0; font-size: 1.2em; color: #b9becd; }
+  .talk-head h1 { margin: 15px 0 5px; height: 80px; font-weight: 200; font-size: 1.3em; color: #5e6d81; }
+
+
+.talk-foot { margin-bottom: 25px; border:0; color: #eee;
+  .glyphicon-pencil, .glyphicon-eye-open {padding-left: 5 px; padding-right: 2px;}
+
+
+}
+
+.talk-foot  a {text-decoration: none; -webkit-transition: all .4s;  color: #eee }
+
+[class^="footItem"] {display: inline-block; width: 32.1%; padding: 15px 0; margin: 0 0 10px; text-align: center; color: rgba(255,255,255,.8); font-size: 1.1em; border:0; }
+[class^="footItem"] span.glyphicon {  padding: 0, 5px 0, 5px; font-size: 1em;  color: #fff; }
+  .footItem1 { background: #9b59b6; border-radius: 0 0 0 5px; }
+    .footItem1:hover { opacity: 0.7 }
+  .footItem2 { background: #e74c3c; }
+    .footItem2:hover { opacity: 0.9; }
+  .footItem3 { background: #f1c40f; border-radius: 0 0 5px 0; }
+    .footItem3:hover { opacity: 0.9 }
