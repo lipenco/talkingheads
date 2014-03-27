@@ -39,6 +39,15 @@
 
     titleRegion: (talk) ->
       titleView = @getTitleView talk
+
+      @listenTo titleView, "fav:clicked", (el) ->
+        el.view.$el.find(".mark-fav").removeClass("glyphicon-star-empty").addClass("glyphicon-star")
+
+
+      @listenTo titleView, "ulfav:clicked", (el) ->
+        el.view.$el.find(".mark-fav").removeClass("glyphicon-star").addClass("glyphicon-star-empty")
+
+
       @layout.titleRegion.show titleView
 
     videoRegion: (talk) ->

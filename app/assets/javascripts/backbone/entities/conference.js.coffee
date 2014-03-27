@@ -40,7 +40,7 @@
 
 
   class Entities.FavoritesCollection extends Entities.Collection
-    model: Entities.Talk
+    # model: Entities.Talk
     url: -> '/favourites'
 
 

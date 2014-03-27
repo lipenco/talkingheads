@@ -8,6 +8,19 @@ class FavouritesController < ApplicationController
     @favourites = Talk.where(:id => @current_user.favourites.pluck(:talk_id))
   end
 
+  def create
+    talk = talk.find(params[:id])
+
+    if talk
+        return 401 unless @current_user
+
+        favourite = talk.favourite_for(@current_user, params[:id])
+        if favourite.save
+          render "favourites/list"
+        end
+      end
+  end
+
   private
 
   def set_current_user
