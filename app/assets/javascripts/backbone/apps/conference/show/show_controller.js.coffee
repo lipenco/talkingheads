@@ -9,13 +9,13 @@
       App.talksListRegion.close()
       App.formRegion.close()
       App.titleRegion.close()
-      # App.execute "when:fetched", single, =>
+
       @layout = @getLayoutView single
 
       @listenTo @layout, "show", =>
         @titleRegion single
         @conferenceRegion single
-        @talksRegion single
+        @talksRegion single, id
 
       @show @layout, loading: true
 
@@ -26,35 +26,15 @@
       # @layout.titleRegion.show titleView
 
 
-    talksRegion: (single) ->
-      talksView = @getTalksView single
+    talksRegion: (single, id) ->
+      App.execute "list:talks:view", single, id, @layout.talksRegion
 
-      @listenTo talksView, "childview:talk:single:clicked", (child, args) ->
-        model = args.model
-        id = model.get("conference_id")
-        talk_id = model.get("id")
-        App.vent.trigger "talk:single:clicked", id, talk_id, args.model
-
-      @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
-        model = args.model
-        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy(model.id) else false
-
-
-      @layout.talksRegion.show talksView
-      # @show talksView region: @layout.talksRegion
 
 
     conferenceRegion: (single) ->
       conferenceView = @getConferenceView single
       @layout.conferenceRegion.show conferenceView
       # @show conferenceView region: @layout.conferenceRegion
-
-
-    getTalksView: (single) ->
-      window.single = single
-      talks = single.get("talks")
-      new Show.Talks
-        collection: talks
 
 
 

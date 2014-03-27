@@ -19,7 +19,11 @@
         talk: talkk
         region: App.formRegion
 
-
+    listTalks: (single, id, region) ->
+      new TalkApp.List.Controller
+        single: single
+        id: id
+        region: region
 
     newTalk: (talks, conference_id, region) ->
       new TalkApp.New.Controller
@@ -32,8 +36,6 @@
         region: App.talksListRegion
         conference_id: conference_id
         talks: talks
-
-
 
 
 
@@ -51,6 +53,9 @@
 
   App.commands.setHandler "new:talk:single", (talks, conference_id, region) ->
     API.newTalk talks, conference_id, region
+
+  App.commands.setHandler "list:talks:view", (single, id, region) ->
+    API.listTalks single, id, region
 
   App.vent.on "talk:edit:clickedd", (id, talk_id, talkk) ->
     App.navigate Routes.edit_conference_talk_path(id, talk_id)

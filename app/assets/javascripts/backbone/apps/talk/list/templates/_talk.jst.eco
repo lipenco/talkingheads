@@ -1,5 +1,3 @@
-
-
 <div class="talk-container col-md-4">
   <div class="talk-head">
       <h1><%= @title %></h1>

@@ -12,7 +12,7 @@
       buttons = @getDefaultButtons buttons, model
 
       array = []
-      array.push { type: "cancel",  className: "btn btn-primary", text: buttons.cancel                        } unless buttons.cancel is false
+      # array.push { type: "cancel",  className: "btn btn-primary", text: buttons.cancel                        } unless buttons.cancel is false
       array.push { type: "primary", className: "btn btn-primary", text: buttons.primary, buttonType: "submit" } unless buttons.primary is false
 
       array.reverse() if buttons.placement is "left"
@@ -24,7 +24,7 @@
     getDefaultButtons: (buttons, model) ->
       _.defaults buttons,
         primary: if model.isNew() then "Create" else "Update"
-        cancel: "Cancel"
+        # cancel: "Cancel"
         placement: "right"
 
   App.reqres.setHandler "form:button:entities", (buttons = {}, model) ->
