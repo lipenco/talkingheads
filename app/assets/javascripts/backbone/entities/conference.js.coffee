@@ -39,6 +39,12 @@
 
 
 
+  class Entities.FavoritesCollection extends Entities.Collection
+    model: Entities.Talk
+    url: -> '/favourites'
+
+
+
   API =
     getConferences: ->
       conferences = new Entities.ConferenceCollection
@@ -69,14 +75,19 @@
         # id: id
       talks
 
+    getFavorites: ->
+      favorites = new Entities.FavoritesCollection
+      favorites.fetch
+        reset: true
+      favorites
+
+
 
     getCurrentUserList: ->
       user_list = new Entities.UserListCollection
       user_list.fetch
         reset: true
       user_list
-      # window.ss = user_list
-
 
 
     newSingle: ->
@@ -86,6 +97,8 @@
       new Entities.Talk(id)
 
 
+  App.reqres.setHandler "favorites:entities", ->
+    API.getFavorites()
 
   App.reqres.setHandler "user_list:entities", ->
     API.getCurrentUserList()

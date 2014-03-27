@@ -30,9 +30,9 @@
         talk_id = model.get("id")
         App.vent.trigger "talk:single:clicked", id, talk_id, args.model
 
-      @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
-        model = args.model
-        if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy(model.id) else false
+      # @listenTo talksView, "childview:talk:delete:clicked", (child, args) ->
+      #   model = args.model
+      #   if confirm "Are you sure you want to delete #{model.get("title")}?" then model.destroy(model.id) else false
 
 
       @layout.talksRegion.show talksView
