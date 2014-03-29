@@ -1,7 +1,7 @@
 class TalksController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :new]
-  before_action :set_current_user, only: [ :destroy, :create, :update, :new]
+  before_action :current_user, only: [ :destroy, :create, :update, :new]
   respond_to :json
 
 
@@ -24,7 +24,6 @@ class TalksController < ApplicationController
     @talk = Talk.new(talk_params.merge(:conference_id => params[:conference_id]))
 
     if @talk.save
-      @single = Conference.find(params[:conference_id])
       render "talks/show"
     else
       respond_with @single
@@ -49,10 +48,6 @@ class TalksController < ApplicationController
   end
 
   private
-
-  def set_current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
 
 
   def talk_params

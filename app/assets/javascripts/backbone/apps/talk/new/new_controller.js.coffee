@@ -6,7 +6,6 @@
       {talks } = options
       conference_id = talks.id
       talk = App.request "new:talk:entity", conference_id
-      talk.set("conference_id", conference_id)
 
       @listenTo talk, "created", ->
         console.log "created"
