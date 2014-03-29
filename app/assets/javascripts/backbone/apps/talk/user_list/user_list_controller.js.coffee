@@ -6,10 +6,6 @@
       { conference_id, talks, talk } = options
       talks or= App.request "talk:entities", conference_id
 
-      @listenTo talks, "model:created", (talk) ->
-        talk.render
-
-
       @layout = @getLayoutView talks
 
       @listenTo @layout, "show", =>
@@ -45,15 +41,15 @@
       childView.addClass('highlight')
 
 
-    panelRegion: (talks, conference_id) ->
-      panelView = @getPanelView()
+    panelRegion: (talks) ->
+      panelView = @getPanelView(talks)
       @listenTo panelView, "new:talk:button:clicked", =>
-        @newRegion(talks, conference_id)
+        @newRegion(talks)
 
       @show panelView, region: @layout.panelRegion
 
-    newRegion: (talks, conference_id) ->
-      App.execute "new:talk:single", talks, conference_id, @layout.newRegion
+    newRegion: (talks) ->
+      App.execute "new:talk:single", talks, @layout.newRegion
 
 
 

@@ -4,9 +4,6 @@
 
     initialize: ->
       conference = App.request "new:conference:entity"
-      window.nee = conference
-
-
       @listenTo conference, "created", ->
         meny.close()
         console.log "created"

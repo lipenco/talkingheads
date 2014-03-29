@@ -25,9 +25,8 @@
         id: id
         region: region
 
-    newTalk: (talks, conference_id, region) ->
+    newTalk: (talks, region) ->
       new TalkApp.New.Controller
-        conference_id: conference_id
         talks: talks
         region: region
 
@@ -51,8 +50,8 @@
     App.navigate Routes.conference_talk_path(id, talk_id)
     API.showTalk  id, talk_id
 
-  App.commands.setHandler "new:talk:single", (talks, conference_id, region) ->
-    API.newTalk talks, conference_id, region
+  App.commands.setHandler "new:talk:single", (talks, region) ->
+    API.newTalk talks, region
 
   App.commands.setHandler "list:talks:view", (single, id, region) ->
     API.listTalks single, id, region

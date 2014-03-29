@@ -25,7 +25,7 @@ class TalksController < ApplicationController
 
     if @talk.save
       @single = Conference.find(params[:conference_id])
-      render "conferences/show"
+      render "talks/show"
     else
       respond_with @single
     end
