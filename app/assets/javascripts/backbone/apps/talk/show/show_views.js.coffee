@@ -8,14 +8,11 @@
       videoRegion:  "#video-region"
       talksRegion:  "#talks-region"
       nextRegion:   "#next-region"
+      starRegion:   "#star-region"
 
 
   class Show.Title extends App.Views.ItemView
     template: "talk/show/_title"
-
-    triggers:
-      "click span.glyphicon-star-empty"   : "fav:clicked"
-      "click span.glyphicon-star"         : "ulfav:clicked"
 
 
   class Show.Video extends App.Views.ItemView

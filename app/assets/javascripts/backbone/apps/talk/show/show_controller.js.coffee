@@ -17,6 +17,7 @@
         @videoRegion talk
         @nextRegion talk
         @talksRegion talks, talk
+        @starRegion talk
 
       @show @layout, loading: true
 
@@ -29,6 +30,7 @@
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
         @titleRegion args.model
         @videoRegion args.model
+        @starRegion args.model
         childview = child.$el
         @manageHighlight(childview)
 
@@ -39,16 +41,11 @@
 
     titleRegion: (talk) ->
       titleView = @getTitleView talk
-
-      @listenTo titleView, "fav:clicked", (el) ->
-        el.view.$el.find(".mark-fav").removeClass("glyphicon-star-empty").addClass("glyphicon-star")
-
-
-      @listenTo titleView, "ulfav:clicked", (el) ->
-        el.view.$el.find(".mark-fav").removeClass("glyphicon-star").addClass("glyphicon-star-empty")
-
-
       @layout.titleRegion.show titleView
+
+    starRegion: (talk) ->
+      App.execute "star:for:talk", talk,  @layout.starRegion
+
 
     videoRegion: (talk) ->
       videoView = @getVideoView talk
