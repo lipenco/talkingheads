@@ -44,6 +44,9 @@
     App.navigate Routes.conference_talk_path(id, talk_id)
     API.showTalk  id, talk_id, talk
 
+  App.vent.on "talk:single:rendered", (conference_id, id) ->
+    App.navigate Routes.conference_talk_path(conference_id, id)
+
   App.vent.on "talk:single:render", (talk) ->
     talk_id = talk.get("id")
     id = talk.get("conference_id")
