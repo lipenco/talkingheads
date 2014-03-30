@@ -19,7 +19,8 @@ Talkingheads::Application.routes.draw do
 
   # get 'favorites', to: 'favourites#current_user'
 
-  post 'conferences/:conference_id/talks/:id/favorites', to: 'favourites#create'
+
+  post 'talks/:talk_id/favorites', to: 'favourites#create'
 
 
 

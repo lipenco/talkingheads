@@ -9,16 +9,15 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    talk = talk.find(params[:id])
-
+    talk = Talk.find(params[:talk_id])
     if talk
-        return 401 unless @current_user
+      return 401 unless @current_user
 
-        favourite = talk.favourite_for(@current_user, params[:id])
-        if favourite.save
-          render "favourites/list"
-        end
+      favourite = @current_user.favourites.build(talk_id: params[:talk_id], user_id: @current_user.id )
+      if favourite.save
+        render "favourites/list"
       end
+    end
   end
 
   private

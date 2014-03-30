@@ -18,9 +18,7 @@
       data = Backbone.Syphon.serialize @formLayout
       if @contentView.triggerMethod("form:submit", data) isnt false
         model = @contentView.model
-        console.log model
         collection = @contentView.collection
-        console.log collection
         @processFormSubmit data, model, collection
 
     processFormSubmit: (data, model, collection) ->

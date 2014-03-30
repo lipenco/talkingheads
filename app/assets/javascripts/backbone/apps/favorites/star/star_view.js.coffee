@@ -12,7 +12,7 @@
     template: "favorites/star/star"
 
     triggers:
-      "click span.glyphicon-star-empty"   : "fav:clicked"
+      # "click span.glyphicon-star-empty"   : "fav:clicked"
       "click span.glyphicon-star"         : "ulfav:clicked"
 
   class GetStar.UnStar extends App.Views.ItemView

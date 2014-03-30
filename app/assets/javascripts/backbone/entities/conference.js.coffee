@@ -37,6 +37,9 @@
     # model: Entities.Talk
     url: -> '/favourites'
 
+  class Entities.Favorites extends App.Entities.Model
+    initialize: (@talk_id) ->
+    url: -> "/talks/#{@talk_id}/favorites"
 
 
   API =
@@ -75,13 +78,14 @@
         reset: true
       favorites
 
-
-
     newSingle: ->
       new Entities.Conference
 
     newTalk: (id) ->
       new Entities.Talk(id)
+
+    setNewFavorites: (talk_id) ->
+      new Entities.Favorites(talk_id)
 
 
   App.reqres.setHandler "favorites:entities", ->
@@ -106,3 +110,6 @@
 
   App.reqres.setHandler "talk:entity", (conference_id, talk_id) ->
     API.getTalk(conference_id, talk_id)
+
+  App.reqres.setHandler "new:favorite:entity", (user_id, talk_id) ->
+    API.setNewFavorites(user_id, talk_id)
