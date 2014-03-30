@@ -1,6 +1,7 @@
 <div class="row" style="width:110%">
 
   <div class="col-md-10  columns">
+    <div id="star-region"></div>
     <div id="title-region"></div>
      <div id="video-region"></div>
     <div id="next-region"></div>

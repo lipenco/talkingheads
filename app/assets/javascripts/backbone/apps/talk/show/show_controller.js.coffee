@@ -28,9 +28,9 @@
 
 
       @listenTo talksView, "childview:talk:single:render", (child, args) ->
+        @starRegion args.model
         @titleRegion args.model
         @videoRegion args.model
-        @starRegion args.model
         childview = child.$el
         @manageHighlight(childview)
 

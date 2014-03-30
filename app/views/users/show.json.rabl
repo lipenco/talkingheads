@@ -1,3 +1,3 @@
 object @current_user
 
-attributes :id, :name
+attributes :id, :name, :favourites

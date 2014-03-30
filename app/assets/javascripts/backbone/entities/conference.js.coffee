@@ -33,12 +33,6 @@
     url: -> Routes.conferences_path()
 
 
-  class Entities.UserListCollection extends Entities.Collection
-    model: Entities.Conference
-    url: -> '/user_list'
-
-
-
   class Entities.FavoritesCollection extends Entities.Collection
     # model: Entities.Talk
     url: -> '/favourites'
@@ -83,13 +77,6 @@
 
 
 
-    getCurrentUserList: ->
-      user_list = new Entities.UserListCollection
-      user_list.fetch
-        reset: true
-      user_list
-
-
     newSingle: ->
       new Entities.Conference
 
@@ -99,10 +86,6 @@
 
   App.reqres.setHandler "favorites:entities", ->
     API.getFavorites()
-
-  App.reqres.setHandler "user_list:entities", ->
-    API.getCurrentUserList()
-
 
   App.reqres.setHandler "conference:entities", ->
     API.getConferences()
@@ -114,8 +97,6 @@
   App.reqres.setHandler "new:conference:entity", ->
     API.newSingle()
 
-  # App.reqres.setHandler "new:talk:entity", (conference_id) ->
-  #   API.getSingle(conference_id)
 
   App.reqres.setHandler "talk:entities", (conference_id) ->
     API.getTalks(conference_id)
