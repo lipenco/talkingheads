@@ -20,6 +20,16 @@ class FavouritesController < ApplicationController
     end
   end
 
+  def destroy
+    talk = Talk.find(params[:talk_id])
+    if talk
+      return 401 unless @current_user
+      talk.favourites.where(user_id: @current_user.id).destroy_all
+      render json: {}
+    end
+      return 500
+  end
+
   private
 
 

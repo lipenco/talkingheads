@@ -22,6 +22,10 @@ Talkingheads::Application.routes.draw do
 
   post 'talks/:talk_id/favorites', to: 'favourites#create'
 
+  delete 'talks/:talk_id/favorites', to: 'favourites#destroy'
+
+
+
 
 
 

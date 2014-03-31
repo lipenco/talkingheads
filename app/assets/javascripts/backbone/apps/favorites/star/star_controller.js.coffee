@@ -20,9 +20,11 @@
     starRegion:(talk_id) ->
       starView = @getStarView()
 
-      @listenTo starView, "fav:clicked", (el) ->
-        el.view.$el.find(".mark-fav").removeClass("glyphicon-star").addClass("glyphicon-star-empty")
-        # favourite = App.request "new:favourite"
+      @listenTo starView, "ulfav:clicked", (el) ->
+        @unstarRegion(talk_id)
+        $.ajax
+          method: 'DELETE',
+          url: "talks/#{talk_id}/favorites"
 
       @show starView , region: @layout.starRegion
 
@@ -30,9 +32,9 @@
       unstarView = @getUnstarView()
 
       @listenTo unstarView, "fav:clicked", (el) ->
-        el.view.$el.find(".mark-fav").removeClass("glyphicon-star-empty").addClass("glyphicon-star")
         favourite = App.request "new:favorite:entity", talk_id
         favourite.save()
+        @starRegion(talk_id)
 
       @show unstarView , region: @layout.starRegion
 

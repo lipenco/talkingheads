@@ -20,4 +20,4 @@
 
     triggers:
       "click span.glyphicon-star-empty"   : "fav:clicked"
-      "click span.glyphicon-star"         : "ulfav:clicked"
+      # "click span.glyphicon-star"         : "ulfav:clicked"
