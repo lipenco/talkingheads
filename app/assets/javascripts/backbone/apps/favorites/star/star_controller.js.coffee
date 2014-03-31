@@ -4,10 +4,10 @@
 
     initialize: (options)->
       {talk} = options
-      currentUser = App.request "get:current:user"
-      favorites = currentUser.get("favourites")
-      favorites = _.pluck(favorites, 'talk_id')
-      talk_id = talk.id
+      # currentUser = App.request "get:current:user"
+      # favorites = currentUser.get("favourites")
+      # favorites = _.pluck(favorites, 'talk_id')
+      # talk_id = talk.id
 
       @layout = @getLayoutView favorites, talk_id
 

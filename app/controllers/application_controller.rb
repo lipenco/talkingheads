@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   def index
 		gon.rabl
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-		# @user = User.first ##just an example of an authenticated user
 		gon.rabl "app/views/users/show.json.rabl"
 	end
 
@@ -22,7 +21,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    @favorites = @current_user.favourites.pluck(:talk_id)
   end
   helper_method :current_user
 
