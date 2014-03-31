@@ -20,6 +20,8 @@ class FavouritesController < ApplicationController
     end
   end
 
+
+
   def destroy
     talk = Talk.find(params[:talk_id])
     if talk

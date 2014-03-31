@@ -25,7 +25,8 @@
         model = args.model
         id = model.get("conference_id")
         talk_id = model.get("id")
-        App.vent.trigger "talk:single:clicked", id, talk_id, args.model
+        window.mm = model
+        App.vent.trigger "talk:single:clicked", id, talk_id, model
 
       @layout.talksRegion.show talksView
 

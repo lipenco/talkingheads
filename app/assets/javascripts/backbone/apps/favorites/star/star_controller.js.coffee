@@ -4,34 +4,38 @@
 
     initialize: (options)->
       {talk} = options
+
       # currentUser = App.request "get:current:user"
       # favorites = currentUser.get("favourites")
       # favorites = _.pluck(favorites, 'talk_id')
       # talk_id = talk.id
 
-      @layout = @getLayoutView favorites, talk_id
+      @layout = @getLayoutView talk
 
       @listenTo @layout, "show", =>
-        @starRegion(talk_id) if talk.id in favorites
-        @unstarRegion(talk_id) unless talk.id in favorites
+        @starRegion(talk) if talk.get("favorited") == true
+        @unstarRegion(talk) unless talk.get("favorited") == true
 
       @show @layout, loading: true
 
-    starRegion:(talk_id) ->
+    starRegion:(talk) ->
       starView = @getStarView()
 
       @listenTo starView, "ulfav:clicked", (el) ->
-        @unstarRegion(talk_id)
+        talk.set("favorited", false);
+        @unstarRegion(talk)
+        talk_id = talk.id
         $.ajax
           method: 'DELETE',
           url: "talks/#{talk_id}/favorites"
 
       @show starView , region: @layout.starRegion
 
-    unstarRegion:(talk_id) ->
+    unstarRegion:(talk) ->
       unstarView = @getUnstarView()
 
       @listenTo unstarView, "fav:clicked", (el) ->
+        talk_id = talk.id
         favourite = App.request "new:favorite:entity", talk_id
         favourite.save()
         @starRegion(talk_id)
