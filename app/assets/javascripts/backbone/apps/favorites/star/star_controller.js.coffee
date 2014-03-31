@@ -22,7 +22,8 @@
       starView = @getStarView()
 
       @listenTo starView, "ulfav:clicked", (el) ->
-        talk.set("favorited", false);
+        talk.set("favorited", false)
+        window.wt = talk
         @unstarRegion(talk)
         talk_id = talk.id
         $.ajax
@@ -35,6 +36,7 @@
       unstarView = @getUnstarView()
 
       @listenTo unstarView, "fav:clicked", (el) ->
+        talk.set("favorited", true)
         talk_id = talk.id
         favourite = App.request "new:favorite:entity", talk_id
         favourite.save()
