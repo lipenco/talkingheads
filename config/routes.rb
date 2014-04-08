@@ -11,7 +11,7 @@ Talkingheads::Application.routes.draw do
   #   resources :conferences
   # end
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  # get '/auth/:provider/callback', to: 'sessions#create'
 
   get 'user_list', to: 'conferences#user_list'
 
@@ -23,6 +23,12 @@ Talkingheads::Application.routes.draw do
   post 'talks/:talk_id/favorites', to: 'favourites#create'
 
   delete 'talks/:talk_id/favorites', to: 'favourites#destroy'
+
+
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'logout', to: 'sessions#destroy', via: [:get, :post]
+
 
 
 

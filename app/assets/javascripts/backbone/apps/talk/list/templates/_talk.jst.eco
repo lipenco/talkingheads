@@ -1,6 +1,6 @@
 <div class="talk-container col-md-4">
   <div class="talk-head">
-      <h1><%= @title %></h1>
+      <a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><h1><%= @title %></h1></a>
       <%= @speaker %>
   </div>
   <div class="talk-foot">
