@@ -1,15 +1,21 @@
-
+<!--
 <div class="container">
 <div class="header">
     <ul class="nav nav-pills pull-right"></ul>
 
   <h3 class="text-muted">Talking Heads</h3>
-
-
-
-
-
-
-
 </div>
+</div> -->
+
+<div id="header">
+  <div class="row-main container">
+    <ul class="nav nav-pills pull-right"></ul>
+
+    <p class="buttons">
+<!-- 			<a href="http://bit.ly/17rN3QU" class="btn"><span>Press</span></a> -->
+    </p>
+  </div>
+  <h1 id="logo" class="logo">Talking Heads</h1>
+
+  <div class="home-overlay"></div>
 </div>
