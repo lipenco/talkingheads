@@ -8,7 +8,7 @@
   API =
     getHeaders: (currentUserName) ->
       new Entities.HeaderCollection [
-        { name: "Favorites" ,  url: "#favorites", icon:'glyphicon glyphicon-heart' }
+        { name: "Favorites" ,  url: "#favorites", icon:'glyphicon glyphicon-star' }
         { name: "About",       url: "#about", icon: '' }
         { name:  currentUserName || "Sign up",    url: "#profile", icon: 'glyphicon glyphicon-user'  }
       ]

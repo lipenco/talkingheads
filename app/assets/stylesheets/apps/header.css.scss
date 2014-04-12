@@ -10,6 +10,7 @@ z-index: 0;
 height: 500px;
 background: #28d8b3;
 width: 100%;
+transition: height 1000ms, background 500ms;
 }
 
 
@@ -24,6 +25,11 @@ padding: 0 10px;
 max-width: 1152px;
 }
 
+#header.tiny {
+  height:50px;
+  background: #28d8b3;
+}
+
 
 .home-overlay {
 width: 100%;
@@ -35,6 +41,10 @@ opacity: 0.03;
 background: url('/assets/icons3.jpg');
 }
 
+#header.tiny .home-overlay {
+  display: none;
+}
+
 .logo {
 
   color: #ffffff;
@@ -43,12 +53,33 @@ background: url('/assets/icons3.jpg');
   font-weight: 100;
   top:30%;
   left: 20%;
-  -webkit-transform: translateY(-20px);
-  -moz-transform: translateY(-20px);
-  transform: translateY(-20px);
-  -webkit-animation: fadein .4s .1s 1 forwards ease-in-out;
-  -moz-animation: fadein .4s .1s 1 forwards ease-in-out;
-  animation: fadein .4s .1s 1 forwards ease-in-out;
+  // -webkit-transform: translateY(-20px);
+  // -moz-transform: translateY(-20px);
+  // transform: translateY(-20px);
+  // -webkit-animation: fadein .4s .1s 1 forwards ease-in-out;
+  // -moz-animation: fadein .4s .1s 1 forwards ease-in-out;
+  // animation: fadein .4s .1s 1 forwards ease-in-out;
+  transition: 500ms;
 
 
+}
+
+#header.tiny .logo {
+
+  font-size:1.8em;
+  font-weight: 200;
+  top:-8px;
+  left: 5%;
+}
+
+.nav>li>a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration:none;
+  transition: 500ms;
+  padding-top: 17px;
+}
+
+.nav ul li a:hover {
+color: #ffffff;
 }
