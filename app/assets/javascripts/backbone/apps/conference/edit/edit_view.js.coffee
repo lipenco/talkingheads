@@ -18,3 +18,9 @@
 
     triggers:
       "click .conference-delete" : "conference:delete:clicked"
+
+    onRender: ->
+       @addDayPicker()
+
+    addDayPicker: ->
+      @$el.find('#dp1').datepicker()

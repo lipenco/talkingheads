@@ -5,7 +5,7 @@
      </p>
       <p>
        <label class="">Date</label>
-       <input type="text" name="date" value="<%= @date %>" />
+       <input type="text" name="date" value="<%= @date %>" id="dp1">
      </p>
      <p>
        <label class="">Place</label>
