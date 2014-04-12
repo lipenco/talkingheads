@@ -33,11 +33,21 @@
     template: "conference/list/_conference"
     itemView: List.ConferenceSingle
     itemViewContainer: "ul"
-    onRender: ->
+    onShow: ->
        @childElementsFadeIn()
 
     childElementsFadeIn: ->
-      duration = 200;
-      @$el.find('.conference_li').each (index) ->
-        $(this).hide()
-        $(this).delay((index+1) * duration).fadeIn(400)
+      container = @$el
+      container.isotope
+        layoutMode : 'masonry'
+        animationOptions:
+          duration: 500
+          easing: "swing"
+
+        itemSelector: ".conference_li"
+
+      #
+      # duration = 200;
+      # @$el.find('.conference_li').each (index) ->
+      #   $(this).hide()
+      #   $(this).delay((index+1) * duration).fadeIn(400)

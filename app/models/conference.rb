@@ -1,6 +1,6 @@
 class Conference < ActiveRecord::Base
   validates :name, presence: true
-  validates :tags, presence: true
+  # validates :tags, presence: true
   has_many :talks, dependent: :destroy
   belongs_to :user
 
