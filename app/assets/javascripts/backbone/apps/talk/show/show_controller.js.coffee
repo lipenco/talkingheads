@@ -18,6 +18,7 @@
         @nextRegion talk
         @talksRegion talks, talk
         @starRegion talk
+        @speakerRegion talk
 
       @show @layout, loading: true
 
@@ -31,6 +32,7 @@
         @starRegion args.model
         @titleRegion args.model
         @videoRegion args.model
+        @speakerRegion args.model
         childview = child.$el
         @manageHighlight(childview)
         id = args.model.get("id")
@@ -45,6 +47,10 @@
     titleRegion: (talk) ->
       titleView = @getTitleView talk
       @layout.titleRegion.show titleView
+
+    speakerRegion: (talk) ->
+      speakerView = @getSpeakerView talk
+      @layout.speakerRegion.show speakerView
 
     starRegion: (talk) ->
       App.execute "star:for:talk", talk,  @layout.starRegion
@@ -71,6 +77,10 @@
 
     getNextView: (talk) ->
       new Show.Next
+        model: talk
+
+    getSpeakerView: (talk) ->
+      new Show.Speaker
         model: talk
 
     getTalksView: (talks, talk) ->

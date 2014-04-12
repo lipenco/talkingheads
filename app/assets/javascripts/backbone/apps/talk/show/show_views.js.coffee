@@ -9,10 +9,14 @@
       talksRegion:  "#talks-region"
       nextRegion:   "#next-region"
       starRegion:   "#star-region"
+      speakerRegion: "#speaker-region"
 
 
   class Show.Title extends App.Views.ItemView
     template: "talk/show/_title"
+
+  class Show.Speaker extends App.Views.ItemView
+    template: "talk/show/_speaker"
 
 
   class Show.Video extends App.Views.ItemView

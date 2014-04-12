@@ -1,1 +1,1 @@
-<span class="mark-fav glyphicon glyphicon-star"></span>
+<span class="mark-fav glyphicon glyphicon-star" id="staricon"></span>
