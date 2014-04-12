@@ -1,10 +1,11 @@
 class ColorPicker
 
   COLOR_MAP = {
-    backbone:   :green,
+    design:     :green,
     rails:      :yellow,
     javascript: :purple,
     ruby:       :red,
+    backbone:   :purple
 
   }
 
