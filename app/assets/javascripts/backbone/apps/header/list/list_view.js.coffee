@@ -19,22 +19,3 @@
 			  else
 			    $("#header").addClass "tiny"
 			  return
-			# $(window).scroll ->
-		  # 	if ($(document).scrollTop() == 0)
-			# 		console.log "laldsad"
-			# 	console.log "lal"
-			# else
-
-
-		  #   @$el.find("#header").removeClass "tiny"
-		  # else
-		  #   $("#heade").addClass "tiny"
-		  return
-
-
-
-			# @$el.find("#header").addClass('tiny')
-				# console.log "scroll"
-      	# @$el.find(".header").removeClass('tiny')
-    	# else
-      # 	@$el.find(".header").addClass('tiny')
