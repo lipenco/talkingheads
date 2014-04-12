@@ -60,8 +60,12 @@
       videoView = @getVideoView talk
       @layout.videoRegion.show videoView
       video = talk.get("video_url")
+      if video.match(/youtube/) != null
+        pop = Popcorn.youtube( "#youtube", "#{video}" )
+      else if video.match(/vimeo/) != null
+        pop = Popcorn.vimeo( "#youtube", "#{video}" )
 
-      pop = Popcorn.youtube( "#youtube", "#{video}" )
+
 
 
     manageHighlight: (childView) ->
