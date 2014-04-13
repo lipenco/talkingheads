@@ -50,6 +50,13 @@ padding-bottom: 50px;
   // height: 1rem;
   // max-height: 100px;
   float: left;
+  transition: 1500ms;
+}
+
+.rainbow-top ul li:hover {
+  opacity: 0.5;
+  transition: 500ms;
+
 }
 
 .rainbow-top ul li p{

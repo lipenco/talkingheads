@@ -64,6 +64,15 @@ ul {
       /* This value is the height of your footer */
 }
 
+.container {
+padding-bottom: 30px;
+}
+
+
+#edit-conference-layout, #show-talk-region, #talks-region {
+padding-top: 40px;
+}
+
 .meny-active #wrap {
   position:fixed;
   height: 120%;

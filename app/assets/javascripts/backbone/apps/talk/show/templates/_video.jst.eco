@@ -13,7 +13,10 @@
   <div class="col-md-12">
     <div id="youtube" style="width:80%; height:500px;"></div>
   </div>
-
   <% end %>
 
+<div class="row container">
+  <div class="col-md-10">
   <p> <%= @description %> </p>
+</div>
+</div>
