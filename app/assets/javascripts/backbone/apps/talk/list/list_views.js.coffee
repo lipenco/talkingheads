@@ -22,3 +22,10 @@
     template: "talk/list/_talks"
     itemView: List.TalkSingle
     itemViewContainer: "ul"
+    onShow: ->
+       @childElementsFadeIn()
+
+    childElementsFadeIn: ->
+      container = @$el.find("ul")
+      container.isotope
+        itemSelector: ".talk-container"
