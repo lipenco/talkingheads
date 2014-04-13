@@ -15,8 +15,8 @@
   </div>
   <% end %>
 
-<div class="row container">
-  <div class="col-md-10">
+<div class="row description-cont">
+
   <p> <%= @description %> </p>
-</div>
+
 </div>
