@@ -7,7 +7,6 @@
       titleRegion:  "#title-region"
       videoRegion:  "#video-region"
       talksRegion:  "#talks-region"
-      nextRegion:   "#next-region"
       starRegion:   "#star-region"
       speakerRegion: "#speaker-region"
 
@@ -22,8 +21,6 @@
   class Show.Video extends App.Views.ItemView
     template: "talk/show/_video"
 
-  class Show.Next extends App.Views.ItemView
-    template: "talk/show/_next"
 
   class Show.Talk extends App.Views.ItemView
     template: "talk/show/_talk"

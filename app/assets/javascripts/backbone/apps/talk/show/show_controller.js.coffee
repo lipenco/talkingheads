@@ -15,7 +15,6 @@
       @listenTo @layout, "show", =>
         @titleRegion talk
         @videoRegion talk
-        @nextRegion talk
         @talksRegion talks, talk
         @starRegion talk
         @speakerRegion talk
@@ -73,15 +72,8 @@
       childView.addClass('highlight')
 
 
-    nextRegion: (talk) ->
-      nextView = @getNextView talk
-      @layout.nextRegion.show nextView
 
 
-
-    getNextView: (talk) ->
-      new Show.Next
-        model: talk
 
     getSpeakerView: (talk) ->
       new Show.Speaker
