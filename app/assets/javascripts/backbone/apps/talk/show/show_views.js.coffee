@@ -4,11 +4,13 @@
     template: "talk/show/show_layout"
 
     regions:
-      titleRegion:  "#title-region"
-      videoRegion:  "#video-region"
-      talksRegion:  "#talks-region"
-      starRegion:   "#star-region"
-      speakerRegion: "#speaker-region"
+      titleRegion:   "#title-region"
+      videoRegion:   "#video-region"
+      talksRegion:   "#talks-region"
+      starRegion:    "#star-region"
+      speakerRegion:  "#speaker-region"
+      commentsRegion: "#comments-region"
+      descriptionRegion : "#description-region"
 
 
   class Show.Title extends App.Views.ItemView
@@ -16,6 +18,10 @@
 
   class Show.Speaker extends App.Views.ItemView
     template: "talk/show/_speaker"
+
+  class Show.Description extends App.Views.ItemView
+    template: "talk/show/_description"
+    className: "description-cont"
 
 
   class Show.Video extends App.Views.ItemView

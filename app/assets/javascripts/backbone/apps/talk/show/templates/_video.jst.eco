@@ -14,9 +14,3 @@
     <div id="youtube" style="width:80%; height:500px;"></div>
   </div>
   <% end %>
-
-<div class="row description-cont">
-
-  <p> <%= @description %> </p>
-
-</div>

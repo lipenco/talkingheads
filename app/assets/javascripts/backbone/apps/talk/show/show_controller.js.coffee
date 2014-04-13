@@ -18,6 +18,8 @@
         @talksRegion talks, talk
         @starRegion talk
         @speakerRegion talk
+        @descriptionRegion talk
+        # @commentsRegion talk
 
       @show @layout, loading: true
 
@@ -32,6 +34,8 @@
         @titleRegion args.model
         @videoRegion args.model
         @speakerRegion args.model
+        @descriptionRegion args.model
+        # @commentsRegion args.model
         childview = child.$el
         @manageHighlight(childview)
         id = args.model.get("id")
@@ -46,6 +50,14 @@
     titleRegion: (talk) ->
       titleView = @getTitleView talk
       @layout.titleRegion.show titleView
+
+    descriptionRegion: (talk) ->
+      descriptionView = @getDescriptionView talk
+      @layout.descriptionRegion.show descriptionView
+
+    # commentsRegion: (talks) ->
+    #   commentsView = @getCommentsView talk
+    #   @layout.commentsRegion.show commentsView
 
     speakerRegion: (talk) ->
       speakerView = @getSpeakerView talk
@@ -72,7 +84,9 @@
       childView.addClass('highlight')
 
 
-
+    getDescriptionView: (talk) ->
+      new Show.Description
+        model: talk
 
 
     getSpeakerView: (talk) ->

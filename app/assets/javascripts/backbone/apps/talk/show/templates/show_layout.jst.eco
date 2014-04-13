@@ -11,6 +11,8 @@
           </div>
       </div>
      <div id="video-region"></div>
+     <div id="description-region"></div>
+     <div id="comments-region"></div>
   </div>
 
   <div class="col-md-2  columns">

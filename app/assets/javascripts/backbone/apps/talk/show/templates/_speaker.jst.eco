@@ -1,1 +1,1 @@
-<p> <%= @speaker %> </p>
+<p> Talk by <%= @speaker %> </p>
