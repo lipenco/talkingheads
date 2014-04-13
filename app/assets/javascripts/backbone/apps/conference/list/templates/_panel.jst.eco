@@ -1,10 +1,10 @@
 
     <div class="rainbow-top animated animate-delay widthExpand">
       <ul>
+        <li class="orange"><p>All</p></li>
         <li class="green"><p>Design</p></li>
         <li class="yellow"><p>Java Script</p></li>
         <li class="red"><p>Ruby</p></li>
         <li class="purple"><p>iOS</p></li>
-        <li class="orange"><p>PHP</p></li>
       </ul>
     </div>

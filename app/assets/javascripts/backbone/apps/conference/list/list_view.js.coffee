@@ -24,11 +24,16 @@
       "click ul li" : "isotopeFilter"
 
     isotopeFilter: (e) =>
-      color = e.target.parentElement.attributes[0].value
       container = $("#conference-region")
-      container.isotope
-        itemSelector: ".note"
-        filter: ".#{color}"
+      color = e.target.parentElement.attributes[0].value
+      unless color is "orange"
+        container.isotope
+          itemSelector: ".note"
+          filter: ".#{color}"
+      else
+        container.isotope
+          itemSelector: ".note"
+          filter: "*"
 
 
   class List.ConferenceSingle extends App.Views.ItemView

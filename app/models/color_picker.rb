@@ -2,10 +2,12 @@ class ColorPicker
 
   COLOR_MAP = {
     design:     :green,
-    rails:      :yellow,
-    javascript: :purple,
+    rails:      :red,
+    javascript: :yellow,
     ruby:       :red,
-    backbone:   :purple
+    backbone:   :yellow,
+    ios:        :purple,
+    php:        :orange
 
   }
 
@@ -14,7 +16,7 @@ class ColorPicker
     COLOR_MAP.keys.each do |tag|
        return COLOR_MAP[tag].to_s if tags.downcase.include? tag.to_s
     end
-    return "red"
+    return "orange"
   end
 
 end
