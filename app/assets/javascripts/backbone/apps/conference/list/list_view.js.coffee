@@ -18,7 +18,17 @@
 
   class List.Panel extends App.Views.ItemView
     template: "conference/list/_panel"
-    tagName: "ul"
+    className: "row"
+
+    events:
+      "click ul li" : "isotopeFilter"
+
+    isotopeFilter: (e) =>
+      color = e.target.parentElement.attributes[0].value
+      container = $("#conference-region")
+      container.isotope
+        itemSelector: ".note"
+        filter: ".#{color}"
 
 
   class List.ConferenceSingle extends App.Views.ItemView
@@ -44,7 +54,7 @@
           duration: 500
           easing: "swing"
 
-        itemSelector: ".conference_li"
+        itemSelector: ".note"
 
       #
       # duration = 200;

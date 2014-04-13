@@ -1,4 +1,4 @@
-<div id="edit-conference-layout">
+<div id="edit-conference-layout" class="container">
 <div class="row">
   <div class="col-md-6  columns">
      <div id="title-region"></div>

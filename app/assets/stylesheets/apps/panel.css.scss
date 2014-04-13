@@ -1,0 +1,162 @@
+.expandmenu {
+width: 100%;
+
+}
+
+.green {
+  background: #1abc9c;
+}
+
+.orange {
+  background: #e67e22;
+}
+
+.purple {
+  background: #9b59b6;
+}
+
+.yellow {
+  background: #f1c40f;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+#panel-region {
+padding-bottom: 50px;
+// border-top: 2px solid #28d8b3;
+
+}
+
+
+.rainbow-top {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.rainbow-top ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rainbow-top ul li {
+  width: 20%;
+  // height: 1rem;
+  // max-height: 100px;
+  float: left;
+}
+
+.rainbow-top ul li p{
+  text-align: center;
+  font-size: 1.2em;
+  color: #ffffff;
+  padding-top: 0.5em;
+  padding-bottom: 0;
+}
+
+@-webkit-keyframes index-rainbow {
+  0% {
+    opacity: 0;
+    height: 5000px;
+    max-height: 10000px;
+  }
+
+  100% {
+    opacity: 1;
+    height: 15px;
+    max-height: 10000px;
+  }
+}
+
+
+
+
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate-delay {
+  animation-delay: .7s;
+  -webkit-animation-delay: .7s;
+  /* Safari and Chrome */
+}
+
+.animate-delay-1 {
+  animation-delay: 1.25s;
+  -webkit-animation-delay: 1.25s;
+  /* Safari and Chrome */
+}
+
+
+
+
+.widthExpand {
+  -webkit-animation-name: widthExpand;
+  -moz-animation-name: widthExpand;
+  -o-animation-name: widthExpand;
+  animation-name: widthExpand;
+}
+
+@-webkit-keyframes widthExpand {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes widthExpand {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@-o-keyframes widthExpand {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes widthExpand {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}

@@ -1,4 +1,4 @@
-<div id="edit-conference-layout">
+<div id="edit-conference-layout" class="container" >
 <!--   <div id="title-region"></div> -->
   <div id="form-region"></div>
 </div>
