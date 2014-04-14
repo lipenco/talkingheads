@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'eco'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'gon'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
