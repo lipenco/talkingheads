@@ -5,6 +5,10 @@
     initialize: (options) ->
       { q } = options
       talks = App.request "search:talk:entities", (q)
+      meny.close()
+      App.talksListRegion.close()
+      App.formRegion.close()
+      App.titleRegion.close()
 
       @layout = @getLayoutView talks
 
@@ -16,6 +20,12 @@
 
     talksRegion: (talks) ->
       talksView = @getTalksView talks
+
+      @listenTo talksView, "query:get", (q) =>
+        # talks = App.request "search:talk:entities", (q)
+        # @talksRegion talks
+        App.vent.trigger "list:searched:talks", q
+
 
       @listenTo talksView, "childview:talk:single:clicked", (child, args) ->
         model = args.model

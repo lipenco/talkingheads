@@ -1,10 +1,10 @@
 @Demo.module "TalkApp.Search", (Search, App, Backbone, Marionette, $, _) ->
 
   class Search.Layout extends App.Views.Layout
-    template: "talk/list/list_layout"
+    template: "talk/search/search_layout"
 
     regions:
-      talksRegion:     "#talks-region"
+      talksRegion:     "#tallks-region"
 
 
 
@@ -19,7 +19,7 @@
 
 
   class Search.Talks extends App.Views.CompositeView
-    template: "talk/list/_talks"
+    template: "talk/search/_talks"
     itemView: Search.TalkSingle
     itemViewContainer: "ul"
     onShow: ->
@@ -29,3 +29,11 @@
       container = @$el.find("ul")
       container.isotope
         itemSelector: ".talk-container"
+
+    events:
+      "keydown #search-input" : "search"
+
+    search: (e) =>
+      if (e.keyCode ==13)
+        q = @.$el.find("#search-input").val()
+        @trigger "query:get", (q)

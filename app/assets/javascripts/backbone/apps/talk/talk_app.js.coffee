@@ -30,10 +30,9 @@
         talks: talks
         region: region
 
-    listSearchedTalks: (q, region) ->
+    listSearchedTalks: (q) ->
       new TalkApp.Search.Controller
         q: q
-        region: region
 
     userListTalk: (conference_id, talks) ->
       new TalkApp.UserTalkList.Controller
@@ -61,8 +60,8 @@
   App.commands.setHandler "new:talk:single", (talks, region) ->
     API.newTalk talks, region
 
-  App.vent.on "list:searched:talks", (q, region) ->
-    API.listSearchedTalks q, region
+  App.vent.on "list:searched:talks", (q) ->
+    API.listSearchedTalks q
 
 
   App.commands.setHandler "list:talks:view", (single, id, region) ->
