@@ -17,6 +17,8 @@ Talkingheads::Application.routes.draw do
 
   get 'favourites', to: 'favourites#list'
 
+  get 'search/:q', to: 'talks#search'
+
   # get 'favorites', to: 'favourites#current_user'
 
 

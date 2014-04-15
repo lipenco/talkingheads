@@ -30,6 +30,15 @@
 
     panelRegion: ->
       panelView = @getPanelView()
+      @listenTo panelView, "query:get", (q) =>
+        App.vent.trigger "list:searched:talks", q, @layout.conferenceRegion
+        # talks = App.request "search:talk:entities" (q)
+        # $.ajax
+        #   method: 'GET',
+        #   url: "search/#{q}"
+        #   success: (data, textStatus, jqXHR) ->
+        #     talks = data
+
       @show panelView, region: @layout.panelRegion
       # @layout.panelRegion.show panelView
 

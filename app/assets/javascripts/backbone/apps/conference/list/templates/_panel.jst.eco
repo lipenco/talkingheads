@@ -6,5 +6,6 @@
         <li class="yellow"><p>Java Script</p></li>
         <li class="red"><p>Ruby</p></li>
         <li class="purple"><p>iOS</p></li>
+        <li><input type="text" placeholder="Search" id="search-input"></li>
       </ul>
     </div>

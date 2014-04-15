@@ -9,7 +9,10 @@ class TalksController < ApplicationController
     @talk = Talk.find params[:id]
   end
 
-
+  def search
+    @talks = Talk.search(params[:q]).records
+    render "talks/index"
+  end
 
   def index
     @conference = Conference.find params[:conference_id]
@@ -60,9 +63,5 @@ class TalksController < ApplicationController
       render json: {} # halts request cycle
     end
   end
-
-
-
-
 
 end

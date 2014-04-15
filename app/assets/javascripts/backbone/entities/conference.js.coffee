@@ -8,11 +8,15 @@
 
 
   class Entities.TalkCollection  extends App.Entities.Collection
-
     model: Entities.Talk
     initialize: (@id) ->
-
     url: -> "/conferences/#{@id}/talks"
+
+
+  class Entities.TalkSearchCollection  extends App.Entities.Collection
+    model: Entities.Talk
+    initialize: (@q) ->
+    url: -> "/search/#{@q}"
 
 
 
@@ -72,6 +76,12 @@
         # id: id
       talks
 
+    getSearchedTalks:(q) ->
+      talks = new Entities.TalkSearchCollection(q)
+      talks.fetch
+        reset: true
+      talks
+
     getFavorites: ->
       favorites = new Entities.FavoritesCollection
       favorites.fetch
@@ -100,6 +110,9 @@
 
   App.reqres.setHandler "new:conference:entity", ->
     API.newSingle()
+
+  App.reqres.setHandler "search:talk:entities", (q)->
+    API.getSearchedTalks(q)
 
 
   App.reqres.setHandler "talk:entities", (conference_id) ->

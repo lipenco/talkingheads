@@ -22,18 +22,27 @@
 
     events:
       "click ul li" : "isotopeFilter"
+      "keydown #search-input" : "search"
+
+    search: (e) =>
+      if (e.keyCode ==13)
+        q = @.$el.find("#search-input").val()
+        @trigger "query:get", (q)
+
+
 
     isotopeFilter: (e) =>
       container = $("#conference-region")
-      color = e.target.parentElement.attributes[0].value
-      unless color is "orange"
-        container.isotope
-          itemSelector: ".note"
-          filter: ".#{color}"
-      else
-        container.isotope
-          itemSelector: ".note"
-          filter: "*"
+      if e.target.parentElement.attributes[0]
+        color = e.target.parentElement.attributes[0].value
+        unless color is "orange"
+          container.isotope
+            itemSelector: ".note"
+            filter: ".#{color}"
+        else
+          container.isotope
+            itemSelector: ".note"
+            filter: "*"
 
 
   class List.ConferenceSingle extends App.Views.ItemView
