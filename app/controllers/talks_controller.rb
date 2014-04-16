@@ -2,12 +2,15 @@ class TalksController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :new]
   before_action :current_user, only: [:destroy, :create, :update, :new]
+  impressionist actions: [:show], unique: [:session_hash]
   respond_to :json
 
 
   def show
     @talk = Talk.find params[:id]
   end
+
+
 
   def search
     @talks = Talk.search(params[:q]).records
@@ -18,6 +21,7 @@ class TalksController < ApplicationController
     @conference = Conference.find params[:conference_id]
     @talks = @conference.talks
   end
+
 
   def new
     @talk = Talk.new(talk_params)
