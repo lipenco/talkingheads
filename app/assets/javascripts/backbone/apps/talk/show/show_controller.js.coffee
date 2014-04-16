@@ -4,7 +4,10 @@
 
     initialize: (options) ->
       { id, talk_id, talk } = options
-      talk or= App.request "talk:entity", id, talk_id
+      if talk
+        App.request "talk:entity", id, talk_id
+      else
+        talk = App.request "talk:entity", id, talk_id
       talks = App.request "talk:entities", id
       App.talksListRegion.close()
       App.formRegion.close()
