@@ -5,7 +5,7 @@
   </div>
   <div class="talk-foot">
     <a href="#" class="footItem1"><span class="glyphicon glyphicon-star"></span><%= @favorites %></a>
-    <a href="#" class="footItem2"><span class="glyphicon glyphicon-eye-open"></span>4,587</a>
+    <a href="#" class="footItem2"><span class="glyphicon glyphicon-eye-open"></span><%= @views_count %></a>
     <a href="#" class="footItem3"><span class="glyphicon glyphicon-pencil"></span>8</a>
   </div>
 </div>

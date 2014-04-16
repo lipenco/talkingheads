@@ -2,12 +2,13 @@ class TalksController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :new]
   before_action :current_user, only: [:destroy, :create, :update, :new]
-  impressionist actions: [:show], unique: [:session_hash]
+  # impressionist actions: [:show], unique: [:session_hash]
   respond_to :json
 
 
   def show
     @talk = Talk.find params[:id]
+    impressionist(@talk)
   end
 
 
