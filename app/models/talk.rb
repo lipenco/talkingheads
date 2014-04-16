@@ -14,6 +14,10 @@ class Talk < ActiveRecord::Base
     self.favourites.count
   end
 
+  def impressions_count
+    self[:impressions_count] || 0
+  end
+
 
 
 
