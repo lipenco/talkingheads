@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416135529) do
+ActiveRecord::Schema.define(version: 20140416160118) do
 
   create_table "conferences", force: true do |t|
     t.string   "name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20140416135529) do
     t.integer  "conference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "impressions_count"
   end
 
   add_index "talks", ["conference_id"], name: "index_talks_on_conference_id"

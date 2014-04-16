@@ -4,7 +4,7 @@ class Talk < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  is_impressionable
+  is_impressionable :counter_cache => true, :unique => :session_hash
 
   belongs_to :conference
   belongs_to :user
@@ -14,9 +14,7 @@ class Talk < ActiveRecord::Base
     self.favourites.count
   end
 
-  def views_count
-    self.impressionist_count(:filter=>:session_hash)
-  end
+
 
 
 
