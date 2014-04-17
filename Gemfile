@@ -22,6 +22,7 @@ gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'spinjs-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

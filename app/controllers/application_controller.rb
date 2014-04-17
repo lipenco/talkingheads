@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
 
 
 
+
   private
 
   def logged_in?

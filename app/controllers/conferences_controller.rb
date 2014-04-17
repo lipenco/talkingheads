@@ -8,6 +8,11 @@ class ConferencesController < ApplicationController
     @conferences = Conference.all
   end
 
+  def praginate
+    @conferences = Conference.page(params[:page]).order('id DESC')
+    render "conferences/index"
+  end
+
   def user_list
     @user_list = @current_user.conferences.all
   end

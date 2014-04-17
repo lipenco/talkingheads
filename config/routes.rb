@@ -19,6 +19,8 @@ Talkingheads::Application.routes.draw do
 
   get 'search/:q', to: 'talks#search'
 
+  get 'praginate/:p', to: 'conferences#praginate'
+
   # get 'favorites', to: 'favourites#current_user'
 
 
