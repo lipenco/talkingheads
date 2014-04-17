@@ -57,8 +57,16 @@
     template: "conference/list/_conference"
     itemView: List.ConferenceSingle
     itemViewContainer: "ul"
+
+
     onShow: ->
-       @childElementsFadeIn()
+      @childElementsFadeIn()
+      window.ell = @$el
+      @$el.parents("body").parents("html").parent().scroll () ->
+        # console.log "watch scrol"
+
+
+
 
     childElementsFadeIn: ->
       container = @$el
@@ -69,9 +77,3 @@
           easing: "swing"
 
         itemSelector: ".note"
-
-      #
-      # duration = 200;
-      # @$el.find('.conference_li').each (index) ->
-      #   $(this).hide()
-      #   $(this).delay((index+1) * duration).fadeIn(400)

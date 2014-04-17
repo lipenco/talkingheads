@@ -6,11 +6,15 @@
       "conferences": "list"
       "conferences/:id/edit" : "edit"
       "conferences/:id" : "show"
+      "_=_" : "redirect"
 
 
   API =
     list: ->
       new ConferenceApp.List.Controller
+
+    redirect: ->
+      App.navigate Routes.conference_path()
 
     newConference: (region) ->
       new ConferenceApp.New.Controller
