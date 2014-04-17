@@ -14,7 +14,7 @@
       new ConferenceApp.List.Controller
 
     redirect: ->
-      App.navigate Routes.conference_path()
+      App.navigate Routes.conferences_path()
 
     newConference: (region) ->
       new ConferenceApp.New.Controller
