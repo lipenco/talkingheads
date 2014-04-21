@@ -9,7 +9,7 @@
 /*  height: 320px;*/
   margin: auto 20px;
   color: #2c3e50;
-  background: #97C02F;
+  // background: #97C02F;
   overflow: hidden;
   float: left;
   margin-bottom: 30px;
@@ -40,30 +40,21 @@
   -moz-border-radius: 0 0 0 5px;
   border-radius: 0 0 0 5px;
 }
-.note.red {
-  background: #e74c3c;
-}
+
 .note.red:before {
   border-color: #fff #fff #c0392b #c0392b;
   background: #1f1f1f;
 }
-.note.yellow {
-  background: #f1c40f;
-}
+
 .note.yellow:before {
   border-color: #fff #fff #f39c12 #f39c12;
-  background: #f39c12;
 }
-.note.green {
-  background: #1abc9c;
-}
+
 .note.green:before {
   border-color: #fff #fff #16a085 #16a085;
   background: #16a085;
 }
-.note.purple {
-  background: #9b59b6;
-}
+
 .note.purple:before {
   border-color: #fff #fff #8e44ad #8e44ad;
   background: #8e44ad;
@@ -93,6 +84,7 @@ a, a:visited {
 
 .note article {
   width: 230px;
+  padding-bottom: 1em;
   background-color: #fff;
   opacity: 0.8;
   margin: 0;
@@ -101,21 +93,26 @@ a, a:visited {
 .yellow article {
   border-left: 1px solid #f1c40f;
   border-right: 1px solid #f1c40f;
+  width: 229px;
 }
 
 .green article {
   border-left: 1px solid #1abc9c;
   border-right: 1px solid #1abc9c;
+  width: 229px;
 }
 
 .red article {
   border-left: 1px solid #e74c3c;
   border-right: 1px solid #e74c3c;
+  width: 229px;
 }
+
 
 .purple article {
   border-left: 1px solid #9b59b6;
   border-right: 1px solid #9b59b6;
+  width: 229px;
 }
 
 
@@ -186,8 +183,9 @@ border-top: 1px solid #b8bcbf
 .comments-status {
   text-align: center;
   padding: 0.5em 1em 0.8em;
-  opacity: 0.6;
+  opacity: 0.9;
   font-size: 0.9em;
+  font-weight: 600;
 }
 
 .user-card header h1 {
@@ -199,6 +197,7 @@ border-top: 1px solid #b8bcbf
 .red .user-card header {
   border-left: 1px solid #e74c3c;
   border-right: 1px solid #e74c3c;
+  width: 229px;
 
 }
 
@@ -206,17 +205,20 @@ border-top: 1px solid #b8bcbf
 
   border-left: 1px solid  #f1c40f;
   border-right: 1px solid  #f1c40f;
+  width: 229px;
 }
 
 .purple .user-card header {
   border-left: 1px solid #9b59b6;
   border-right: 1px solid #9b59b6;
+  width: 229px;
 }
 
 
 .green .user-card header {
   border-left: 1px solid #1abc9c;
   border-right: 1px solid #1abc9c;
+  width: 229px;
 }
 
 .user-card header p {
@@ -236,118 +238,34 @@ border-top: 1px solid #b8bcbf
 
 
 
-.user-menu {
-  background: rgba(0, 0, 0, 0.05);
+.conference-footer {
   text-shadow: 0 0.1em 0.1em black;
-  margin-bottom: 0.3em; }
-  .user-menu li {
-    position: relative;
-    width: 20%;
-    box-shadow: inset 0.1em 0 rgba(59, 64, 66, 0.3);
-  }
-    .user-menu li:hover {
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0.3em #1c84d4, inset 0.1em 0 rgba(255, 255, 255, 0.05), inset -0.1em 0 rgba(255, 255, 255, 0.05);
-    }
-      .user-menu li:hover.activity:after {
-        box-shadow: inset 0 0.1em rgba(255, 255, 255, 0.2), 0 0 0 0.25em rgba(255, 255, 255, 0.2), 0 0 0 0.25em #1d2122; }
-    .user-menu li:first-child {
-      border-bottom-left-radius: 0.3rem; }
-    .yellow .user-menu li:first-child {
-      border-left: 1px solid  #f1c40f;
-    }
-    .red .user-menu li:first-child {
-      border-left: 1px solid  #e74c3c;
-    }
-    .purple .user-menu li:first-child {
-      border-left: 1px solid  #9b59b6;
-    }
-    .green .user-menu li:first-child {
-      border-left: 1px solid  #1abc9c;
-    }
-
-    .user-menu li:last-child {
-      border-bottom-right-radius: 0.3rem; }
-
-    .yellow .user-menu li:last-child {
-      border-right: 1px solid  #f1c40f;
-      }
-     .red .user-menu li:last-child {
-      border-right: 1px solid  #e74c3c;
-      }
-       .green .user-menu li:last-child {
-      border-right: 1px solid  #1abc9c;
-      }
-       .purple .user-menu li:last-child {
-      border-right: 1px solid  #9b59b6;
-      }
-    .user-menu li.activity:after {
-      content: "";
-      display: block;
-      width: 0.5em;
-      height: 0.5em;
-      background: #a1a5a8;
-      border-radius: 100%;
-      box-shadow: inset 0 0.1em rgba(255, 255, 255, 0.2), 0 0 0 0.25em #1d2122;
-      position: absolute;
-      top: 30%;
-      right: 30%; }
-  .user-menu a {
-    color: #686868;
-    display: block;
-    padding: 1rem 0;
-    font-size: 1.5em;
-    text-align: center;
-  }
-
-  .user-menu a:hover {
-      color: #1c84d4;
-    }
-
-
-.icon {
-  position: absolute;
-  top:33px;
-  right: 33px;
-  font-size: 1.4em;
-  opacity: 0.5;
+  margin-bottom: 0.3em;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
 
 }
 
-.red .icon {
-  color: #66150d;
+.conference-footer.red {
+background:#e74c3c;
 }
 
-.yellow .icon {
-  color: #5e4c05;
+.conference-footer.purple {
+background:#9b59b6;
 }
 
-.icon-status {
-  width: 40px;
-  text-align: center;
-  margin-left: 95px;
-  padding-bottom: 10px;
+.conference-footer.yellow {
+background:#f1c40f;
 }
-.icon-status1 {
-  width: 45px;
-  text-align: center;
-  margin-left: 95px;
-  padding-bottom: 10px;
+
+.conference-footer.green {
+background: #1abc9c;
 }
 
 
-.table {
-  display: table; }
-  .table .row {
-    display: table-row; }
-  .table .cell {
-    display: table-cell; }
 
-.fullwidth {
-  width: 100%; }
 
-.middle {
-  vertical-align: middle; }
+
 
 
 a {
@@ -436,64 +354,6 @@ a { text-decoration: none; -webkit-transition: all .4s;
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
  }
-
-
-
-
-
-
-.talk-head { overflow: auto; padding: 20px; background: #eaedf1; border-radius: 5px 5px 0 0; font-size: 1.2em; color: #b9becd; }
-  .talk-head h1 { margin: 15px 0 5px; font-weight: 200; font-size: 1.3em; color: #5e6d81; }
-
-
-.talk-foot {margin-bottom: 25px;
-  border:0;
-  color: #eee;
-  word-spacing: 0px;
-}
-
-
-.talk-foot  a {text-decoration: none; -webkit-transition: all .4s;  color: #eee }
-
-.footItem {
-  display:inline-block;
-  width: 33.3%;
-  padding: 15px 0;
-  margin:0;
-  text-align: center;
-  color: rgba(255,255,255,.8);
-  font-size: 1.1em;
-  border:0;
-  margin:0px;
-  margin-right: -3px;
-
-}
-.footItem span.glyphicon {
-  padding: 0, 5px 0, 5px;
-  margin:0;
-  font-size: 1em;  color: #fff;
-}
-
-.footItem1 { background: #9b59b6;
-    border-radius: 0 0 0 5px;
-
-  }
-
-.footItem:hover { opacity: 0.8 }
-.footItem2 { background: #e74c3c;  }
-
-.footItem3 { background: #f1c40f; border-radius: 0 0 5px 0;  }
-
-
-.talk-container {
-width:32%;
-margin-left: 1%;
-}
-
-.sinpadding {
-padding-left:0;
-
-}
 
 
 

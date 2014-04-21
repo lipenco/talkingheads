@@ -11,15 +11,9 @@
           <div class="comments-status"><a><%= @place %></a>, <%= @date %></div>
 
              <div class="status"><%= @description %></div>
-             <div class="comments-status"><a> <%= @talks_num %> talks</a>, 13 kudos</div>
+             <div class="comments-status"><a> <%= @talks_num %> talks</a></div>
            </article>
-           <div class="user-menu card">
-              <ul class="unstyled table fullwidth">
-                <li><a><span class="icon-rss"></span></a></li>
-                <li><a><span class="icon-comment"></span></a></li>
-                <li><a><span class="icon-share "></span></a></li>
-                <li><a><span class="icon-remove"></span></a></li>
-              </ul>
+           <div class="conference-footer <%= @color %>">
             </div>
         </div>
   </div>

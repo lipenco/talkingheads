@@ -31,3 +31,63 @@ margin-top: 50px;
 // ul.talk-foot li {
 // margin:0;
 // }
+
+
+
+
+
+
+
+
+.talk-head { overflow: auto; padding: 20px; background: #eaedf1; border-radius: 5px 5px 0 0; font-size: 1.2em; color: #b9becd; }
+  .talk-head h1 { margin: 15px 0 5px; font-weight: 200; font-size: 1.3em; color: #5e6d81; }
+
+
+.talk-foot {margin-bottom: 25px;
+  border:0;
+  color: #eee;
+  word-spacing: 0px;
+}
+
+
+.talk-foot  a {text-decoration: none; -webkit-transition: all .4s;  color: #eee }
+
+.footItem {
+  display:inline-block;
+  width: 33.3%;
+  padding: 15px 0;
+  margin:0;
+  text-align: center;
+  color: rgba(255,255,255,.8);
+  font-size: 1.1em;
+  border:0;
+  margin:0px;
+  margin-right: -4px;
+}
+
+.footItem span.glyphicon {
+  padding: 0, 5px 0, 5px;
+  margin:0;
+  font-size: 1em;  color: #fff;
+}
+
+.footItem1 { background: #9b59b6;
+    border-radius: 0 0 0 5px;
+
+  }
+
+.footItem:hover { opacity: 0.8 }
+.footItem2 { background: #e74c3c;  }
+
+.footItem3 { background: #f1c40f; border-radius: 0 0 5px 0;  }
+
+
+.talk-container {
+width:32%;
+margin-left: 1%;
+}
+
+.sinpadding {
+padding-left:0;
+
+}
