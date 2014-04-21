@@ -21,3 +21,4 @@
     template: "talk/list/_talks"
     itemView: List.TalkSingle
     itemViewContainer: "ul"
+    className: "favoritestalks"
