@@ -1,4 +1,2 @@
 
-<li class="next">
-    <h2><a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><%= @title %></a></h2>
-</li>
+<h2 id="<%= @id %>"><a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><%= @title %></a></h2>

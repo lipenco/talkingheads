@@ -61,7 +61,6 @@
 
     onShow: ->
       @childElementsFadeIn()
-      window.ell = @$el
       @$el.parents("body").parents("html").parent().scroll () ->
         # console.log "watch scrol"
 

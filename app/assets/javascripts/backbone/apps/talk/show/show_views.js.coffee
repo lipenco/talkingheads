@@ -35,12 +35,13 @@
     triggers:
       "click"      : "talk:single:render"
 
-    # onRender: ->
-    #   App.vent.trigger 'app:show'
-
-
 
   class Show.Talks extends App.Views.CompositeView
     template: "talk/show/_talks"
     itemView: Show.Talk
     itemViewContainer: "ul"
+
+    onShow: ->
+      elll = @.model.id
+      # @childElementsFadeIn()
+      @$el.find("##{elll}").parent().addClass("highlight")

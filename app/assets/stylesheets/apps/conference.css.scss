@@ -365,3 +365,8 @@ input[type='search']#search-input {
   padding-left: 1em;
 
 }
+
+input[type='search']:focus {
+  outline: none;
+
+}
