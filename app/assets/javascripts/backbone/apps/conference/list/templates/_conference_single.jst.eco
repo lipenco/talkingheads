@@ -10,7 +10,6 @@
           <article>
           <div class="comments-status"><a><%= @place %></a>, <%= @date %></div>
 
-              <!--  <img class="icon-status" src="img/issue.png"> -->
              <div class="status"><%= @description %></div>
              <div class="comments-status"><a> <%= @talks_num %> talks</a>, 13 kudos</div>
            </article>
@@ -23,5 +22,4 @@
               </ul>
             </div>
         </div>
-
   </div>

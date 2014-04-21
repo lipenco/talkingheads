@@ -7,9 +7,9 @@
   overflow: hidden;
   color: #bbb;
   padding-left: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -24,10 +24,6 @@ padding: 1em;
 
 #top-links li {
 float: left;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-position: relative;
 text-decoration: none;
 }
 
