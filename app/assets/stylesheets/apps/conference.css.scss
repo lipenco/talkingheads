@@ -334,7 +334,12 @@ ul li .conference_li {
 
 .highlight {
   padding-right: 10px;
-  border-left : 5px solid #16a085;
+  border-left : 1px solid #16a085;
+  background-color: #fcfcfc;
+}
+
+#talks-menu.talks li.highlight h2 a  {
+  color: #f56363;
 }
 
 .glyphicon {
