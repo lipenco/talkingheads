@@ -1,7 +1,7 @@
 
-<div class="comment">
+<div class="comment row">
   <img src="<%= @author_image %>">
-  <div class="comment-content"><p class="author"><strong><%= @author_name %></strong> - <%= @updated_at_formatted  %></p>
+  <div class="comment-content"><p class="author"><strong><%= @author_name %></strong> - <%= @updated_at_formatted%> ago </p>
     <span>
        <%= @content %>
     </span>

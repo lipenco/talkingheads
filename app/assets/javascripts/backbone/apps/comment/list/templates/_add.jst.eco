@@ -1,13 +1,9 @@
-<ul>
-  <li>
-  <div class="comment">
+
+  <div class="comment row">
   <img src="<%= @image %>">
   <div class="comment-content"><p class="author"><strong><%= @name %></strong> - now</p>
-    <span><p contenteditable="true">Add Your Comment</p>
-    <button id="contentible" class="btn">Add</button>
+    <span><p class="commentp" contenteditable="true">Add Your Comment</p>
+    <button id="contentible" class="btn">+</button>
   </span>
-
   </div>
 </div>
-</li>
-</ul>

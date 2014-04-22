@@ -27,14 +27,15 @@
       @listenTo addComentsView, "comment:save", (comment) =>
         text = $("span p").text()
         talk_id  = comments.talk_id
+        name = comment.get("name")
+        image = comment.get("image")
         comment = App.request "new:comments:entity", talk_id
         comment.set({content: text})
+        comment.set({author_name: name})
+        comment.set({author_image: image})
         comment.set({talk_id: comments.talk_id})
-        # comment.set({user_id: user.id})
-        window.tt = comment
-        talk_id  = comments.talk_id
-        # ticket_id = ticket.id
-        # comment.url = "/talks/#{talk_id}/comments"
+        $("span p").text("Add Your Comment")
+        comments.unshift(comment)
         comment.save()
 
       @show addComentsView, region: @layout.addComentRegion

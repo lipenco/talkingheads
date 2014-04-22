@@ -2,6 +2,8 @@
   width:600px;
   padding:5px;
   margin:20px 0;
+  display: block;
+
 }
 
 .comment-content{
@@ -50,10 +52,10 @@
   border-radius:50%;
   margin:20px 0 0 10px;
 }
-
-#comments-region {
-padding-bottom: 100px;
+.commentp {
+ width: 90%;
 }
+
 
 [contenteditable="true"]:active,
 [contenteditable="true"]:focus{
@@ -63,6 +65,20 @@ outline:none;
 
 #contentible {
 position: absolute;
-bottom:5px;
-right: 5px;
+bottom: 0;
+right: 0;
+font-size: 1.5em;
+height:100%;
+transition: 500ms;
+border-radius: 0;
+}
+
+#contentible:hover {
+opacity: 0.8;
+
+}
+
+.comment_li {
+display: block;
+
 }

@@ -10,16 +10,15 @@
 
   class List.AddComment extends App.Views.ItemView
     template: "comment/list/_add"
+    className: 'comment_li'
+    tagName: "li"
 
     events:
       "click #contentible" : 'saveComment'
 
     saveComment: (e) =>
-      console.log "sa"
       model = @.model
       @trigger "comment:save", (model)
-
-
 
 
 
@@ -28,13 +27,9 @@
     className: 'comment_li'
     tagName: "li"
 
-  class List.Empty extends App.Views.ItemView
-    template: "comment/list/_empty"
-    tagName: "li"
 
 
   class List.Comments extends App.Views.CompositeView
     template: "comment/list/_comments"
     itemView: List.Comment
-    emptyView: List.Empty
     itemViewContainer: "ul"
