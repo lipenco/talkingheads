@@ -27,11 +27,16 @@
     className: 'comment_li'
     tagName: "li"
 
+  class List.Empty extends App.Views.ItemView
+    template: "comment/list/_empty"
+    className: 'comment_li'
+    tagName: "li"
 
 
   class List.Comments extends App.Views.CompositeView
     template: "comment/list/_comments"
     itemViewContainer: "ul"
+    emptyView: List.Empty
     itemView: List.Comment
 
 

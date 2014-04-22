@@ -21,22 +21,24 @@
 
     addComentRegion: (comments) ->
       currentUser = App.request "get:current:user"
-      currentUserName = currentUser.get("name")
-      addComentsView = @getAddCommentsView comments, currentUser
+      currentUserId = currentUser.get("id")
+      if currentUserId != undefined
+        currentUserName = currentUser.get("name")
+        addComentsView = @getAddCommentsView comments, currentUser
 
-      @listenTo addComentsView, "comment:save", (comment) =>
-        text = $("span p").text()
-        talk_id  = comments.talk_id
-        name = comment.get("name")
-        image = comment.get("image")
-        comment = App.request "new:comments:entity", talk_id
-        comment.set({content: text})
-        comment.set({author_name: name})
-        comment.set({author_image: image})
-        comment.set({talk_id: comments.talk_id})
-        $("span p").text("Add Your Comment")
-        comments.unshift(comment)
-        comment.save()
+        @listenTo addComentsView, "comment:save", (comment) =>
+          text = $("span p").text()
+          talk_id  = comments.talk_id
+          name = comment.get("name")
+          image = comment.get("image")
+          comment = App.request "new:comments:entity", talk_id
+          comment.set({content: text})
+          comment.set({author_name: name})
+          comment.set({author_image: image})
+          comment.set({talk_id: comments.talk_id})
+          $("span p").text("Add Your Comment")
+          comments.unshift(comment)
+          comment.save()
 
       @show addComentsView, region: @layout.addComentRegion
 
