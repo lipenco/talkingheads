@@ -6,6 +6,6 @@
   <div class="talk-foot">
     <div class="footItem1 footItem"><span class="glyphicon glyphicon-star"></span><%= @favorites %></div>
     <div  class="footItem2 footItem"><span class="glyphicon glyphicon-eye-open"></span><%= @impressions_count %></div>
-    <div  class="footItem3 footItem"><span class="glyphicon glyphicon-pencil"></span>8</div>
+    <div  class="footItem3 footItem"><span class="glyphicon glyphicon-pencil"></span><%= @comments_count %> </div>
   </div>
 </div>

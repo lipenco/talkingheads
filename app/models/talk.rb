@@ -19,6 +19,10 @@ class Talk < ActiveRecord::Base
     self[:impressions_count] || 0
   end
 
+  def comments_count
+    self.comments.count
+  end
+
 
 
 
