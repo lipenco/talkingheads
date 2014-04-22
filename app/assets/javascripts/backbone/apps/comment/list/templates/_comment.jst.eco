@@ -1,1 +1,9 @@
-<p> comment <%= @content %></p>
+
+<div class="comment">
+  <img src="/assets/avatar.png">
+  <div class="comment-content"><p class="author"><strong>Jack the Ripper</strong> - 10 minutes ago</p>
+    <span>
+       <%= @content %>
+    </span>
+  </div>
+</div>

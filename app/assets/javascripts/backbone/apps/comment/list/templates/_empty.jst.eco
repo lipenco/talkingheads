@@ -1,1 +1,9 @@
-<p> no comments yet</p>
+
+<div class="comment">
+  <img src="/assets/avatar.png">
+  <div class="comment-content"><p class="author"><strong>Jack the Ripper</strong> - 10 minutes ago</p>
+    <span>
+       no comments yet no comments yet  no comments yet no comments yet no comments yet no comments yet no comments yet no comments yetno comments yet
+    </span>
+  </div>
+</div>

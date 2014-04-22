@@ -38,7 +38,7 @@
         @videoRegion args.model
         @speakerRegion args.model
         @descriptionRegion args.model
-        # @commentsRegion args.model
+        @commentsRegion args.model
         childview = child.$el
         @manageHighlight(childview)
         id = args.model.get("id")
