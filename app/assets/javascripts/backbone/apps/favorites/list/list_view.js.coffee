@@ -22,3 +22,11 @@
     itemView: List.TalkSingle
     itemViewContainer: "ul"
     className: "favoritestalks"
+
+    onShow: ->
+       @childElementsFadeIn()
+
+    childElementsFadeIn: ->
+      container = @$el.find("ul")
+      container.isotope
+        itemSelector: ".talk-container"
