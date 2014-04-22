@@ -10,7 +10,7 @@
       starRegion:    "#star-region"
       speakerRegion:  "#speaker-region"
       commentsRegion: "#comments-region"
-      descriptionRegion : "#description-region"
+      descriptionRegion: "#description-region"
 
 
   class Show.Title extends App.Views.ItemView

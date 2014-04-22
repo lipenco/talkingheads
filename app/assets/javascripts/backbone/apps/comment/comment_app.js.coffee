@@ -3,7 +3,7 @@
 
   API =
     list: (talk, region) ->
-      new FavoritesApp.List.Controller
+      new CommentApp.List.Controller
         talk: talk
         region: region
 

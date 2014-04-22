@@ -4,9 +4,9 @@
 
     initialize: (options) ->
       { talk } = options
-      id = talk.id
-      comments = App.request "comment:entities", id
-
+      talk_id = talk.id
+      comments = App.request "comments:entities", talk_id
+      console.log comments
       @layout = @getLayoutView comments
 
       @listenTo @layout, "show", =>

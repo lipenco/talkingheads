@@ -70,7 +70,7 @@
       App.execute "star:for:talk", talk,  @layout.starRegion
 
     commentsRegion: (talk) ->
-      App.ececute "get:talk:comments", talk, @layout.commentsRegion
+      App.execute "get:talk:comments", talk, @layout.commentsRegion
 
 
     videoRegion: (talk) ->

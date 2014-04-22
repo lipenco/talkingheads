@@ -9,6 +9,7 @@ class Talk < ActiveRecord::Base
   belongs_to :conference
   belongs_to :user
   has_many :favourites
+  has_many :comments
 
   def favorites
     self.favourites.count

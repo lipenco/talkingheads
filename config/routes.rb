@@ -7,6 +7,10 @@ Talkingheads::Application.routes.draw do
     resources :talks
   end
 
+  resources :talks do
+    resources :comments
+  end
+
   # resources :users do
   #   resources :conferences
   # end

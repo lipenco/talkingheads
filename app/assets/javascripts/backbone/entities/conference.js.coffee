@@ -7,8 +7,8 @@
 
   class Entities.CommentCollection  extends App.Entities.Collection
     model: Entities.Comment
-    initialize: (@id) ->
-    url: -> "/talks/#{@id}/comments"
+    initialize: (@talk_id) ->
+    url: -> "/talks/#{@talk_id}/comments"
 
 
   class Entities.Talk extends App.Entities.Model
@@ -90,7 +90,6 @@
         # id: id
       talks.fetch
         reset: true
-        # id: id
       talks
 
     getSearchedTalks:(q) ->
@@ -98,6 +97,12 @@
       talks.fetch
         reset: true
       talks
+
+    getComments: (talk_id) ->
+      comments = new Entities.CommentCollection(talk_id)
+      comments.fetch
+        reset: true
+      comments
 
     getFavorites: ->
       favorites = new Entities.FavoritesCollection
@@ -134,6 +139,9 @@
 
   App.reqres.setHandler "talk:entities", (conference_id) ->
     API.getTalks(conference_id)
+
+  App.reqres.setHandler "comments:entities", (talk_id) ->
+    API.getComments(talk_id)
 
   App.reqres.setHandler "new:talk:entity", (id) ->
     API.newTalk(id)

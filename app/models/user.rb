@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :conferences
   has_many :talks, through: :conferences
   has_many :favourites
+  has_many :comments
 
 
   def self.create_with_omniauth(auth)
