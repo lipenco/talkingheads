@@ -33,6 +33,7 @@
           image = comment.get("image")
           comment = App.request "new:comments:entity", talk_id
           comment.set({content: text})
+          comment.set({updated_at_formatted: "1 minute"})
           comment.set({author_name: name})
           comment.set({author_image: image})
           comment.set({talk_id: comments.talk_id})
