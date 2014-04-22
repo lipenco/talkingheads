@@ -1,0 +1,11 @@
+<ul>
+  <li>
+  <div class="comment">
+  <img src="/assets/avatar.png">
+  <div class="comment-content"><p class="author"><strong><%= @name %></strong> - now</p>
+    <span contenteditable="true">Add Your Comment
+    </span>
+  </div>
+</div>
+</li>
+</ul>

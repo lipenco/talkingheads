@@ -5,6 +5,13 @@
 
     regions:
       commentsRegion:     "#comments-region"
+      addComentRegion:    "#add-comments-region"
+
+
+  class List.AddComment extends App.Views.ItemView
+    template: "comment/list/_add"
+
+
 
 
 

@@ -6,11 +6,11 @@
       { talk } = options
       talk_id = talk.id
       comments = App.request "comments:entities", talk_id
-      console.log comments
       @layout = @getLayoutView comments
 
       @listenTo @layout, "show", =>
         @commentsRegion comments
+        @addComentRegion comments
 
       @show @layout, loading: true
 
@@ -18,6 +18,18 @@
     commentsRegion: (comments) ->
       commentsView = @getCommentsView comments
       @show commentsView, region: @layout.commentsRegion
+
+    addComentRegion: (comments) ->
+      currentUser = App.request "get:current:user"
+      currentUserName = currentUser.get("name")
+      addComentsView = @getAddCommentsView comments, currentUser
+      @show addComentsView, region: @layout.addComentRegion
+
+
+    getAddCommentsView: (comments, currentUser) ->
+      new List.AddComment
+        collection: comments
+        model: currentUser
 
 
     getCommentsView: (comments) ->
