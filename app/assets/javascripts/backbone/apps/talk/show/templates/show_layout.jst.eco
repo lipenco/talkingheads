@@ -1,7 +1,7 @@
 <div class="row" id="show-talk-region">
 
-  <div class="col-md-9 col-md-offset-1">
-     <div class="row" >
+  <div class="col-md-9 col-md-offset-1 talk-bacground">
+     <div class="row info-bacground" >
           <div class="col-md-1">
             <div id="star-region"></div>
           </div>
@@ -15,7 +15,7 @@
      <div id="comments-region"></div>
   </div>
 
-  <div class="col-md-2  columns">
+  <div class="col-md-2">
     <div id="talks-region"></div>
   </div>
 </div>

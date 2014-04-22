@@ -8,15 +8,7 @@ height: 400px;
 }
 
 
-.description-cont {
 
-margin: 30px 0;
-font-size: 1.2em;
-padding: 20px;
-background: #eaedf1;
-border-radius: 5px;
-// border: 2px solid #eaedf1;
-}
 
 .favoritestalks {
 margin-top: 50px;
@@ -91,4 +83,64 @@ margin-left: 1%;
 .sinpadding {
 padding-left:0;
 
+}
+
+.talk-bacground {
+background: #34495e;
+border-radius: 5px;
+
+}
+
+.info-bacground {
+
+// background: #28d8b3;
+border-radius: 6px 6px 0 0;
+color: #28d8b3;
+border-bottom: 2px solid #28d8b3;
+}
+
+#video-region {
+padding-top: 30px;
+
+}
+
+
+.description-cont {
+
+margin: 10px 0 0;
+font-size: 1.2em;
+color: #eaedf1;
+padding: 20px;
+background: #2c3e50;
+border-radius: 0 0 5px 5px;
+// border-bottom: 2px solid #28d8b3;
+}
+
+#show-talk-region {
+  background: #33495f;
+}
+
+#talks-region h4 {
+padding-top: 44px;
+padding-bottom: 20px;
+color: #28d8b3;
+border-bottom: 2px solid #28d8b3;
+}
+
+#talks-region .talks li {
+border-bottom: 1px solid #2c3e50;
+// border-left: 5px solid #2c3e50;
+border-top: none;
+position: relative;
+padding-top: 0;
+margin: 0;
+padding: 0;
+}
+
+#talks-region #talks-menu.talks li h2 a {
+color: #eaedf1;
+}
+
+#talks-region #talks-menu.talks li h2 a:hover{
+background: #2c3e50;
 }

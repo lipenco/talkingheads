@@ -1,12 +1,12 @@
-<dt>Join Us</dt>
+<dt>Join Talking Heads</dt>
 <ul>
   <dd class="item">
      <li><p><a href="/auth/twitter">Sign in with Twitter</a></p></li>
   </dd>
-  <dd class="item">
+<!--   <dd class="item">
   <li><p><a href="/auth/facebook">Sign in with Facebook</a></p></li>
 </dd>
   <dd class="item">
   <li><p><a href="/auth/facebook">Sign in with Github</a></p></li>
-</dd>
+</dd> -->
 </ul>
