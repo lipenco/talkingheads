@@ -1,5 +1,5 @@
 
-  <li class="next">
+
     <span class="dot glyphicon glyphicon-chevron-right"></span>
     <h2><a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><%= @title %></a></h2>
     <p class="small meta">
@@ -11,4 +11,3 @@
       <span>•</span>
       <a class="talk-edit">edit</a>
     </p>
-  </li>

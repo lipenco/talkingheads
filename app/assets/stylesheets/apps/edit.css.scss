@@ -37,17 +37,22 @@ input[type='text'], input[type='password'], input[type='email'], input[type='fil
     width: 100%;
 }
 
-ul .talks {
+#talks-region ul.talks li.talk_li.edittalk{
   margin: 0;
   border-bottom: 1px solid #eee;
 }
 
-.talks li {
+#talks-region ul.talks li.talk_li.edittalk {
   border-top: 1px solid #eee;
   position: relative;
   padding-top: 0;
   margin: 0;
   padding: 0;
+}
+
+ul.talks.edit {
+margin-top: 60px;
+
 }
 
 .talks li .dot {

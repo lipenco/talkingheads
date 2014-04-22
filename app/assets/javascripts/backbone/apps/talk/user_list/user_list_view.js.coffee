@@ -22,7 +22,7 @@
 
   class UserTalkList.Talk extends App.Views.ItemView
     template: "talk/user_list/_talk"
-    className: 'talk_li'
+    className: 'talk_li edittalk'
     tagName: "li"
 
 
