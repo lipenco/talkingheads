@@ -11,6 +11,6 @@
 
   <% else: %>
   <div class="col-md-12">
-    <div id="youtube" style="width:80%; height:500px;"></div>
+    <div id="youtube" style="width:100%; height:500px;"></div>
   </div>
   <% end %>
