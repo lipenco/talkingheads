@@ -1,1 +1,2 @@
+<h4 class="count section">Description:</h4>
 <p> <%= @description %> </p>

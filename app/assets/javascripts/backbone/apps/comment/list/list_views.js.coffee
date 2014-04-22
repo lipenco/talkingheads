@@ -4,7 +4,7 @@
     template: "comment/list/list_layout"
 
     regions:
-      commentsRegion:     "#comments-region"
+      commentsRegion:     "#commentss-region"
       addComentRegion:    "#add-comments-region"
 
 
@@ -31,5 +31,9 @@
 
   class List.Comments extends App.Views.CompositeView
     template: "comment/list/_comments"
-    itemView: List.Comment
     itemViewContainer: "ul"
+    itemView: List.Comment
+
+
+    appendHtml: (cv, iv) ->
+      cv.$el.prepend iv.el

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def index
     @talk = Talk.find params[:talk_id]
-    @comments = @talk.comments
+    @comments = @talk.comments.order('id DESC')
   end
 
   def create

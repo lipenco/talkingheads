@@ -1,3 +1,3 @@
 <h4 class="count section">Comments:</h4>
 <ul id="add-comments-region"></ul>
-<div id="comments-region"></div>
+<ul id="commentss-region"></ul>
