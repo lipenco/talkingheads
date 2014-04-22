@@ -82,5 +82,8 @@ background: url('/assets/icons3.jpg');
 }
 
 .nav ul li a:hover {
-color: #ffffff;
+}
+
+.nav-pills>li>a {
+border-radius: 0;
 }
