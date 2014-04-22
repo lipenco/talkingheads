@@ -116,6 +116,10 @@
     newTalk: (id) ->
       new Entities.Talk(id)
 
+    newComment: (talk_id) ->
+      new Entities.Comment(talk_id)
+
+
     setNewFavorites: (talk_id) ->
       new Entities.Favorites(talk_id)
 
@@ -142,6 +146,10 @@
 
   App.reqres.setHandler "comments:entities", (talk_id) ->
     API.getComments(talk_id)
+
+  App.reqres.setHandler "new:comments:entity", (talk_id) ->
+    API.newComment(talk_id)
+
 
   App.reqres.setHandler "new:talk:entity", (id) ->
     API.newTalk(id)

@@ -3,8 +3,10 @@
   <div class="comment">
   <img src="<%= @image %>">
   <div class="comment-content"><p class="author"><strong><%= @name %></strong> - now</p>
-    <span contenteditable="true">Add Your Comment
-    </span>
+    <span><p contenteditable="true">Add Your Comment</p>
+    <button id="contentible" class="btn">Add</button>
+  </span>
+
   </div>
 </div>
 </li>

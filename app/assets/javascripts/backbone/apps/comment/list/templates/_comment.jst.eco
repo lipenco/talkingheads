@@ -1,7 +1,7 @@
 
 <div class="comment">
-  <img src="/assets/avatar.png">
-  <div class="comment-content"><p class="author"><strong>Jack the Ripper</strong> - 10 minutes ago</p>
+  <img src="<%= @author_image %>">
+  <div class="comment-content"><p class="author"><strong><%= @author_name %></strong> - <%= @updated_at_formatted  %></p>
     <span>
        <%= @content %>
     </span>

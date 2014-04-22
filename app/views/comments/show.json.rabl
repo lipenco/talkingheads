@@ -1,4 +1,4 @@
-collection @comments
+object @comment
 
 attributes :id, :content, :user_id, :talk_id, :author_name, :author_image
 

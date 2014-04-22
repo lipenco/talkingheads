@@ -11,6 +11,8 @@ Talkingheads::Application.routes.draw do
     resources :comments
   end
 
+  # put 'talks/:talk_id/comments', to: 'comments#create'
+
   # resources :users do
   #   resources :conferences
   # end

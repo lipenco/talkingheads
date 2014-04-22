@@ -23,6 +23,20 @@
       currentUser = App.request "get:current:user"
       currentUserName = currentUser.get("name")
       addComentsView = @getAddCommentsView comments, currentUser
+
+      @listenTo addComentsView, "comment:save", (comment) =>
+        text = $("span p").text()
+        talk_id  = comments.talk_id
+        comment = App.request "new:comments:entity", talk_id
+        comment.set({content: text})
+        comment.set({talk_id: comments.talk_id})
+        # comment.set({user_id: user.id})
+        window.tt = comment
+        talk_id  = comments.talk_id
+        # ticket_id = ticket.id
+        # comment.url = "/talks/#{talk_id}/comments"
+        comment.save()
+
       @show addComentsView, region: @layout.addComentRegion
 
 

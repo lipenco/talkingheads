@@ -11,6 +11,14 @@
   class List.AddComment extends App.Views.ItemView
     template: "comment/list/_add"
 
+    events:
+      "click #contentible" : 'saveComment'
+
+    saveComment: (e) =>
+      console.log "sa"
+      model = @.model
+      @trigger "comment:save", (model)
+
 
 
 
