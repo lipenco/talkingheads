@@ -22,7 +22,7 @@
         @starRegion talk
         @speakerRegion talk
         @descriptionRegion talk
-        # @commentsRegion talk
+        @commentsRegion talk
 
       @show @layout, loading: true
 
@@ -68,6 +68,9 @@
 
     starRegion: (talk) ->
       App.execute "star:for:talk", talk,  @layout.starRegion
+
+    commentsRegion: (talk) ->
+      App.ececute "get:talk:comments", talk, @layout.commentsRegion
 
 
     videoRegion: (talk) ->

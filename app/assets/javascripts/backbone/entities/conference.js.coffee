@@ -1,5 +1,16 @@
 @Demo.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
+  class Entities.Comment extends App.Entities.Model
+    initialize: (@talk_id, @comment_id) ->
+    url: -> "/talks/#{@talk_id}/comments/#{@comment_id or ""}"
+
+
+  class Entities.CommentCollection  extends App.Entities.Collection
+    model: Entities.Comment
+    initialize: (@id) ->
+    url: -> "/talks/#{@id}/comments"
+
+
   class Entities.Talk extends App.Entities.Model
 
     initialize: (@conference_id, @talk_id) ->
@@ -11,6 +22,12 @@
     model: Entities.Talk
     initialize: (@id) ->
     url: -> "/conferences/#{@id}/talks"
+
+    relations : [
+          type: Backbone.Many,
+          key : 'comments',
+          relatedModel : Entities.Comment
+          ]
 
 
   class Entities.TalkSearchCollection  extends App.Entities.Collection
