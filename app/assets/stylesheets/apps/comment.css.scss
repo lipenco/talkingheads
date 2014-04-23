@@ -96,3 +96,45 @@ border-radius: 5px;
 // border: 2px solid #1abc9c;
 // border: 2px solid #eaedf1;
 }
+
+
+
+textarea[type=text]#description-input  {
+border-radius:0;
+color:#444;
+background:#eff0f2;
+padding-left:0;
+border: 0;
+margin: 0;
+padding: 0;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+width: 90%;
+line-height: 18px;
+}
+
+textarea[type=text]#description-input::-webkit-input-placeholder {
+    color:#444;
+}
+textarea[type=text]#description-input:-moz-placeholder {
+    color:#444;
+}
+textarea[type=text]#description-input::-moz-placeholder {
+  color:#444;
+}
+textarea[type=text]#description-input:-ms-input-placeholder {
+    color:#444;
+}
+
+
+
+textarea[type=text]:focus {
+
+  outline: none;
+}
+
+
+textarea[type=text]#description-input:focus {
+  outline: none;
+}

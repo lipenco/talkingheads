@@ -27,7 +27,7 @@
         addComentsView = @getAddCommentsView comments, currentUser
 
         @listenTo addComentsView, "comment:save", (comment) =>
-          text = $("span p").text()
+          text = $("textarea").val()
           talk_id  = comments.talk_id
           name = comment.get("name")
           image = comment.get("image")
@@ -37,7 +37,7 @@
           comment.set({author_name: name})
           comment.set({author_image: image})
           comment.set({talk_id: comments.talk_id})
-          $("span p").text("Add Your Comment")
+          $("textarea").val("Add Your Comment")
           comments.unshift(comment)
           comment.save()
 

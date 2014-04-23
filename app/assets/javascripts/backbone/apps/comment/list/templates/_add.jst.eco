@@ -2,7 +2,8 @@
   <div class="comment row">
   <img src="<%= @image %>">
   <div class="comment-content"><p class="author"><strong><%= @name %></strong> - now</p>
-    <span><p class="commentp" contenteditable="true">Add Your Comment</p>
+    <span><textarea  type="text" id="description-input" class="commentp" placeholder="Write your comment"></textarea>
+
     <button id="contentible" class="btn">+</button>
   </span>
   </div>
