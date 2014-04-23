@@ -1,6 +1,6 @@
 <div id="new-conference">
   <p>
-    <label class="">What is the name of the Conference?</label>
-    <input type="text" name="name" placeholder="Conference Name" />
+    <label class="labelnew">What is the name of the Conference?</label>
+    <input id="newconference" type="text" name="name" placeholder="Conference Name" />
   </p>
 </div>
