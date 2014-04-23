@@ -41,13 +41,15 @@
     App.navigate Routes.edit_conference_path(id)
     API.edit id, single
 
+    goto:home
+
 
   App.vent.on "conference:single:details", (single) ->
     App.navigate Routes.conference_path(single.id)
     API.show single.id, single
 
 
-  App.vent.on "conference:cancelled conference:updated menu:closed talk:cancelled", (conferences) ->
+  App.vent.on "conference:cancelled conference:updated menu:closed talk:cancelled goto:home", (conferences) ->
     App.navigate Routes.conferences_path()
     API.list()
 

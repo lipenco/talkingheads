@@ -9,6 +9,12 @@
 		itemView: List.Header
 		itemViewContainer: "ul"
 
+		events:
+			"click #logo" : "gotoHomepage"
+
+		gotoHomepage:->
+			App.vent.trigger "goto:home"
+
 		onShow:->
 			@scrollHeader()
 

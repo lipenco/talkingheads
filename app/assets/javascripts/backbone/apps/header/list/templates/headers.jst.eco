@@ -14,7 +14,7 @@
     <p class="buttons">
     </p>
   </div>
-  <a href="/#conferences"><h1 id="logo" class="logo">Talking Heads</h1></a>
+  <h1 id="logo" class="logo">Talking Heads</h1>
 
   <div class="home-overlay"></div>
 </div>
