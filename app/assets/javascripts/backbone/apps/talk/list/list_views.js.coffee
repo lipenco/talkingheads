@@ -10,7 +10,7 @@
 
   class List.TalkSingle extends App.Views.ItemView
     template: "talk/list/_talk"
-    className: 'talk_li'
+    className: 'talk_li col-md-4'
     tagName: "li"
 
     triggers:
@@ -28,4 +28,4 @@
     childElementsFadeIn: ->
       container = @$el.find("ul")
       container.isotope
-        itemSelector: ".talk-container"
+        itemSelector: ".col-md-4"

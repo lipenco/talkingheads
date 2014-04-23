@@ -1,4 +1,4 @@
-<div class="talk-container col-md-4">
+<div class="talk-container">
   <div class="talk-head">
       <a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><h1><%= @title %></h1></a>
       <%= @speaker %>
