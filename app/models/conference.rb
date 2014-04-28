@@ -18,5 +18,9 @@ class Conference < ActiveRecord::Base
     self.talks.count
   end
 
+  def date
+    self[:date] ||= Date.today
+  end
+
 
 end
