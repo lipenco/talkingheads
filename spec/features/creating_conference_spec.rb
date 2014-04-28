@@ -2,17 +2,17 @@ require 'spec_helper'
 # require 'capybara/poltergeist'
 # Cabybara.default_driver = :poltergeist
 
-feature 'conferences page' do
-  scenario 'single talk is linkable from conference page' do
-      visit '/#conferences/76'
-      link = find("h1", :text => "Advanced Jank Busting in Chrome").parent("a")[:href]
-      expect(link).to eq("/#conferences/76/talks/283")
-  end
-
-  scenario 'clicking Talking Heads (Home button)' do
-    pending
-  end
-end
+# feature 'conferences page' do
+#   scenario 'single talk is linkable from conference page' do
+#       visit '/#conferences/76'
+#       link = find("h1", :text => "Advanced Jank Busting in Chrome").parent("a")[:href]
+#       expect(link).to eq("/#conferences/76/talks/283")
+#   end
+#
+#   scenario 'clicking Talking Heads (Home button)' do
+#     pending
+#   end
+# end
 
 # feature 'Creating Coxnferences' do
   # scenario "can create a conference" do
