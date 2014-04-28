@@ -3,11 +3,11 @@
     <span class="dot glyphicon glyphicon-chevron-right"></span>
     <h2><a href="#conferences/<%= @conference_id %>/talks/<%= @id %>"><%= @title %></a></h2>
     <p class="small meta">
-      <a href="" target="_blank">22 comments</a>
+      <a href="" target="_blank"><%= @comments_count %> comments</a>
       <span>•</span>
-      <a href="" class="popup">1111 views</a>
+      <a href="" class="popup"><%= @favorites %> favorited</a>
       <span>•</span>
-      <a href="">30 upvotes</a>
+      <a href=""><%= @impressions_count %> views</a>
       <span>•</span>
       <a class="talk-edit">edit</a>
     </p>
