@@ -1,0 +1,13 @@
+<div class="share-button">
+  <span class="social-toggle mark-fav glyphicon glyphicon-share" id="shareicon"></span>
+  <div class="social-networks">
+    <ul>
+      <li class="social-twitter">
+        <a href="http://www.twitter.com"><img src="/assets/twit.png"></a>
+      </li>
+      <li class="social-facebook">
+      <a href="http://www.facebook.com"><img src="/assets/fb.png"></a>
+      </li>
+    </ul>
+  </div>
+</div>

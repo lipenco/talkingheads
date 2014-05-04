@@ -23,6 +23,7 @@
         @speakerRegion talk
         @descriptionRegion talk
         @commentsRegion talk
+        @shareRegion talk
 
       @show @layout, loading: true
 
@@ -36,6 +37,7 @@
         @starRegion args.model
         @titleRegion args.model
         @videoRegion args.model
+        @shareRegion args.model
         @speakerRegion args.model
         @descriptionRegion args.model
         @commentsRegion args.model
@@ -53,6 +55,10 @@
     titleRegion: (talk) ->
       titleView = @getTitleView talk
       @layout.titleRegion.show titleView
+
+    shareRegion: (talk) ->
+      shareView = @getShareView talk
+      @layout.shareRegion.show shareView
 
     descriptionRegion: (talk) ->
       descriptionView = @getDescriptionView talk
@@ -92,6 +98,10 @@
 
     getDescriptionView: (talk) ->
       new Show.Description
+        model: talk
+
+    getShareView: (talk) ->
+      new Show.Share
         model: talk
 
 

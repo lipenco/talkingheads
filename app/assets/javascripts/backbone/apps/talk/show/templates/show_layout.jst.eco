@@ -9,6 +9,9 @@
             <div id="title-region"></div>
             <div id="speaker-region"></div>
           </div>
+          <div class="col-md-1">
+            <div id="share-region"></div>
+          </div>
       </div>
      <div id="video-region"></div>
      <div id="description-region"></div>

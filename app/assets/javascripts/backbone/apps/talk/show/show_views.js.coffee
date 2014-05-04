@@ -11,6 +11,7 @@
       speakerRegion:  "#speaker-region"
       commentsRegion: "#comments-region"
       descriptionRegion: "#description-region"
+      shareRegion:  "#share-region"
 
 
   class Show.Title extends App.Views.ItemView
@@ -18,6 +19,18 @@
 
   class Show.Speaker extends App.Views.ItemView
     template: "talk/show/_speaker"
+
+  class Show.Share extends App.Views.ItemView
+    template: "talk/show/_share"
+
+    events:
+      "click .social-toggle" : "toggle"
+
+    toggle: (e) =>
+      console.log "kilk"
+      @$el.find(".social-networks").toggleClass('open-menu')
+      # $(this).next().toggleClass('open-menu');
+
 
   class Show.Description extends App.Views.ItemView
     template: "talk/show/_description"
