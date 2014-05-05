@@ -6,7 +6,7 @@
         <a href="https://twitter.com/intent/tweet?text=Great%20talk%20on%20%22<%= @title %>%22%20on%20TalkingHeads&url=http://lipenco-talkingheads.herokuapp.com/%23conferences/<%= @conference_id %>/talks/<%= @id %>&via=talkingheads" target="_blank">><img src="/assets/twit.png"></a>
       </li>
       <li class="social-facebook">
-      <a href="http://www.facebook.com"><img src="/assets/fbb.png"></a>
+      <a href="http://www.facebook.com/sharer/sharer.php?u=http://lipenco-talkingheads.herokuapp.com/%23conferences/<%= @conference_id %>/talks/<%= @id %>" target="_blank"><img src="/assets/fbb.png"></a>
       </li>
     </ul>
   </div>

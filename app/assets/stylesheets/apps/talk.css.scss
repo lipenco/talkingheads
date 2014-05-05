@@ -164,6 +164,11 @@ padding-top: 11px;
   color:#1b967c;
 }
 
+li a:hover {
+ opacity: 0.6;
+}
+
+
 .no-js .social-toggle, .no-js .social-toggle:hover {
   cursor: default;
   border:none;
