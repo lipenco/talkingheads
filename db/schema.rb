@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422031934) do
+ActiveRecord::Schema.define(version: 20140505193258) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20140422031934) do
     t.string   "title"
     t.text     "description"
     t.string   "video_url"
-    t.string   "slides_url"
+    t.text     "slides_url",        limit: 255
     t.string   "speaker"
     t.integer  "conference_id"
     t.datetime "created_at"
