@@ -3,10 +3,10 @@
   <div class="social-networks">
     <ul>
       <li class="social-twitter">
-        <a class="share" href="https://twitter.com/intent/tweet?text=Great%20talk%20on%20%22<%= @title %>%22%20on%20TalkingHeads&url=http://lipenco-talkingheads.herokuapp.com/%23conferences/<%= @conference_id %>/talks/<%= @id %>&via=talkingheads" target="_blank">><img src="/assets/twit.png"></a>
+        <a class="share" href="https://twitter.com/intent/tweet?text=Great%20talk%20on%20%22<%= @title %>%22%20on%20TalkingHeads&url=http://talkingheads.co/%23conferences/<%= @conference_id %>/talks/<%= @id %>&via=talkingheads" target="_blank">><img src="/assets/twit.png"></a>
       </li>
       <li class="social-facebook">
-      <a class="share" href="http://www.facebook.com/sharer/sharer.php?u=http://lipenco-talkingheads.herokuapp.com/%23conferences/<%= @conference_id %>/talks/<%= @id %>" target="_blank"><img src="/assets/fbb.png"></a>
+      <a class="share" href="http://www.facebook.com/sharer/sharer.php?u=http://www.talkingheads.co/%23conferences/<%= @conference_id %>/talks/<%= @id %>" target="_blank"><img src="/assets/fbb.png"></a>
       </li>
     </ul>
   </div>
