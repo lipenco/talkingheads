@@ -25,11 +25,22 @@
 
     events:
       "click .social-toggle" : "toggle"
+      "click .share": "share"
 
     toggle: (e) =>
-      console.log "kilk"
       @$el.find(".social-networks").toggleClass('open-menu')
-      # $(this).next().toggleClass('open-menu');
+
+    share: (e) =>
+      e.preventDefault();
+      url = $(e.currentTarget).attr('href')
+      @openPopup(url, 600, 300)
+
+
+    openPopup: (url, width, height) ->
+      console.log(url);
+      left = (window.screen.width / 2) - ((width / 2) + 10);
+      top = (window.screen.height / 2) - ((height / 2) + 50);
+      window.open(url, "ShareTalkWindow", "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no")
 
 
   class Show.Description extends App.Views.ItemView
