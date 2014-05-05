@@ -4,8 +4,7 @@
 
     initialize: (options)->
       {talk} = options
-
-      # currentUser = App.request "get:current:user"
+      # c = App.request "get:current:user"
       # favorites = currentUser.get("favourites")
       # favorites = _.pluck(favorites, 'talk_id')
       # talk_id = talk.id
@@ -35,12 +34,17 @@
     unstarRegion:(talk) ->
       unstarView = @getUnstarView()
 
-      @listenTo unstarView, "fav:clicked", (el) ->
-        talk.set("favorited", true)
-        talk_id = talk.id
-        favourite = App.request "new:favorite:entity", talk_id
-        favourite.save()
-        @starRegion(talk_id)
+      @listenTo unstarView, "fav:clicked", (el) =>
+        currentUser = App.request "get:current:user"
+        currentUserId = currentUser.get("id")
+        if currentUserId != undefined
+          talk.set("favorited", true)
+          talk_id = talk.id
+          favourite = App.request "new:favorite:entity", talk_id
+          favourite.save()
+          @starRegion(talk_id)
+        else
+          el.view.$el.find(".social-networks").toggleClass('open-menu')
 
       @show unstarView , region: @layout.starRegion
 

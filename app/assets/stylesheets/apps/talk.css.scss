@@ -198,8 +198,14 @@ width:100px;
   -webkit-backface-visibility: hidden;
 }
 
+.start-tultip {
+width: 135px;
+text-align: center;
+margin-left: -5px;
+}
 
-.social-networks.open-menu, .no-js .social-networks {
+
+.social-networks.open-menu, .no-js .social-networks  {
   -webkit-transform: scale(1) translateY(-90px);
   transform: scale(1) translateY(-90px);
   opacity:1;

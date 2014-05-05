@@ -1,1 +1,4 @@
 <span class="mark-fav glyphicon glyphicon-star-empty" id="staricon"></span>
+<div class="social-networks">
+<p class="start-tultip">Sign up to add talks to favorites</p>
+</div>
