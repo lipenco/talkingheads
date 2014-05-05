@@ -21,7 +21,7 @@
      </p>
      <p>
        <label class="">Description</label>
-       <input type="text" name="description" value="<%= @description %>" />
+       <textarea  name="description" value="<%= @description %>" ></textarea>
      </p>
      <p>
        <label class="conference-delete"><span class="glyphicon glyphicon-remove"></span> Delete this conference</label>

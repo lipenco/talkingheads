@@ -4,20 +4,20 @@
        <input type="text" name="title" value="<%= @title %>" />
      </p>
       <p>
-       <label class="">Video url</label>
+       <label class="">Video url (Youtube or Vimeo)</label>
        <input type="text" name="video_url" value="<%= @video_url %>" />
      </p>
      <p>
-       <label class="">Slides</label>
+       <label class="">Slides embeded code (Speakerdeck or Slideshare)</label>
        <input type="text" name="slides_url" value="<%= @slides_url %>" />
      </p>
      <p>
-       <label class="">Speaker</label>
+       <label class="">Speaker name</label>
        <input type="text" name="speaker" value="<%= @speaker %>" />
      </p>
      <p>
        <label class="">Description</label>
-       <input type="text" name="description" value="<%= @description %>" />
+       <textarea name="description" value="<%= @description %>"></textarea>
      </p>
 
      <p>
