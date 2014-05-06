@@ -16,6 +16,14 @@
        <input type="text" name="speaker" value="<%= @speaker %>" />
      </p>
      <p>
+       <label class="">Twitter username of speaker</label>
+<!--        <input type="text" name="speaker_twitter" value="<%= @speaker_twitter %>" /> -->
+       <div class="row">
+         <div class="col-md-1"><span class="input-group-addon ">@</span></div>
+         <div class="col-md-11"><input type="text"  name="speaker_twitter" value="<%= @speaker_twitter %>"></div>
+       </div>
+     </p>
+     <p>
        <label class="">Description</label>
        <textarea name="description" value="<%= @description %>"></textarea>
      </p>

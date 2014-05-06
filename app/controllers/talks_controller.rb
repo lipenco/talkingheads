@@ -59,7 +59,7 @@ class TalksController < ApplicationController
 
 
   def talk_params
-    params.require(:talk).permit(:title, :video_url, :description, :slides_url, :speaker, :conference_id)
+    params.require(:talk).permit(:title, :video_url, :description, :slides_url, :speaker, :speaker_twitter, :conference_id)
   end
 
   def require_login

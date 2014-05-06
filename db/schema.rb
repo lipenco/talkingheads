@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505193258) do
+ActiveRecord::Schema.define(version: 20140505210310) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140505193258) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "impressions_count"
+    t.string   "speaker_twitter"
   end
 
   add_index "talks", ["conference_id"], name: "index_talks_on_conference_id"
