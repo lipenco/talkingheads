@@ -10,7 +10,8 @@ font-size: 2em;
 }
 
 #slides {
-height: 400px;
+max-height: 429px;
+overflow: hidden;
 }
 
 a.twittername {
