@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505210310) do
+ActiveRecord::Schema.define(version: 20140507161449) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140505210310) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "public",      default: false
   end
 
   add_index "conferences", ["user_id"], name: "index_conferences_on_user_id"
