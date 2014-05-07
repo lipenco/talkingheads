@@ -1,4 +1,4 @@
-
+<div class="col-md-10 col-md-offset-1" >
 <p>
  <label class="">Title</label>
  <input type="text" name="title" placeholder="Title" />
@@ -19,3 +19,11 @@
   <label class="">Speaker</label>
   <input type="text" name="speaker" placeholder="speaker"/>
 </p>
+<p>
+  <label class="">Twitter username of the speaker</label>
+  <div class="row">
+    <div class="col-md-1"><span class="input-group-addon ">@</span></div>
+    <div class="col-md-11"><input type="text"  name="speaker_twitter" value="<%= @speaker_twitter %>"></div>
+  </div>
+</p>
+</div>
