@@ -25,6 +25,12 @@
 
     titleRegion: (conferences) ->
       titleView = @getTitleView conferences
+
+      @listenTo titleView, "conference:publish:clicked", (conferences) =>
+        model = conferences.model
+        model.set({public: true})
+        model.save()
+
       @show titleView, region: App.titleRegion
 
 

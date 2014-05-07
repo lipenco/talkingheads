@@ -5,7 +5,8 @@ class ConferencesController < ApplicationController
   respond_to :json
 
   def index
-    @conferences = Conference.all
+    # @conferences = Conference.all
+    @conferences = Conference.where(:public=> true)
   end
 
   def praginate
@@ -62,7 +63,7 @@ class ConferencesController < ApplicationController
   end
 
   def conference_params
-    params.permit(:name, :tags, :date, :organizer, :description, :place, :talks_attributes => [:title, :video_url])
+    params.permit(:name, :tags, :date, :organizer, :description, :place, :public, :talks_attributes => [:title, :video_url])
   end
 
 end

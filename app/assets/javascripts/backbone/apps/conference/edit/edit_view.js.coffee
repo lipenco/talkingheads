@@ -9,6 +9,10 @@
 
   class Edit.Title extends App.Views.ItemView
     template: "conference/edit/edit_title"
+    className: "container"
+
+    triggers:
+      "click #publish" : "conference:publish:clicked"
 
     modelEvents:
       "updated" : "render"
