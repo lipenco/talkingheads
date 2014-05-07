@@ -12,7 +12,8 @@
     className: "container"
 
     triggers:
-      "click #publish" : "conference:publish:clicked"
+      "click .publish" : "conference:publish:clicked"
+      "click .unpublish" : "conference:unpublish:clicked"
 
     modelEvents:
       "updated" : "render"

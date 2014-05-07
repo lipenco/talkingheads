@@ -1,7 +1,11 @@
 
 <div class="row">
   <div class="col-md-2 col-md-offset-1">
-    <button id="publish" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span>Publish</button>
+    <% if @public == true: %>
+    <button type="submit" class="unpublish btn btn-primary"><span class="glyphicon glyphicon glyphicon-eye-close"></span>Unpublish</button>
+    <% else: %>
+    <button type="submit" class="publish btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span>Publish</button>
+    <% end %>
   </div>
 
   <div class="col-md-9">

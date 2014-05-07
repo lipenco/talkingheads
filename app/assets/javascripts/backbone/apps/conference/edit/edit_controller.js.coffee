@@ -30,6 +30,15 @@
         model = conferences.model
         model.set({public: true})
         model.save()
+        conferences.view.$el.find(".publish").addClass("unpublish").removeClass("publish").text("Unpublish")
+
+      @listenTo titleView, "conference:unpublish:clicked", (conferences) =>
+        model = conferences.model
+        model.set({public: false})
+        model.save()
+        conferences.view.$el.find(".unpublish").addClass("publish").removeClass("unpublish").text("Publish")
+
+
 
       @show titleView, region: App.titleRegion
 
