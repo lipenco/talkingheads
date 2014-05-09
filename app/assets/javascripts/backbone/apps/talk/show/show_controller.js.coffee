@@ -46,6 +46,7 @@
         id = args.model.get("id")
         conference_id = args.model.get("conference_id")
         App.vent.trigger "talk:single:rendered", conference_id, id
+        App.request "talk:entity", conference_id, id
 
 
       # @layout.talksRegion.show talksView
