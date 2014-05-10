@@ -3,7 +3,7 @@
   <div class="social-networks">
     <ul>
       <li class="social-twitter">
-        <% if @speaker_twitter != null: %>
+        <% if @speaker_twitter != (null || ""): %>
             <a class="share" href="https://twitter.com/intent/tweet?text=@<%= @speaker_twitter %>%20great%20talk%20on%20%22<%= @title %>%22%20on%20TalkingHeads&url=http://talkingheads.co/%23conferences/<%= @conference_id %>/talks/<%= @id %>&via=TalkingHeadsCo" target="_blank">><img src="/assets/twit.png"></a>
         <% else: %>
             <a class="share" href="https://twitter.com/intent/tweet?text=Great%20talk%20on%20%22<%= @title %>%22%20on%20TalkingHeads&url=http://talkingheads.co/%23conferences/<%= @conference_id %>/talks/<%= @id %>&via=TalkingHeadsCo" target="_blank">><img src="/assets/twit.png"></a>

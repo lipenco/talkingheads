@@ -1,5 +1,5 @@
 <p> Talk by <strong><%= @speaker %></strong>
-  <% if @speaker_twitter != null: %>
+  <% if @speaker_twitter != (null || ""): %>
   - <a class="twittername" href="https://twitter.com/<%= @speaker_twitter %>" target="_blank" >
     @<%= @speaker_twitter %>
   </a>
