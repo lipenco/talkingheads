@@ -5,7 +5,7 @@ class ConferencesController < ApplicationController
   respond_to :json
 
   def index
-    @conferences = Conference.where(:public=> true).order('id DESC')
+    @conferences = Conference.where(:public=> true).order('created_at DESC')
   end
 
   def praginate
