@@ -5,12 +5,11 @@ class ConferencesController < ApplicationController
   respond_to :json
 
   def index
-    # @conferences = Conference.all
-    @conferences = Conference.where(:public=> true)
+    @conferences = Conference.where(:public=> true).order('id DESC')
   end
 
   def praginate
-    @conferences = Conference.page(params[:page]).order('id DESC')
+    @conferences = Conference.where(:public=> true).page(params[:page]).order('id DESC')
     render "conferences/index"
   end
 
